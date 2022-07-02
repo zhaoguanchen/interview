@@ -254,3 +254,122 @@ https://leetcode.com/discuss/interview-question/2092307/Amazon-OA
 Got a follow-up from my recruiter about the on-site quite fast (no delay at all). Will post more about the interview experience after the on-site.
 
 Update: got an offer! currently interviewing for other companies but probably will just take this one.
+
+## array
+Find the minimum operations to be performed on the array to have maximum element in the sliding window of 3 to be greater than K. The only allowed operation would be to increase the element by 1.
+Example :
+Input : array = [1, 3, 0, 3, 1] , K=5
+Output: 4
+Explanation : Increasing the element at index (0-based Index) 1 and 3 two times.
+
+Find the minimum number that can be XOR-ed to each element in the given sorted array to arrange the array to be sorted in descending order
+Input : [2, 2, 4, 5]
+Output : 5
+Explanation : If each element is XOR-ed with 5, will yield the following array : [7, 7, 3, 0]
+
+Could someone please help with the approach ?
+
+https://leetcode.com/discuss/interview-question/2072252/Amazon
+
+## String palindrome
+https://leetcode.com/discuss/interview-question/2068125/Amazon-or-OA-or-Seattle
+
+Given a binary string write an algorithm to calculate minimum number of swaps required to make it a palindrome for eg 11101 requires on swap between 3rd and 4th to make it 11011
+
+
+## Password strength
+Password strength determination - Given a password determine the strength of the password which is calculated by getting substrings in password and calculating strength based on number of unique characters in the substring and adding all the strength
+
+
+##  n piles of products
+图片
+https://leetcode.com/discuss/interview-question/2068122/Amazonor-OA
+
+
+
+## Demolition robot
+Determine the min distance required for the robot to remove the obstacle
+Input is given as a 2D array which consists of 0, 1 and 9
+9 is the obstacle, can pass through 1 and cannot pass through 0
+Robot can move top, left, right and bottom
+
+Input: [[1,0,0],[1,0,0],[1,9,1]]
+output: 3
+
+
+## Minimum Days to Deliver All Parcels
+https://leetcode.com/discuss/interview-question/1998840/Amazonor-OA-or-Minimum-Days-to-Deliver-All-Parcels 
+
+There is N delivery centers. Each Devliery Outlet has some packages to be delivered, denoted by parcels[i]. There is a Rule how delivery should be completed. On each day, an equal number of parcerls are to be dispatched from each delivery center that has atleast one parcel remaining.
+
+Find minimum nunmber of days needed to deliver all the parcels.
+Input:
+parcels= {2,3,4,3,3}
+
+Output
+3
+
+Solutions:
+Iterate over the list/ array, count distinct elements i.e desired minimum days
+
+Please post if you know any other logic/ soultions.
+
+
+## Find Maximum Sustainable Cluster Size
+
+https://leetcode.com/discuss/interview-question/1636493/Amazon-or-OA-or-Max-Length-of-Valid-Server-Cluster
+
+Question2:
+Give you a list servers. Their processing power is given as a array of integer, and boot power as a array of integer.
+Write a function to return the max length of sub array which's power consumption is less than or equal to max power limit.
+Formula to calculate the power consumption for a subArray is:
+Max(bootPower[i...j]) + Sum(processPower[i....j]) * length of subArray.
+
+Note: Single server is also a subArray, return 0 if no such subArray can be found.
+
+public int MaxLengthValidSubArray(int[] processingPower, int[] bootingPower, int maxPower)
+{}
+Does anyone know what is the similar question in leetcode?
+
+
+
+## nnn
+
+https://leetcode.com/discuss/interview-question/2023674/Amazon-OA
+Given an array consisting of N integer and two number k,d.
+Task1-From the given array we can choose k consecutive elements one after in array and after that leave an array element.Then we calculate maximum sum of all such consecutive element containing subarray.
+Task2-From the given array we can choose k+d consecutive elements one after in array and after that leave an array element.Then we calculate maximum sum of all such consecutive element containing subarray.
+Find the difference between task1 and task 2 ans.
+ex 1->arr=[1,2,3,4,8,9,10]
+k=2,d=1;
+Task1 elements {3,4}+{9,10}=7+19=26
+Task2 elements {1,2,3}+{8,9,10}=6+27=33;
+output=33-26=7
+
+
+
+## the maximum subarray length with a product of 1.
+
+A question about Amazon student badges but ultimately the problem was given an arr of -1 or 1, return the maximum subarray length with a product of 1.
+The array is of size 2 and above and only contains -1 and 1
+e.g arr = [-1,-1,1,1,-1], return 4, since index 0 to 3 have the max length with product equal to 1
+
+I tried to use a sliding window but only passed 4/13 cases. there was somthing i had to fix in the logic for the case arr = [ -1,-1,-1,-1,-1, 1]
+
+Given an array containing only 0 and 1 as its elements. We have to sort the array in such a manner that all the ones are grouped together and all the zeros are grouped together. The group of ones can be either at the start of the array or at the end of the array. The constraint while sorting is that every one/zero can be swapped only with its adjacent zero/one. Find the minimum number of moves to sort the array as per the description.
+Example:
+input array ={0,1,0,1}
+Final array = {0,0,1,1}
+Minimum moves = 1 (1 at index 1 is swapped with 0 at index 2)
+
+input array = { 1101}
+Final array - {1110}
+Minimum moves = 1 {1 at index 2 is swapped with index 3}
+
+I passed all test cases on this one 13/13.
+
+I ran a sliding window to check number of swaps if the elements on the left should be 0s before 1s, and at each 0 found by right index, I found the number of swaps needed
+repeated the same above for the case if the elements on the left should be 1s before 0s,
+returned the minimum of both operations.
+
+Do I have even a miniscule chance of moving forward
