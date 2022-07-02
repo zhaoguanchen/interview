@@ -350,11 +350,15 @@ output=33-26=7
 
 ## the maximum subarray length with a product of 1.
 
+
 A question about Amazon student badges but ultimately the problem was given an arr of -1 or 1, return the maximum subarray length with a product of 1.
 The array is of size 2 and above and only contains -1 and 1
 e.g arr = [-1,-1,1,1,-1], return 4, since index 0 to 3 have the max length with product equal to 1
 
 I tried to use a sliding window but only passed 4/13 cases. there was somthing i had to fix in the logic for the case arr = [ -1,-1,-1,-1,-1, 1]
+
+
+
 
 Given an array containing only 0 and 1 as its elements. We have to sort the array in such a manner that all the ones are grouped together and all the zeros are grouped together. The group of ones can be either at the start of the array or at the end of the array. The constraint while sorting is that every one/zero can be swapped only with its adjacent zero/one. Find the minimum number of moves to sort the array as per the description.
 Example:
@@ -373,3 +377,245 @@ repeated the same above for the case if the elements on the left should be 1s be
 returned the minimum of both operations.
 
 Do I have even a miniscule chance of moving forward
+
+
+
+## Min no. of swaps required to make binary string a palindrome
+Range min query
+
+
+
+
+
+
+
+## Maximum Twin Sum of a Linked List
+photo twin-sum
+
+https://leetcode.com/problems/maximum-twin-sum-of-a-linked-list/
+
+
+
+
+
+given an array consisting of only 1 and -1, return the max length of the subarray such that the product of all elements in said subarray is 1 https://leetcode.com/discuss/interview-question/1655441/amazon-oa
+given an array and an integer k, return the number of subarrays such that the difference between its max value and its min values is no more than k https://leetcode.com/discuss/interview-question/1904966/Amazon-orOAorset-7
+
+
+
+
+
+
+## restaurant orders
+roblem statement
+You are the owner of a restaurant. On a particular day, there are N orders coming in. The billing policy for each order is as follows:
+
+For each minute of preparation of the order, the cost is K units of money.
+For each minute when an order has been received, but its preparation has not been started, W units of money is discounted.
+The chef in the restaurant believes that it is most profitable if he follows the following rules to select the sequence in which he prepares the orders:
+
+If no order is being prepared, start preparing the order that has the least preparation time from among the pending orders.
+If there are two or more pending orders having the same preparation time, pick the order that was received first.
+If the waiting discount is greater than the cost of preparation, the order is considered to be free which means, money earned is 0.
+Task
+Determine the money earned for the completion of each order.
+
+Assumptions
+
+N = 4
+K = 5
+W = 1
+each-order has [x,y] where x is the start time of the order and y is the preparation of the order.
+Example:
+orders = [[1,4],[2,2],[3,3],[9,1]]
+Output -> [20,7,13,5] -
+[1,4] (1 is the start time,4 is the processing time)-> 20
+As its a first job and no need to wait. and the cost would be is * 5-1 * 0(4 is the processing time taken,5 is the cost for every processing minute,1 is the cost for every wait minute,0 as its not waiting for any order)
+[2,2]-> 7 as it needs to wait till 5sec(1+4) -> 5 * 2-3 * 1
+[3,3] 13 as it needs to wait till 5sec(1+4)-> 5 * 3-2 * 1
+[9,1] 5 no need to wait -> 5 * 1-0
+
+This will be solved using priority queues based on the completion time.
+but how to solve the use-case of "If no order is being prepared, start preparing the order that has the least preparation time from among the pending orders."
+
+
+
+
+
+
+Economy Mart is a very popular e-commerce platform because they display the cheapest items first. Economy Mart has decided to migrate its database to Amazon's cloud platform. The product listings in the old database are being migrated into the Amazon database. Customers that go onto Amazon.com will be viewing items from the new database.
+
+Economy Mart has an unusual way of displaying items,
+
+If a customer views the first item, they will be shown the cheapest item in the database
+
+If a customer is currently viewing the kth cheapest item, viewing the next item will display the (k+1)th cheapest item.
+
+If multiple items have the same price, they are ordered alphabetically ascending.
+
+There are 2 types of entries:
+
+The first element in the row is “INSERT” followed by the name of the item (String) and its price (String denoting an Integer). This describes an item being added to the database.
+
+The first element in the row is the word “VIEW”. This is when the customer views an item. The other 2 elements in these rows contain "-" that can be ignored. It is guaranteed that at least one item is added to the database when a customer views an item.
+
+Table of entries
+image
+
+Note: The price of each item is in string format so you may need to convert it to an integer before using it.
+
+While the database is being transferred, an unknowing customer logs onto the website and browses some of Economy Mart's items. Given a server log in chronological order, determine which items were shown to the customer.
+
+Example
+
+entries = [['INSERT', 'milk', '4'], ['INSERT', 'coffee', '3'], ['VIEW', '-', '-'], ['INSERT', 'pizza', '5'], ['INSERT', 'gum', '1'], ['VIEW', '-', '-']]
+
+Let's consider the following entries in the database:
+
+INSERT milk 4
+INSERT coffee 3
+VIEW - -
+INSERT pizza 5
+INSERT gum 1
+VIEW - -
+
+In this case, milk and coffee are added to the database at costs of 4 and 3, respectively. When the customer logs onto the site, the cheapest item in the database is shown: coffee.
+
+image
+
+While the customer is browsing, pizza and gum are added to the database. Pizza is worth 5 and gum is worth 1. When the customer views the next cheapest item, the items in the database in sorted order are gum (1), coffee (3), milk (4), and pizza (5). Since the customer is viewing for the second time, the second cheapest item, coffee, will be shown again.
+
+image
+
+Return ['coffee', 'coffee'].
+
+Function Description
+
+Complete the function getItems in the editor below.
+
+getItems has the following parameters:
+
+string entries[n][3]: each row in the matrix represents an individual log entry
+
+Returns
+
+string[]: answers to each of the "VIEW" queries
+
+Constraints
+
+1 ≤ n ≤ 105
+1 ≤ | itemName | ≤ 10 (The name of each item will be 1 to 10 characters long)
+
+Item names will only consist of lowercase English letters.
+
+All itemName strings are distinct
+
+1 ≤ price ≤ 109
+
+k ≤ length of the database (That is, there will always be at least k items in the database when the customer is viewing for the kth time)
+
+Input Format For Custom Testing
+
+The first line of input contains n, the number of entries in the log.
+
+The second line contains the number 3, the size of each entry.
+
+The following n lines each contain an entry with 3 space-separated values.
+
+Sample Case 0
+
+Sample Input For Custom Testing
+
+STDIN FUNCTION
+
+10 → entries[][] size n = 10
+3 → entries[n][] columns = 3
+INSERT fries 4 → rows of entries
+INSERT soda 2
+VIEW - -
+VIEW - -
+INSERT hamburger 5
+VIEW - -
+INSERT nuggets 4
+INSERT cookie 1
+VIEW - -
+VIEW - -
+
+Sample Output
+
+soda
+fries
+hamburger
+nuggets
+hamburger
+
+Explanation
+
+Add 'fries' for 4. db = ['fries'] (costs = [4])
+Add 'soda' for 2. db = ['soda', 'fries'] (costs = [2, 4])
+
+For the first "VIEW", the cheapest item in the database, soda, is shown.
+
+For the second "VIEW", the second cheapest item in the database, fries, is shown.
+
+Add 'hamburger' for 5. db = ['soda', 'fries', 'hamburger'] (costs = [2, 4, 5])
+
+For the third 'VIEW", the third cheapest item is shown: hamburger.
+
+Add 'nuggets' for 4, the same price as 'fries'. Sort nuggets and fries alphabetically. db = ['soda', 'fries', 'nuggets', 'hamburger'] ( costs = [2, 4, 4, 5])
+
+Add 'cookie' for 1. db = ['cookie', 'soda', 'fries', 'nuggets', 'hamburger'] ( costs = [1, 2, 4, 4, 5])
+
+For the fourth "VIEW", the fourth cheapest item is nuggets.
+
+For the fifth "VIEW", the fifth cheapest item is hamburger.
+
+Sample Case 1
+
+Sample Input For Custom Testing
+
+STDIN FUNCTION
+
+9 → entries[][] size n = 9
+3 → entries[n][] columns = 3
+INSERT ruler 4 → rows of entries
+VIEW - -
+INSERT notecards 2
+VIEW - -
+INSERT notebook 9
+INSERT backpack 10
+INSERT pens 6
+INSERT pencils 5
+VIEW - -
+
+Sample Output
+
+ruler
+ruler
+pencils
+
+Explanation
+
+First, ruler, worth 4, is added to the database. The database contains ruler = 4.
+
+Next, the customer views the database for the first time. The cheapest item in the database is ruler.
+
+notecards is added to the database and is worth 2. The database contains notecards = 2 and ruler = 4.
+
+The customer decides to view the next cheapest item. After the first item, he is shown the second cheapest item in the database, ruler.
+
+notebook is added to the database and is worth 9. The database contains notecards = 2, ruler = 4, and notebook = 9.
+
+backpack is added to the database and is worth 10. The database contains notecards = 2, ruler = 4, notebook = 9, and backpack = 10.
+
+pens is added to the database and is worth 6. The database contains notecards = 2, ruler = 4, pens = 6, notebook = 9, and backpack = 10.
+
+pencils is added to the database and is worth 5. The database contains notecards = 2, ruler = 4, pencils = 5, pens = 6, notebook = 9, and backpack = 10.
+
+For the third and last viewing, the third cheapest item is pencils.
+
+
+
+## 2272
+https://leetcode.com/problems/substring-with-largest-variance/
+
