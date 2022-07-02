@@ -2,6 +2,8 @@ https://archive.ph/Ckx54
 
 # from 1 points
 ## minimum days to deliver all the parcels
+Keyword:parcels,deliver
+
 
 There is N delivery centers. Each Devliery Outlet has some packages to be delivered, denoted by parcels[i]. There is a Rule how delivery should be completed. On each day, an equal number of parcerls are to be dispatched from each delivery center that has atleast one parcel remaining.
 
@@ -17,6 +19,25 @@ Iterate over the list/ array, count distinct elements i.e desired minimum days
 
 Please post if you know any other logic/ soultions.
 
+
+Solution
+```java
+class Solution {
+  public int maxArea(int[] parcels) {
+        Set<Integer> seen = new HashSet<>();
+        
+        for(int num : parcels) {
+            if(0 == num) {
+                continue;
+            }
+            
+            seen.add(num);
+        }
+        
+        return seen.size();
+    }
+}
+```
 
 
 
