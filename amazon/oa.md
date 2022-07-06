@@ -461,7 +461,7 @@ but how to solve the use-case of "If no order is being prepared, start preparing
 
 
 
-
+## Economy Mart
 
 
 Economy Mart is a very popular e-commerce platform because they display the cheapest items first. Economy Mart has decided to migrate its database to Amazon's cloud platform. The product listings in the old database are being migrated into the Amazon database. Customers that go onto Amazon.com will be viewing items from the new database.
