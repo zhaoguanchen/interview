@@ -1,7 +1,7 @@
 https://archive.ph/Ckx54
 
 # from 1 points
-## [Solved] minimum days to deliver all the parcels
+## 1. [Solved] minimum days to deliver all the parcels
 Keyword:parcels,deliver
 
 
@@ -18,23 +18,21 @@ Solutions:
 Iterate over the list/ array, count distinct elements i.e desired minimum days
 
 Please post if you know any other logic/ soultions.
-
  
-
-
-
 https://www.1point3acres.com/bbs/thread-898185-1-1.html
 
 
 
 
+## 2. [Solved] Password strength == Leetcode 2662
+Password strength determination - Given a password determine the strength of the password which is calculated by getting substrings in password and calculating strength based on number of unique characters in the substring and adding all the strength
 
-
-## [Solved] 2262
+https://leetcode.com/problems/total-appeal-of-a-string/
+ 
 https://www.1point3acres.com/bbs/thread-901320-1-1.html
+ 
 
-
-## [Solved] 2272. Substring With Largest Variance
+## 3. [Solved] 2272. Substring With Largest Variance
 https://leetcode.com/problems/substring-with-largest-variance/
 
 
@@ -69,7 +67,7 @@ https://www.1point3acres.com/bbs/thread-899236-1-1.html
 
 
 
-## Server Power
+## 4. Server Power
 
 Net power consumption = maximum booting power among the k processors + (sum of processing power of processors)*k.
 A cluster is said to be sustainable if it's net power consumption does not exceed a given threshold value powerMax.
@@ -103,17 +101,11 @@ powerMax = 6
 
 k = 0, not possible to form any sustainable clusters.
 
-## item rating
-https://www.1point3acres.com/bbs/thread-885897-1-1.html
-https://www.1point3acres.com/bbs/thread-899236-1-1.html
-
-rating
-Subarrays
 
 
 
 
-## Get Heaviest Package
+## 5. Get Heaviest Package
 
 第一题Get Heaviest Package, 给一个int array 叫 package，如果package < package[i+1]，可以把i并到i+1里，反过来不行，求合并完之后最大的包裹
 
@@ -121,6 +113,12 @@ Subarrays
 
 
 
+## item rating
+https://www.1point3acres.com/bbs/thread-885897-1-1.html
+https://www.1point3acres.com/bbs/thread-899236-1-1.html
+
+rating
+Subarrays
 
 
 # From Leetcode Discussion
@@ -217,11 +215,6 @@ https://www.geeksforgeeks.org/minimum-count-of-bit-flips-required-to-make-a-bina
 
 
 https://www.geeksforgeeks.org/count-minimum-swap-to-make-string-palindrome/
-
-## [Solved] get the password strength 
-
-2262
-, same as https://leetcode.com/problems/total-appeal-of-a-string/
 
 
 
@@ -338,8 +331,6 @@ https://leetcode.com/discuss/interview-question/2068125/Amazon-or-OA-or-Seattle
 Given a binary string write an algorithm to calculate minimum number of swaps required to make it a palindrome for eg 11101 requires on swap between 3rd and 4th to make it 11011
 
 
-## [Solved] Password strength
-Password strength determination - Given a password determine the strength of the password which is calculated by getting substrings in password and calculating strength based on number of unique characters in the substring and adding all the strength
 
 
 ##  n piles of products
@@ -356,24 +347,6 @@ Robot can move top, left, right and bottom
 
 Input: [[1,0,0],[1,0,0],[1,9,1]]
 output: 3
-
-
-## [Solved] Minimum Days to Deliver All Parcels
-https://leetcode.com/discuss/interview-question/1998840/Amazonor-OA-or-Minimum-Days-to-Deliver-All-Parcels 
-
-There is N delivery centers. Each Devliery Outlet has some packages to be delivered, denoted by parcels[i]. There is a Rule how delivery should be completed. On each day, an equal number of parcerls are to be dispatched from each delivery center that has atleast one parcel remaining.
-
-Find minimum nunmber of days needed to deliver all the parcels.
-Input:
-parcels= {2,3,4,3,3}
-
-Output
-3
-
-Solutions:
-Iterate over the list/ array, count distinct elements i.e desired minimum days
-
-Please post if you know any other logic/ soultions.
 
 
 ## [Solved] Find Maximum Sustainable Cluster Size
@@ -501,7 +474,7 @@ but how to solve the use-case of "If no order is being prepared, start preparing
 
 
 
-## Economy Mart
+## [Solved] Economy Mart
 
 
 Economy Mart is a very popular e-commerce platform because they display the cheapest items first. Economy Mart has decided to migrate its database to Amazon's cloud platform. The product listings in the old database are being migrated into the Amazon database. Customers that go onto Amazon.com will be viewing items from the new database.
