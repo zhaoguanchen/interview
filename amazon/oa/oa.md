@@ -1,7 +1,7 @@
 https://archive.ph/Ckx54
 
 # from 1 points
-## minimum days to deliver all the parcels
+## [Solved] minimum days to deliver all the parcels
 Keyword:parcels,deliver
 
 
@@ -30,11 +30,11 @@ https://www.1point3acres.com/bbs/thread-898185-1-1.html
 
 
 
-## 2262
+## [Solved] 2262
 https://www.1point3acres.com/bbs/thread-901320-1-1.html
 
 
-## 2272. Substring With Largest Variance
+## [Solved] 2272. Substring With Largest Variance
 https://leetcode.com/problems/substring-with-largest-variance/
 
 
@@ -125,7 +125,7 @@ Subarrays
 
 # From Leetcode Discussion
 
-## maximize the median sum
+## [Solved] maximize the median sum
 https://leetcode.com/discuss/interview-question/1565781/Amazon-or-OA-or-maximize-the-median-sum/1142854
 
 Given an array of integers (unsorted) and a value n indicating number of channels. You have to send all these numbers through n channels (At least one number should go through each channel)
@@ -218,7 +218,7 @@ https://www.geeksforgeeks.org/minimum-count-of-bit-flips-required-to-make-a-bina
 
 https://www.geeksforgeeks.org/count-minimum-swap-to-make-string-palindrome/
 
-## get the password strength 
+## [Solved] get the password strength 
 
 2262
 , same as https://leetcode.com/problems/total-appeal-of-a-string/
@@ -302,14 +302,14 @@ also
 
 https://leetcode.com/discuss/interview-question/2068122/Amazonor-OA
 
-## K Closest Points to Origin
+## [Solved] K Closest Points to Origin
 https://leetcode.com/discuss/interview-question/2092307/Amazon-OA
 
 : used a max heap (~nlogk solution) and passed all test cases (although using quickselect would've yielded a better time complexity on average but I don't think it's much of a big deal as long as it's not the naive approach w/ sorting the entire array. No need to take a risk when doing an interview unless required)
 
 
 
-## Find Minimum Distance to Destination in a Grid
+## [Solved] Find Minimum Distance to Destination in a Grid
 : a classic bfs problem. Doing a bfs while keeping track of the distance for each path yields the min distance to the destination point since bfs traverses all the connected paths from the starting point at the same time. Passed all test cases.
 
 Got a follow-up from my recruiter about the on-site quite fast (no delay at all). Will post more about the interview experience after the on-site.
@@ -338,7 +338,7 @@ https://leetcode.com/discuss/interview-question/2068125/Amazon-or-OA-or-Seattle
 Given a binary string write an algorithm to calculate minimum number of swaps required to make it a palindrome for eg 11101 requires on swap between 3rd and 4th to make it 11011
 
 
-## Password strength
+## [Solved] Password strength
 Password strength determination - Given a password determine the strength of the password which is calculated by getting substrings in password and calculating strength based on number of unique characters in the substring and adding all the strength
 
 
@@ -348,7 +348,7 @@ https://leetcode.com/discuss/interview-question/2068122/Amazonor-OA
 
 
 
-## Demolition robot
+## [Solved] Demolition robot
 Determine the min distance required for the robot to remove the obstacle
 Input is given as a 2D array which consists of 0, 1 and 9
 9 is the obstacle, can pass through 1 and cannot pass through 0
@@ -358,7 +358,7 @@ Input: [[1,0,0],[1,0,0],[1,9,1]]
 output: 3
 
 
-## Minimum Days to Deliver All Parcels
+## [Solved] Minimum Days to Deliver All Parcels
 https://leetcode.com/discuss/interview-question/1998840/Amazonor-OA-or-Minimum-Days-to-Deliver-All-Parcels 
 
 There is N delivery centers. Each Devliery Outlet has some packages to be delivered, denoted by parcels[i]. There is a Rule how delivery should be completed. On each day, an equal number of parcerls are to be dispatched from each delivery center that has atleast one parcel remaining.
@@ -376,7 +376,7 @@ Iterate over the list/ array, count distinct elements i.e desired minimum days
 Please post if you know any other logic/ soultions.
 
 
-## Find Maximum Sustainable Cluster Size
+## [Solved] Find Maximum Sustainable Cluster Size
 
 https://leetcode.com/discuss/interview-question/1636493/Amazon-or-OA-or-Max-Length-of-Valid-Server-Cluster
 
@@ -450,7 +450,7 @@ Range min query
 
 
 
-## Maximum Twin Sum of a Linked List
+## [Solved] Maximum Twin Sum of a Linked List
 photo twin-sum
 
 https://leetcode.com/problems/maximum-twin-sum-of-a-linked-list/
@@ -675,7 +675,7 @@ pencils is added to the database and is worth 5. The database contains notecards
 
 For the third and last viewing, the third cheapest item is pencils.
 
-## 2272
+## [Solved] 2272
 
 https://leetcode.com/problems/substring-with-largest-variance/
 
@@ -697,7 +697,7 @@ https://leetcode.com/problems/substring-with-largest-variance/
 
 
 
-## Economy Mart
+## [Solved] Economy Mart
 
 1. 2.Economy Mart 相关的题 lc  饵以岭饵变种‍‌‌&
 
@@ -753,7 +753,7 @@ https://leetcode.com/discuss/interview-question/1777410/Amazon-Online-Assesment-
 
 # 
 
-## | Implement an algorithm to find plan for the closest X destinations
+## [Solved]  Implement an algorithm to find plan for the closest X destinations
 
 https://leetcode.com/discuss/interview-question/1777410/Amazon-Online-Assesment-SDE-1/1272110
 
