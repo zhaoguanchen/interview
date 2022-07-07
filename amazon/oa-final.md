@@ -121,3 +121,58 @@ class EconomyMartTrackerEntity {
 
 
 ## 4. find plan for the closest X destinations
+
+
+### PriorityQueue
+```java
+// "static void main" must be defined in a public class.
+//Input
+// allLocations = [ [1,2], [3,4], [1,-1]]
+// numDeliveries = 2
+
+// output
+// [ [1,-1], [1,2]]
+public class Main {
+    public static void main(String[] args) {
+        int[][] points = {{1,2}, {3,4}, {1, -1}};
+        int k = 2;
+        Solution solution = new Solution();
+        int[][] ans = solution.kClosest(points, k);
+        System.out.println(Arrays.deepToString(ans));
+    }
+}
+
+class Solution {
+    
+    public int[][] kClosest(int[][] points, int k) {
+        
+        PriorityQueue<int []> pq = new PriorityQueue<>((a, b) -> {
+            int distanceA = getDistance(a);
+            int distanceB = getDistance(b);
+            
+            if (distanceA == distanceB) {
+                return Math.abs(a[0]) - Math.abs(b[0]);
+            } else {
+                return distanceA - distanceB;
+            }
+        });
+        
+        for (int[] point : points) {
+            pq.add(point);
+        }
+        
+        int[][] ans = new int[k][2];
+        
+        for (int i = 0; i < k; i++) {
+            ans[i] = pq.poll();
+        }
+        
+        return ans;
+        
+    }
+    
+    private int getDistance(int [] point) {
+        return point[0] * point[0] + point[1] * point[1];
+    }
+}
+```
