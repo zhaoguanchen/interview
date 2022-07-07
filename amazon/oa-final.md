@@ -32,6 +32,11 @@ class Solution {
 
 ## 3. Economy Mart
 
+Use both min heap and max heap
+The size of max heap will be equal to the kth query as top of max heap will contain the kth cheapest element.
+If the size of max heap is less than kth query add item to max heap directly.
+Else If the price of new item to be inserted is less than the price of item at the top, remove the top item of max heap and insert into min heap and add new item into max heap.
+
 ```java
 class EconomyMartSolution {
 
@@ -111,3 +116,8 @@ class EconomyMartTrackerEntity {
 }
 ```
 
+
+
+
+
+## 4. find plan for the closest X destinations
