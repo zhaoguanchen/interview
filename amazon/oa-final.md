@@ -27,3 +27,8 @@ class Solution {
 ## 2. [leetcode 2262] Total Appeal of A String
 
 
+
+
+
+## 3. Economy Mart
+

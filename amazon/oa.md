@@ -701,6 +701,154 @@ Constraints
 -- 1 <= n <=3*10^5
 ```
 
+## k most popular combos
+
+
+
+https://leetcode.com/discuss/interview-question/1895396/Amazon-SDE-New-Grad-or-OA-or-k-most-popular-combos
+
+
+
+https://leetcode.com/discuss/interview-question/1777410/Amazon-Online-Assesment-SDE-1/1272110
+
+# 
+
+## | Implement an algorithm to find plan for the closest X destinations
+
+https://leetcode.com/discuss/interview-question/1777410/Amazon-Online-Assesment-SDE-1/1272110
+
+# 
+
+Same question :    https://leetcode.com/problems/k-closest-points-to-origin/
+
+My assessment was completed recently. I am sharing the questions asked. Please feel free to suggest the approach.
+One thing more, not only you have to solve coding problems, but also, you need to explain the approach and time complexity on a seperate notepad.
+
+
+
+**PLEASE UPVOTE IF YOU FIND IT USEFUL.**
+
+
+
+Here we go with the question:
+**Question : 1**
+Given a list of N possible delivery destinations, implement an algorithm to create the delivery plan for the closest X destinations.
+
+
+
+**Input**
+The input to the function/method consisits of two arguments:
+*allLocations*, a list where each element consists of a pair of integers representing the x and y coordinates of the delivery locations;
+*numDeliveries*, an integer representing the number of deliveries that will be delivered in the plan(X).
+
+
+
+**Output**
+Return a list of elements where each element of the list represents the X closest x and y integer coordinates of the delivery destinations, where X represents the *numDeliveries* input. If there is one tie, use the location with the closest X coordinate. If no location is possible, return a list with an empty location - not just an empty list.
+
+
+
+**Constraints**
+*numDeliveries*<=*size(allLocations)*
+
+
+
+**Note**
+The plan starts with the truck's location [0.0]. The distance of the truck from a delivery destination (x,y) is the square root of x^2 + y^2. If there are multiple ties, then return the locations starting with the closest X-coordinate as long as you satisfy returning exactly X delivery locations. The returned output can be in any order.
+
+
+
+**Example
+Input**
+*allLocations* = [ [1,2], [3,4], [1,-1]]
+*numDeliveries* = 2
+
+
+
+**Output**
+[ [1,-1], [1,2]]
+
+
+
+**Explaination**
+The distance of the truck from loaction [1,2] is square root(5) = 2.236.
+The distance of the truck from loaction [3,4] is square root(25) = 5.
+The distance of the truck from loaction [1,-1] is square root(2) = 1.414.
+
+
+
+*numDeliveries* is 2, hence the output is [1,-1] and [1,2].
+
+
+
+**Question 2:** https://leetcode.com/discuss/interview-question/1777426/Amazon-Online-Assessment-(follow-up)
+
+
+
+## minimum distance required for the demolition robot to remove the obstacle
+
+类似参考： 1293. Shortest Path in a Grid with Obstacles Elimination
+
+
+
+Write an algorithm to determine the minimum distance required for the demolition robot to remove the obstacle.
+
+
+
+**Assumptions**
+The demolition robot must start from the top-left corner of the lot, which is always *flat*, and can move one block up, down, left, or right at a time.
+The demolition robot cannot enter *trenches* and cannot leave the *lot*.
+The *flat areas* are represented as 1, areas with *trenches* are represented as 0 and the *obstacle* is represented by 9.
+
+
+
+**Input**
+The input to yhe function/method consists of one argument:
+*lot*, representing the two-dimensional grid of integers;
+
+
+
+**Output**
+Return an integer representing the minimum distance traversed to remove the *obstacle* **else return -1**.
+
+
+
+**Constraints**
+1<=*rows,columns*<=10^3
+
+
+
+**Example**
+**Input**
+*lot* = [ [1,0,0] , [1,0,0] , [1,9,1] ]
+
+
+
+**Output**
+3
+
+
+
+**Explaination**
+Starting from the top-left corner, the demolition robot traversed the cells (0,0) -> (1,0) ->(2,0) ->(2,1). The robot traversed the total distance 3 to remove the obstacle.
+So, the output is 3.
+
+
+
+
+
+## .net stock price change minimum
+
+第一题： aggregate temperature change evaluated on the ith day is the maximum of the sum of the changes in temperatures until the ith day, and the sum of the change in temperatures on the next (n - i) days, with the ith day temperature change included in both. Given the temperature data of n days, find the maximum aggregate temperature change
+
+
+
+## minimum start health,游戏装甲伤害那一题
+
+第二题：Given the stock [rices of n months, the net price change for the ith month is defined as the absolute difference between the average of stock prices for the first i months and for the remaining (n - i) months where 1 <= i /, n. Note that these averages are rounded down to an integer. Given an array of stock prices, find the month at which the net price change is minimum. If there are several such months, return the realiest month.
+
+
+
 # 题集
 
 https://www.1point3acres.com/bbs/thread-699232-1-1.html
