@@ -206,3 +206,14 @@ class Solution {
     }
 }
 ```
+
+
+## 5. max de‍‌‌‍‌‍viation among all substrings
+
+
+
+## 6. item rating
+
+
+
+

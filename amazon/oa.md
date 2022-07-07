@@ -19,25 +19,7 @@ Iterate over the list/ array, count distinct elements i.e desired minimum days
 
 Please post if you know any other logic/ soultions.
 
-
-Solution
-```java
-class Solution {
-  public int maxArea(int[] parcels) {
-        Set<Integer> seen = new HashSet<>();
-        
-        for(int num : parcels) {
-            if(0 == num) {
-                continue;
-            }
-            
-            seen.add(num);
-        }
-        
-        return seen.size();
-    }
-}
-```
+ 
 
 
 
@@ -52,16 +34,72 @@ https://www.1point3acres.com/bbs/thread-898185-1-1.html
 https://www.1point3acres.com/bbs/thread-901320-1-1.html
 
 
+## 2272. Substring With Largest Variance
+https://leetcode.com/problems/substring-with-largest-variance/
 
 
 
+##  the minimum number of swaps required so that the maximum element is at the beginning and the minimum element is at last
+The first question was posted with a lot of other text, but ultimately you can boil it down to this :
+Given N number of elements, find the minimum number of swaps required so that the maximum element is at the beginning and the minimum element is at last with the condition that only swapping of adjacent elements is allowed.
+Examples:
 
+Input: a[] = {3, 1, 5, 3, 5, 5, 2}
+Output: 6
+Step 1: Swap 5 with 1 to make the array as {3, 5, 1, 3, 5, 5, 2}
+Step 2: Swap 5 with 3 to make the array as {5, 3, 1, 3, 5, 5, 2}
+Step 3: Swap 1 with 3 at its right to make the array as {5, 3, 3, 1, 5, 5, 2}
+Step 4: Swap 1 with 5 at its right to make the array as {5, 3, 3, 5, 1, 5, 2}
+Step 5: Swap 1 with 5 at its right to make the array as {5, 3, 3, 5, 5, 1, 2}
+Step 6: Swap 1 with 2 at its right to make the array as {5, 3, 3, 5, 5, 2, 1}
+After performing 6 swapping operations 5 is at the beginning and 1 at the end
+Input: a[] = {5, 6, 1, 3}
+Output: 2
+
+
+## Minimun Proessing time
+
+https://leetcode.com/discuss/interview-question/2239893/Amazon-OA-july-2022
 
 ## max de‍‌‌‍‌‍viation among all substrings
 https://www.1point3acres.com/bbs/thread-899236-1-1.html
 
 
 
+
+## Server Power
+
+Net power consumption = maximum booting power among the k processors + (sum of processing power of processors)*k.
+A cluster is said to be sustainable if it's net power consumption does not exceed a given threshold value powerMax.
+
+Example:
+bootingPower = [3,6,1,3,4]
+processingPower = [2,1,3,4,5]
+powerMax = 25
+
+If k = 2, any adjacent pair can be choosen. The highest usage is the pair [4,5] with net power consumption 4 + (4 + 5)2 = 22. Next, try k = 3. Group the first 3 processors together as:
+Here,
+Max booting power = max(3,6,1)
+Sum of processing power = 2 + 1+ 3 = 6
+Net power consumption = 6 + 63 = 24 <= powerMax
+
+Thus, k = 3 is a sustainable cluster.
+Example:
+bootingPower = [8,8,10,9,2]
+processingPower = [4,1,4,5,3]
+powerMax = 33
+
+If k = 2, consisting of first 2 processors.
+Net power consumption = max(8,8) + (4+1)*2 = 18 <= 33 (powerMax)
+
+Thus, k = 2 is a sustainable cluster.
+
+Example:
+bootingPower = [11,12,19]
+processingPower = [10,8,7]
+powerMax = 6
+
+k = 0, not possible to form any sustainable clusters.
 
 ## item rating
 https://www.1point3acres.com/bbs/thread-885897-1-1.html
