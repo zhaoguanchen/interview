@@ -26,7 +26,37 @@ class Solution {
 
 ## 2. [leetcode 2262] Total Appeal of A String
 
+assume we have string xxxaxxxxb..., with s[i] = a and s[j] = b.
+s[i] is th last character a before that b.
 
+We want to count, how many substring ending at s[j] contains character a.
+They are xxxaxxxxb, xxaxxxxb, xaxxxxb, axxxxb ....,
+i + 1 substring ending with character a at s[i],
+so we do res += i + 1.
+
+We repeatly do this for every s[i] and every one of 26 characters.
+
+```java
+    public long appealSum(String s) {
+        
+        int[] memo = new int[26];
+        
+        char[] chars = s.toCharArray();
+        long count = 0;
+        
+        for (int i = 0; i < chars.length; i++) {
+            memo[chars[i] - 'a'] = i + 1;
+            
+            for (int position : memo) {
+                count += position;
+            }
+            
+        }
+        
+        return count;
+        
+    }
+```
 
 
 
