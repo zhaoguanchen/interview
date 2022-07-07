@@ -39,6 +39,8 @@ https://leetcode.com/problems/substring-with-largest-variance/
 
 
 
+
+
 ##  the minimum number of swaps required so that the maximum element is at the beginning and the minimum element is at last
 The first question was posted with a lot of other text, but ultimately you can boil it down to this :
 Given N number of elements, find the minimum number of swaps required so that the maximum element is at the beginning and the minimum element is at last with the condition that only swapping of adjacent elements is allowed.
