@@ -214,6 +214,8 @@ class Solution {
 
 ## 6. Count Decreasing Ratings
 
+https://leetcode.com/playground/UEQFLjEn
+
 ```java
 
 class Solution {
