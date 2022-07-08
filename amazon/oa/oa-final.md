@@ -217,32 +217,30 @@ class Solution {
 https://leetcode.com/playground/UEQFLjEn
 
 ```java
-
 class Solution {
-  public int   countDecreasingRatings(int[] ratings) {
-// Write your code here
-    
-if(ratings.length ==0) {
-    return 0;    
-}
-int left =0;    
-int ans =0;    
+  
+    public int countDecreasingRatings(int[] ratings) {
+        if (ratings.length == 0) {
+            return 0;
+        }
+        int left = 0;
+        int ans = 0;
 
-for(int right = 0;right <ratings.length; right++){
-    if (right - 1 < 0) {
-        ans++;
-        continue;
+        for (int right = 0; right < ratings.length; right++) {
+            if (right - 1 < 0) {
+                ans++;
+                continue;
+            }
+            if ((ratings[right - 1] - ratings[right]) == 1) {
+                ans += (right - left + 1);
+            } else {
+                left = right;
+                ans += 1;
+            }
+
+        }
+        return ans;
     }
-    if((ratings[right-1] - ratings[right]) == 1){
-        ans +=(right-left+1);
-    }else{
-        left = right;
-        ans +=1;
-    }
-    
-}
-return ans;
-}
 }
   
 ```
@@ -317,44 +315,42 @@ class Solution {
 https://leetcode.com/playground/XHaDvGTH
 
 ```java
- 
-class Solution{
+class Solution {
 
 
-    public int maxLengthValidSubArray(int[] processingPower, int[] bootingPower, int maxPower){
-        if(processingPower == null || bootingPower == null 
-            ||  processingPower.length != bootingPower.length){
-                return 0;
+    public int maxLengthValidSubArray(int[] processingPower, int[] bootingPower, int maxPower) {
+        if (processingPower == null || bootingPower == null || processingPower.length != bootingPower.length) {
+            return 0;
         }
-if (processingPower.length == 0 || maxPower == 0) {
-    return 0;
-}
+        if (processingPower.length == 0 || maxPower == 0) {
+            return 0;
+        }
         PriorityQueue<Integer> pq = new PriorityQueue<>((a, b) -> {
             return b - a;
         });
-        
-        
+
+
         int maxLength = 0;
         int currentLength = 0;
 
         int left = 0;
         int right = 0;
-         
+
         int processingPowerSum = 0;
-        while(right < processingPower.length){
-            
+        while (right < processingPower.length) {
+
             pq.add(bootingPower[right]);
             processingPowerSum += processingPower[right];
             currentLength++;
-            
+
             int maxBootingPower = pq.peek();
             int sum = maxBootingPower + processingPowerSum * currentLength;
 
-            if(sum <= maxPower){
+            if (sum <= maxPower) {
                 maxLength = currentLength;
                 right++;
-                
-            } else{
+
+            } else {
                 processingPowerSum -= processingPower[left];
                 pq.remove(bootingPower[left]);
                 left++;
@@ -362,12 +358,13 @@ if (processingPower.length == 0 || maxPower == 0) {
                 currentLength--;
             }
 
- 
+
         }
 
         return maxLength;
     }
 }
+
 
 ```
 
