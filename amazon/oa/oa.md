@@ -338,7 +338,7 @@ While converting to prefix sums, do the operation modulo 10^9 +7.
 I could pass only half the TCs. Remaning Time Limit Exceeding. how to solve it
 
 
-## Variation of Reorder Data in Log Files :
+## [Solved] Variation of Reorder Data in Log Files :
 
 https://leetcode.com/discuss/interview-question/2225636/Amazon-OA-oror-Questions-oror-SDE1
 
@@ -384,6 +384,7 @@ I tried to use a sliding window but only passed 4/13 cases. there was somthing i
 
 
 
+## [Solved] inimum-swaps-required-sort-binary-array
 
 Given an array containing only 0 and 1 as its elements. We have to sort the array in such a manner that all the ones are grouped together and all the zeros are grouped together. The group of ones can be either at the start of the array or at the end of the array. The constraint while sorting is that every one/zero can be swapped only with its adjacent zero/one. Find the minimum number of moves to sort the array as per the description.
 Example:
@@ -404,6 +405,45 @@ returned the minimum of both operations.
 Do I have even a miniscule chance of moving forward
 
 
+
+answer
+
+https://www.geeksforgeeks.org/minimum-swaps-required-sort-binary-array/
+
+
+
+```java
+
+     int findMinSwaps(int arr[], int n)
+    {
+        // Array to store count of zeroes
+        int noOfZeroes[] = new int[n];
+        int i, count = 0;
+ 
+        // Count number of zeroes
+        // on right side of every one.
+        noOfZeroes[0] = 1 - arr[0];
+        
+        
+        for (i = 1; i < n; i++)
+        {
+            noOfZeroes[i] = noOfZeroes[i - 1];
+            if (arr[i] == 0)
+                noOfZeroes[i]++;
+        }
+ 
+        // Count total number of swaps by adding number
+        // of zeroes on right side of every one.
+        for (i = 0; i < n; i++)
+        {
+            if (arr[i] == 1)
+                count += noOfZeroes[i];
+        }
+        return count;
+    }
+      
+   
+```
 
 
 
