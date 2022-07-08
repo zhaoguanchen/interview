@@ -203,7 +203,7 @@ I tried a couple of approaches but could not pass most test cases. :(
 https://leetcode.com/discuss/interview-question/2068125/Amazon-or-OA-or-Seattle
 
 Given a binary string write an algorithm to calculate minimum number of swaps required to make it a palindrome for eg 11101 requires on swap between 3rd and 4th to make it 11011
- 
+
 reference: 
 https://leetcode.com/discuss/interview-question/2144970/Amazon-OA
 
@@ -217,19 +217,31 @@ https://www.geeksforgeeks.org/minimum-count-of-bit-flips-required-to-make-a-bina
 
 https://www.geeksforgeeks.org/count-minimum-swap-to-make-string-palindrome/
 
+**答案：(仅交换相邻)**
 
+**Leetcode  2193. Minimum Number of Moves to Make Palindrome**
+
+
+
+
+
+**答案：(任意交换)**
 
 ```java
-public int minSwapsRequired(String s) {
- int l = 0, r = s.length()-1, swap = 0;
- while(l<r) {
-  if(s.charAt(l)!=s.charAt(r)) swap++;
-  l++;
-  r--;
- }
- if(s.length()%2==0 && swap%2==1) return -1;
- return (swap+1)/2; 
-}
+ public int minSwapsRequired(String s) {
+        int l = 0, r = s.length() - 1, swap = 0;
+        while (l < r) {
+            if (s.charAt(l) != s.charAt(r)) swap++;
+            l++;
+            r--;
+        }
+        if (s.length() % 2 == 0 && swap % 2 == 1) {
+            return -1;
+        }
+
+        return (swap + 1) / 2;
+    }
+
 ```
 
 
@@ -246,10 +258,14 @@ https://leetcode.com/discuss/interview-question/2134960/Amazon-OA
 https://leetcode.com/discuss/interview-question/1895396/amazon-sde-new-grad-oa-k-most-popular-combos
 
 
+
+
+
+
 ## Minimum money
 
 https://leetcode.com/discuss/interview-question/2133434/AMAZON-OA
- 
+
 
 ## Minnum diffenence
 
@@ -406,7 +422,7 @@ but how to solve the use-case of "If no order is being prepared, start preparing
 
 
  
- 
+
 
 
 
@@ -906,7 +922,7 @@ https://leetcode.com/discuss/interview-question/2239893/Amazon-OA-july-2022
 
 **评论区答案**
 
- 
+
  ## [Solved] 6. findMaxProducts  从里面单调递增拿包裹
 
 第二题也是package, 给一个int array, 从里面单调递增拿包裹，可以只拿一部分，例子是[7, 4, 5]取[3, 4, 5] ，也是求最大
@@ -1040,7 +1056,7 @@ public static int getHeaviest(int[] input) {
 }
 
 ```
- 
+
 
 ## [Solved] Find Minimum Distance to Destination in a Grid
 : a classic bfs problem. Doing a bfs while keeping track of the distance for each path yields the min distance to the destination point since bfs traverses all the connected paths from the starting point at the same time. Passed all test cases.
