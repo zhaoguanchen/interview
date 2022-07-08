@@ -1,43 +1,7 @@
 https://archive.ph/Ckx54
 
 # from 1 points
-## 1. [Solved] minimum days to deliver all the parcels
-Keyword:parcels,deliver
 
-
-There is N delivery centers. Each Devliery Outlet has some packages to be delivered, denoted by parcels[i]. There is a Rule how delivery should be completed. On each day, an equal number of parcerls are to be dispatched from each delivery center that has atleast one parcel remaining.
-
-Find minimum nunmber of days needed to deliver all the parcels.
-Input:
-parcels= {2,3,4,3,3}
-
-Output
-3
-
-Solutions:
-Iterate over the list/ array, count distinct elements i.e desired minimum days
-
-Please post if you know any other logic/ soultions.
-
-https://www.1point3acres.com/bbs/thread-898185-1-1.html
-
-
-
-
-## 2. [Solved] Password strength == Leetcode 2662
-Password strength determination - Given a password determine the strength of the password which is calculated by getting substrings in password and calculating strength based on number of unique characters in the substring and adding all the strength
-
-https://leetcode.com/problems/total-appeal-of-a-string/
-
-https://www.1point3acres.com/bbs/thread-901320-1-1.html
-
-
-## 3. [Solved] 2272. Substring With Largest Variance
-https://leetcode.com/problems/substring-with-largest-variance/
-
-
-## max de‍‌‌‍‌‍viation among all substrings
-https://www.1point3acres.com/bbs/thread-899236-1-1.html
 
 
 
@@ -67,40 +31,6 @@ https://leetcode.com/discuss/interview-question/2239893/Amazon-OA-july-2022
 
 
 
-## 4. [Solved] Server Power [Find Maximum Sustainable Cluster Size]
-
-Net power consumption = maximum booting power among the k processors + (sum of processing power of processors)*k.
-A cluster is said to be sustainable if it's net power consumption does not exceed a given threshold value powerMax.
-
-Example:
-bootingPower = [3,6,1,3,4]
-processingPower = [2,1,3,4,5]
-powerMax = 25
-
-If k = 2, any adjacent pair can be choosen. The highest usage is the pair [4,5] with net power consumption 4 + (4 + 5)2 = 22. Next, try k = 3. Group the first 3 processors together as:
-Here,
-Max booting power = max(3,6,1)
-Sum of processing power = 2 + 1+ 3 = 6
-Net power consumption = 6 + 63 = 24 <= powerMax
-
-Thus, k = 3 is a sustainable cluster.
-Example:
-bootingPower = [8,8,10,9,2]
-processingPower = [4,1,4,5,3]
-powerMax = 33
-
-If k = 2, consisting of first 2 processors.
-Net power consumption = max(8,8) + (4+1)*2 = 18 <= 33 (powerMax)
-
-Thus, k = 2 is a sustainable cluster.
-
-Example:
-bootingPower = [11,12,19]
-processingPower = [10,8,7]
-powerMax = 6
-
-k = 0, not possible to form any sustainable clusters.
-
 
 
 ## 5. Get Heaviest Package
@@ -111,16 +41,7 @@ k = 0, not possible to form any sustainable clusters.
 
 
 
-## [Solved] item rating
 
-answer: https://leetcode.com/discuss/interview-question/1639758/amazon-oa-usa
-
-
-https://www.1point3acres.com/bbs/thread-885897-1-1.html
-https://www.1point3acres.com/bbs/thread-899236-1-1.html
-
-rating
-Subarrays
 
 
 # From Leetcode Discussion
@@ -156,7 +77,7 @@ Sort the array in decreasing order. Assign top n-1 values to n-1 channels. Media
 
 
 
-## GOod String
+## Good String
 
 https://leetcode.com/discuss/interview-question/2173518/Amazon-or-Good-String
 图片
@@ -175,33 +96,7 @@ I tried a couple of approaches but could not pass most test cases. :(
 
 
 
-
-
-
-## segment subarray  与上面类似
- Amazon warehouse has a group of n items of various weights lined up in a row. A segment of contiguously placed items can be shipped ogether if only if the difference betweeen the weihts of the heaviest and lightest item differs by at most k to avoid load imbalance.
-
-Given the weights of the n items and an integer k, fine the number of segments of items that can be shipped together.
-
-Note: A segment (l,r) is a subarray starting at index l and ending at index r where l less than equal(<=) r.
-
-Example:
-weights = [1, 3, 6], k=3
-
-weight difference between max and min for each (l,r) index pair are:
-
-(0,0) -> max(weights[0]) - min(weights[0]) = max(1)-min(1) = 1-1 =0
-(0,1) - > max(weights[0],weights[1]) - min(weights[0],weights[1])= max(1,3)-min(1,3)=3-1=2
-(0,2) - > max(weights[0],weights[1],weights[2]) - min(weights[0],weights[1],weights[2])= max(1,3,6)-min(1,3,6)=6-1=5
-(1,1) -> max(weights[1]) - min(weights[1]) = max(3)-min(3) = 3-3 =0
-(1,2) -> max(weights[1],weights[2]) - min(weights[1],weights[2]) = max(3,6)-min(3,6) = 6-3 =3
-(2,2) -> max(weights[2])-min(weights[2]) = max(6)-min(6) = 6-6 =0
-
-as only 5 out 6 pair, is less than equal equal to k (3) , so the number of segments that can shipped together is 5.
-
-Constraints
--- 1<=k, weights[i] <=10^9
--- 1 <= n <=3*10^5
+ 
 
 
 
@@ -241,8 +136,7 @@ https://leetcode.com/discuss/interview-question/2133434/AMAZON-OA
 
 https://leetcode.com/discuss/interview-question/2132962/Amazon-OA
 
-
-## 
+##  the number of second
 https://leetcode.com/discuss/interview-question/2131732/Amazon-OA
 
 Parade in HackerLand
@@ -297,11 +191,6 @@ also
 
 https://leetcode.com/discuss/interview-question/2068122/Amazonor-OA
 
-## [Solved] K Closest Points to Origin
-https://leetcode.com/discuss/interview-question/2092307/Amazon-OA
-
-: used a max heap (~nlogk solution) and passed all test cases (although using quickselect would've yielded a better time complexity on average but I don't think it's much of a big deal as long as it's not the naive approach w/ sorting the entire array. No need to take a risk when doing an interview unless required)
-
 
 
 ## [Solved] Find Minimum Distance to Destination in a Grid
@@ -341,7 +230,7 @@ https://leetcode.com/discuss/interview-question/2068122/Amazonor-OA
 
 
 
-## [Solved] obstacle robot
+## obstacle robot
 Determine the min distance required for the robot to remove the obstacle
 Input is given as a 2D array which consists of 0, 1 and 9
 9 is the obstacle, can pass through 1 and cannot pass through 0
@@ -422,6 +311,16 @@ output=33-26=7
 ## the maximum subarray length with a product of 1.
 
 
+
+given an array consisting of only 1 and -1, return the max length of the subarray such that the product of all elements in said subarray is 1 https://leetcode.com/discuss/interview-question/1655441/amazon-oa
+
+
+
+
+
+
+
+
 A question about Amazon student badges but ultimately the problem was given an arr of -1 or 1, return the maximum subarray length with a product of 1.
 The array is of size 2 and above and only contains -1 and 1
 e.g arr = [-1,-1,1,1,-1], return 4, since index 0 to 3 have the max length with product equal to 1
@@ -451,7 +350,7 @@ Do I have even a miniscule chance of moving forward
 
 
 
-## Min no. of swaps required to make binary string a palindrome
+## Min number of swaps required to make binary string a palindrome
 Range min query
 
 
@@ -460,17 +359,7 @@ Range min query
 
 
 
-## [Solved] Maximum Twin Sum of a Linked List
-photo twin-sum
 
-https://leetcode.com/problems/maximum-twin-sum-of-a-linked-list/
-
-
-
-
-
-given an array consisting of only 1 and -1, return the max length of the subarray such that the product of all elements in said subarray is 1 https://leetcode.com/discuss/interview-question/1655441/amazon-oa
-given an array and an integer k, return the number of subarrays such that the difference between its max value and its min values is no more than k https://leetcode.com/discuss/interview-question/1904966/Amazon-orOAorset-7
 
 
 
@@ -511,7 +400,217 @@ but how to solve the use-case of "If no order is being prepared, start preparing
 
 
 
-## [Solved] Economy Mart
+
+
+
+
+
+
+ 
+
+
+
+## Minimum swaps to sort an array
+
+
+
+
+
+
+
+
+## k most popular combos
+
+
+
+https://leetcode.com/discuss/interview-question/1895396/Amazon-SDE-New-Grad-or-OA-or-k-most-popular-combos
+
+
+
+https://leetcode.com/discuss/interview-question/1777410/Amazon-Online-Assesment-SDE-1/1272110
+
+ 
+
+
+
+## .net stock price change minimum
+
+第一题： aggregate temperature change evaluated on the ith day is the maximum of the sum of the changes in temperatures until the ith day, and the sum of the change in temperatures on the next (n - i) days, with the ith day temperature change included in both. Given the temperature data of n days, find the maximum aggregate temperature change
+
+
+
+## minimum start health,游戏装甲伤害那一题
+
+第二题：Given the stock [rices of n months, the net price change for the ith month is defined as the absolute difference between the average of stock prices for the first i months and for the remaining (n - i) months where 1 <= i /, n. Note that these averages are rounded down to an integer. Given an array of stock prices, find the month at which the net price change is minimum. If there are several such months, return the realiest month.
+
+
+
+
+
+
+
+# 已解决
+
+## 1. [Solved] minimum days to deliver all the parcels
+
+Keyword:parcels,deliver
+
+
+There is N delivery centers. Each Devliery Outlet has some packages to be delivered, denoted by parcels[i]. There is a Rule how delivery should be completed. On each day, an equal number of parcerls are to be dispatched from each delivery center that has atleast one parcel remaining.
+
+Find minimum nunmber of days needed to deliver all the parcels.
+Input:
+parcels= {2,3,4,3,3}
+
+Output
+3
+
+Solutions:
+Iterate over the list/ array, count distinct elements i.e desired minimum days
+
+Please post if you know any other logic/ soultions.
+
+https://www.1point3acres.com/bbs/thread-898185-1-1.html
+
+
+
+
+## 2. [Solved] Password strength == Leetcode 2662
+
+Password strength determination - Given a password determine the strength of the password which is calculated by getting substrings in password and calculating strength based on number of unique characters in the substring and adding all the strength
+
+https://leetcode.com/problems/total-appeal-of-a-string/
+
+https://www.1point3acres.com/bbs/thread-901320-1-1.html
+
+## 3. [Solved] Maximum Twin Sum of a Linked List
+
+photo twin-sum
+
+https://leetcode.com/problems/maximum-twin-sum-of-a-linked-list/
+
+
+
+## 4. [Solved] closest X destinations
+
+https://leetcode.com/discuss/interview-question/1777410/Amazon-Online-Assesment-SDE-1/1272110
+
+ 
+
+Same question :    https://leetcode.com/problems/k-closest-points-to-origin/
+
+My assessment was completed recently. I am sharing the questions asked. Please feel free to suggest the approach.
+One thing more, not only you have to solve coding problems, but also, you need to explain the approach and time complexity on a seperate notepad.
+
+```
+**PLEASE UPVOTE IF YOU FIND IT USEFUL.**
+
+
+
+Here we go with the question:
+**Question : 1**
+Given a list of N possible delivery destinations, implement an algorithm to create the delivery plan for the closest X destinations.
+
+
+
+**Input**
+The input to the function/method consisits of two arguments:
+*allLocations*, a list where each element consists of a pair of integers representing the x and y coordinates of the delivery locations;
+*numDeliveries*, an integer representing the number of deliveries that will be delivered in the plan(X).
+
+
+
+**Output**
+Return a list of elements where each element of the list represents the X closest x and y integer coordinates of the delivery destinations, where X represents the *numDeliveries* input. If there is one tie, use the location with the closest X coordinate. If no location is possible, return a list with an empty location - not just an empty list.
+
+
+
+**Constraints**
+*numDeliveries*<=*size(allLocations)*
+
+
+
+**Note**
+The plan starts with the truck's location [0.0]. The distance of the truck from a delivery destination (x,y) is the square root of x^2 + y^2. If there are multiple ties, then return the locations starting with the closest X-coordinate as long as you satisfy returning exactly X delivery locations. The returned output can be in any order.
+
+
+
+**Example
+Input**
+*allLocations* = [ [1,2], [3,4], [1,-1]]
+*numDeliveries* = 2
+
+
+
+**Output**
+[ [1,-1], [1,2]]
+
+
+
+**Explaination**
+The distance of the truck from loaction [1,2] is square root(5) = 2.236.
+The distance of the truck from loaction [3,4] is square root(25) = 5.
+The distance of the truck from loaction [1,-1] is square root(2) = 1.414.
+
+
+
+*numDeliveries* is 2, hence the output is [1,-1] and [1,2].
+
+```
+
+**Question 2:** https://leetcode.com/discuss/interview-question/1777426/Amazon-Online-Assessment-(follow-up)
+
+
+
+## 5. [Solved] Server Power [Find Maximum Sustainable Cluster Size]
+
+Net power consumption = maximum booting power among the k processors + (sum of processing power of processors)*k.
+A cluster is said to be sustainable if it's net power consumption does not exceed a given threshold value powerMax.
+
+Example:
+bootingPower = [3,6,1,3,4]
+processingPower = [2,1,3,4,5]
+powerMax = 25
+
+If k = 2, any adjacent pair can be choosen. The highest usage is the pair [4,5] with net power consumption 4 + (4 + 5)2 = 22. Next, try k = 3. Group the first 3 processors together as:
+Here,
+Max booting power = max(3,6,1)
+Sum of processing power = 2 + 1+ 3 = 6
+Net power consumption = 6 + 63 = 24 <= powerMax
+
+Thus, k = 3 is a sustainable cluster.
+Example:
+bootingPower = [8,8,10,9,2]
+processingPower = [4,1,4,5,3]
+powerMax = 33
+
+If k = 2, consisting of first 2 processors.
+Net power consumption = max(8,8) + (4+1)*2 = 18 <= 33 (powerMax)
+
+Thus, k = 2 is a sustainable cluster.
+
+Example:
+bootingPower = [11,12,19]
+processingPower = [10,8,7]
+powerMax = 6
+
+k = 0, not possible to form any sustainable clusters.
+
+
+
+## 6. [Solved] 2272. Substring With Largest Variance
+
+https://leetcode.com/problems/substring-with-largest-variance/
+
+
+
+max de‍‌‌‍‌‍viation among all substrings
+
+https://www.1point3acres.com/bbs/thread-899236-1-1.html
+
+
+
+## 7. [Solved] Economy Mart
 
 ```
 Economy Mart is a very popular e-commerce platform because they display the cheapest items first. Economy Mart has decided to migrate its database to Amazon's cloud platform. The product listings in the old database are being migrated into the Amazon database. Customers that go onto Amazon.com will be viewing items from the new database.
@@ -687,38 +786,22 @@ For the third and last viewing, the third cheapest item is pencils.
 
 ```
 
-## [Solved] 2272
-
-https://leetcode.com/problems/substring-with-largest-variance/
-
-
-
-## 1438
-
-1. Amazom warehouse 相关的题 是 lc药思散罢 的变种
-
-
-
-1438.  	Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit
-
-
-
-
-
-
-
  
 
+## 8. [Solved] K Closest Points to Origin
+
+https://leetcode.com/discuss/interview-question/2092307/Amazon-OA
+
+: used a max heap (~nlogk solution) and passed all test cases (although using quickselect would've yielded a better time complexity on average but I don't think it's much of a big deal as long as it's not the naive approach w/ sorting the entire array. No need to take a risk when doing an interview unless required)
 
 
-## Minimum swaps to sort an array
+
+## 9. [Solved] Amazon warehouse load imbalance [ the number of segments]
+
+given an array and an integer k, return the number of subarrays such that the difference between its max value and its min values is no more than k https://leetcode.com/discuss/interview-question/1904966/Amazon-orOAorset-7
 
 
 
-
-
-## Amazon warehouse load imbalance
- 
 Amazon warehouse has a group of n items of various weights lined up in a row. A segment of contiguously placed items can be shipped ogether if only if the difference betweeen the weihts of the heaviest and lightest item differs by at most k to avoid load imbalance.
 
 Given the weights of the n items and an integer k, fine the number of segments of items that can be shipped together.
@@ -742,101 +825,29 @@ as only 5 out 6 pair, is less than equal equal to k (3) , so the number of segme
 Constraints
 -- 1<=k, weights[i] <=10^9
 -- 1 <= n <=3*10^5
- 
-
-## k most popular combos
 
 
 
-https://leetcode.com/discuss/interview-question/1895396/Amazon-SDE-New-Grad-or-OA-or-k-most-popular-combos
+Solution :   https://leetcode.com/discuss/interview-question/1994481/need-help-amazon-oa
 
 
 
-https://leetcode.com/discuss/interview-question/1777410/Amazon-Online-Assesment-SDE-1/1272110
+## 10. [Solved] item rating
 
- 
+answer: https://leetcode.com/discuss/interview-question/1639758/amazon-oa-usa
 
-## [Solved] closest X destinations
 
-https://leetcode.com/discuss/interview-question/1777410/Amazon-Online-Assesment-SDE-1/1272110
+https://www.1point3acres.com/bbs/thread-885897-1-1.html
+https://www.1point3acres.com/bbs/thread-899236-1-1.html
 
- 
-
-Same question :    https://leetcode.com/problems/k-closest-points-to-origin/
-
-My assessment was completed recently. I am sharing the questions asked. Please feel free to suggest the approach.
-One thing more, not only you have to solve coding problems, but also, you need to explain the approach and time complexity on a seperate notepad.
-
-```
-
-**PLEASE UPVOTE IF YOU FIND IT USEFUL.**
+rating
+Subarrays
 
 
 
-Here we go with the question:
-**Question : 1**
-Given a list of N possible delivery destinations, implement an algorithm to create the delivery plan for the closest X destinations.
 
 
 
-**Input**
-The input to the function/method consisits of two arguments:
-*allLocations*, a list where each element consists of a pair of integers representing the x and y coordinates of the delivery locations;
-*numDeliveries*, an integer representing the number of deliveries that will be delivered in the plan(X).
-
-
-
-**Output**
-Return a list of elements where each element of the list represents the X closest x and y integer coordinates of the delivery destinations, where X represents the *numDeliveries* input. If there is one tie, use the location with the closest X coordinate. If no location is possible, return a list with an empty location - not just an empty list.
-
-
-
-**Constraints**
-*numDeliveries*<=*size(allLocations)*
-
-
-
-**Note**
-The plan starts with the truck's location [0.0]. The distance of the truck from a delivery destination (x,y) is the square root of x^2 + y^2. If there are multiple ties, then return the locations starting with the closest X-coordinate as long as you satisfy returning exactly X delivery locations. The returned output can be in any order.
-
-
-
-**Example
-Input**
-*allLocations* = [ [1,2], [3,4], [1,-1]]
-*numDeliveries* = 2
-
-
-
-**Output**
-[ [1,-1], [1,2]]
-
-
-
-**Explaination**
-The distance of the truck from loaction [1,2] is square root(5) = 2.236.
-The distance of the truck from loaction [3,4] is square root(25) = 5.
-The distance of the truck from loaction [1,-1] is square root(2) = 1.414.
-
-
-
-*numDeliveries* is 2, hence the output is [1,-1] and [1,2].
-
-```
-
-**Question 2:** https://leetcode.com/discuss/interview-question/1777426/Amazon-Online-Assessment-(follow-up)
-
-
- 
-## .net stock price change minimum
-
-第一题： aggregate temperature change evaluated on the ith day is the maximum of the sum of the changes in temperatures until the ith day, and the sum of the change in temperatures on the next (n - i) days, with the ith day temperature change included in both. Given the temperature data of n days, find the maximum aggregate temperature change
-
-
-
-## minimum start health,游戏装甲伤害那一题
-
-第二题：Given the stock [rices of n months, the net price change for the ith month is defined as the absolute difference between the average of stock prices for the first i months and for the remaining (n - i) months where 1 <= i /, n. Note that these averages are rounded down to an integer. Given an array of stock prices, find the month at which the net price change is minimum. If there are several such months, return the realiest month.
 
 
 

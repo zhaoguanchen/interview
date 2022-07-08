@@ -375,3 +375,52 @@ class Solution {
 
 
 ```
+
+
+
+## 10. Amazon Warehouse
+
+Given the weights of the n items and an integer k, fine the number of segments of items that can be shipped together.
+
+```java
+public int shipment(int [] arr, int k){
+
+int left = 0;
+int count = 0;
+Deque<Integer> incr = new LinkedList<Integer>(); //  to store the index of min values at each iteration 
+Deque<Integer> decr = new LinkedList<Integer>(); // to store the index of max values at each iteration
+
+for(int right = 0; right<arr.length;right++){
+ 
+ while(!incr.isEmpty() && arr[right] <= arr[incr.peekLast]){ //remove value from the end until the current value is greater than the last value in the queue
+           incr.pollLast();
+ }
+incr.offerLast(right);
+
+while(!decr.isEmpty() && arr[right] >= arr[decr.peekLast]){ //remove value from the end until the current value is less than the last value in the queue
+        decr.pollLast();
+}
+
+
+while(arr[decr.peekFirst()] - arr[incr.peekFirst()] > k){//slide the window if the diff between min and max is bigger than k
+     if(decr.peekFirst() <= left)
+          decr.pollFirst();
+     if(incr.peekFirst() <= left)   
+         incr.pollFirst();
+    left++;
+}
+
+ count+= right-left+1;
+
+
+
+
+
+
+}
+
+return count;
+
+}
+```
+
