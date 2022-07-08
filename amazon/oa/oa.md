@@ -361,6 +361,12 @@ I tried to use a sliding window but only passed 4/13 cases. there was somthing i
 
 
 
+## inimum-swaps-required-sort-binary-array
+
+answer
+
+https://www.geeksforgeeks.org/minimum-swaps-required-sort-binary-array/
+
 
 Given an array containing only 0 and 1 as its elements. We have to sort the array in such a manner that all the ones are grouped together and all the zeros are grouped together. The group of ones can be either at the start of the array or at the end of the array. The constraint while sorting is that every one/zero can be swapped only with its adjacent zero/one. Find the minimum number of moves to sort the array as per the description.
 Example:
