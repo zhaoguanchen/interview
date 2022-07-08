@@ -73,11 +73,67 @@ https://leetcode.com/discuss/interview-question/2239893/Amazon-OA-july-2022
 **评论区答案**
 
  
+ ## 6. findMaxProducts  从里面单调递增拿包裹
 
 第二题也是package, 给一个int array, 从里面单调递增拿包裹，可以只拿一部分，例子是[7, 4, 5]取[3, 4, 5] ，也是求最大
 两题思路都是一样的从后往前遍历，第一题O(N)，第二题O(N^2)
 要用long不然会overflow
 
+```
+https://leetcode.com/discuss/interview-question/2108095/amazon-sde2-may-2022-online-&#8205;&#8205;&#8205;&#8204;&#8204;&#8205;&#8204;&#8205;&#8204;&#8205;&#8204;&#8205;&#8204;&#8205;&#8204;&#8204;&#8204;&#8204;&#8205;&#8204;assessment
+
+```
+
+
+
+##  n piles of products （Array Strictly Increasing Order）
+题目
+https://leetcode.com/discuss/interview-question/2068122/Amazonor-OA
+
+There are a total of n piles of products.
+The number of products in each pile is represented by the array nums.
+Select any subarray from the array nums and pick up products from that subarray such that the number of the products you pick from the ith pile is strictly less the than the number of the products you pick from the (i+1)th pile for all the indices i of the subarray.
+
+
+
+Example
+nums [7,4,5,2,6,5]
+Choose subarray from indices (1,3) and pick products [3,4,5] respectively from each index, which is 12 products. Note that we are not forced to pick only 3 products from the index 1 as the maximum number of the products we can pick from index 2 is 4 and we need to make sure it is greater than the number of the products picked from index 1.
+
+
+
+indices (3,6) [1,2,4,5] = 12
+indices (3,5) = [1,26] = 9
+indices (1,1) = 7
+
+
+
+答案：
+
+https://leetcode.com/discuss/interview-question/1988635/amazon-phone-screen-array-strictly-increasing-order
+
+
+
+
+```java
+public long findMaxProducts(List<Integer> products) {
+        int l = products.size();
+        long max = 0;
+        for(int i=l-1;i>=0;--i) {
+            if(i!=l-1 && products.get(i) < products.get(i+1)) continue;
+            long localMax = products.get(i);
+            long prev = localMax;
+            for(int j=i-1;j>=0;--j) {
+                prev = Math.min(prev-1, products.get(j));
+                localMax+=prev;
+                if(prev==1) break;
+            }
+            max = Math.max(localMax,max);
+        }
+        return max;
+  }
+
+```
 
 
 
@@ -316,35 +372,6 @@ https://leetcode.com/discuss/interview-question/2072252/Amazon
 https://leetcode.com/discuss/interview-question/2068125/Amazon-or-OA-or-Seattle
 
 Given a binary string write an algorithm to calculate minimum number of swaps required to make it a palindrome for eg 11101 requires on swap between 3rd and 4th to make it 11011
-
-
-
-
-##  n piles of products 9（Array Strictly Increasing Order）
-题目
-https://leetcode.com/discuss/interview-question/2068122/Amazonor-OA
-
-There are a total of n piles of products.
-The number of products in each pile is represented by the array nums.
-Select any subarray from the array nums and pick up products from that subarray such that the number of the products you pick from the ith pile is strictly less the than the number of the products you pick from the (i+1)th pile for all the indices i of the subarray.
-
-
-
-Example
-nums [7,4,5,2,6,5]
-Choose subarray from indices (1,3) and pick products [3,4,5] respectively from each index, which is 12 products. Note that we are not forced to pick only 3 products from the index 1 as the maximum number of the products we can pick from index 2 is 4 and we need to make sure it is greater than the number of the products picked from index 1.
-
-
-
-indices (3,6) [1,2,4,5] = 12
-indices (3,5) = [1,26] = 9
-indices (1,1) = 7
-
-
-
-答案：
-
-https://leetcode.com/discuss/interview-question/1988635/amazon-phone-screen-array-strictly-increasing-order
 
 
 
