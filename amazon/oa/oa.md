@@ -258,6 +258,14 @@ https://leetcode.com/discuss/interview-question/2134960/Amazon-OA
 https://leetcode.com/discuss/interview-question/1895396/amazon-sde-new-grad-oa-k-most-popular-combos
 
 
+https://leetcode.com/discuss/interview-question/1895396/Amazon-SDE-New-Grad-or-OA-or-k-most-popular-combos
+
+
+
+https://leetcode.com/discuss/interview-question/1777410/Amazon-Online-Assesment-SDE-1/1272110
+
+
+
 
 Answer
 
@@ -415,29 +423,6 @@ As its a first job and no need to wait. and the cost would be is * 5-1 * 0(4 is 
 This will be solved using priority queues based on the completion time.
 but how to solve the use-case of "If no order is being prepared, start preparing the order that has the least preparation time from among the pending orders."
 
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-## k most popular combos
-
-
-
-https://leetcode.com/discuss/interview-question/1895396/Amazon-SDE-New-Grad-or-OA-or-k-most-popular-combos
-
-
-
-https://leetcode.com/discuss/interview-question/1777410/Amazon-Online-Assesment-SDE-1/1272110
 
  
 
