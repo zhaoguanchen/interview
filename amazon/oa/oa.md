@@ -289,7 +289,11 @@ While converting to prefix sums, do the operation modulo 10^9 +7.
 I could pass only half the TCs. Remaning Time Limit Exceeding. how to solve it
 
 
+## Variation of Reorder Data in Log Files :
 
+https://leetcode.com/discuss/interview-question/2225636/Amazon-OA-oror-Questions-oror-SDE1
+
+ https://leetcode.com/problems/reorder-data-in-log-files/
 
 
 ## Find the difference between task1 and task 2 
@@ -312,11 +316,13 @@ output=33-26=7
 
 
 
-given an array consisting of only 1 and -1, return the max length of the subarray such that the product of all elements in said subarray is 1 https://leetcode.com/discuss/interview-question/1655441/amazon-oa
+given an array consisting of only 1 and -1, return the max length of the subarray such that the product of all elements in said subarray is 1
 
+ https://leetcode.com/discuss/interview-question/1655441/amazon-oa
 
+**ANSWER**
 
-
+https://leetcode.com/discuss/interview-question/1692832/amazon-online-first-round-sde
 
 
 
