@@ -18,7 +18,7 @@ Solutions:
 Iterate over the list/ array, count distinct elements i.e desired minimum days
 
 Please post if you know any other logic/ soultions.
- 
+
 https://www.1point3acres.com/bbs/thread-898185-1-1.html
 
 
@@ -28,9 +28,9 @@ https://www.1point3acres.com/bbs/thread-898185-1-1.html
 Password strength determination - Given a password determine the strength of the password which is calculated by getting substrings in password and calculating strength based on number of unique characters in the substring and adding all the strength
 
 https://leetcode.com/problems/total-appeal-of-a-string/
- 
+
 https://www.1point3acres.com/bbs/thread-901320-1-1.html
- 
+
 
 ## 3. [Solved] 2272. Substring With Largest Variance
 https://leetcode.com/problems/substring-with-largest-variance/
@@ -100,7 +100,7 @@ processingPower = [10,8,7]
 powerMax = 6
 
 k = 0, not possible to form any sustainable clusters.
- 
+
 
 
 ## 5. Get Heaviest Package
@@ -352,6 +352,57 @@ output: 3
 
 
 
+类似参考： 1293. Shortest Path in a Grid with Obstacles Elimination
+
+
+```
+Write an algorithm to determine the minimum distance required for the demolition robot to remove the obstacle.
+
+
+
+**Assumptions**
+The demolition robot must start from the top-left corner of the lot, which is always *flat*, and can move one block up, down, left, or right at a time.
+The demolition robot cannot enter *trenches* and cannot leave the *lot*.
+The *flat areas* are represented as 1, areas with *trenches* are represented as 0 and the *obstacle* is represented by 9.
+
+
+
+**Input**
+The input to yhe function/method consists of one argument:
+*lot*, representing the two-dimensional grid of integers;
+
+
+
+**Output**
+Return an integer representing the minimum distance traversed to remove the *obstacle* **else return -1**.
+
+
+
+**Constraints**
+1<=*rows,columns*<=10^3
+
+
+
+**Example**
+**Input**
+*lot* = [ [1,0,0] , [1,0,0] , [1,9,1] ]
+
+
+
+**Output**
+3
+
+
+
+**Explaination**
+Starting from the top-left corner, the demolition robot traversed the cells (0,0) -> (1,0) ->(2,0) ->(2,1). The robot traversed the total distance 3 to remove the obstacle.
+So, the output is 3.
+
+
+
+```
+
+
 
 ## nnn
 
@@ -462,7 +513,7 @@ but how to solve the use-case of "If no order is being prepared, start preparing
 
 ## [Solved] Economy Mart
 
-
+```
 Economy Mart is a very popular e-commerce platform because they display the cheapest items first. Economy Mart has decided to migrate its database to Amazon's cloud platform. The product listings in the old database are being migrated into the Amazon database. Customers that go onto Amazon.com will be viewing items from the new database.
 
 Economy Mart has an unusual way of displaying items,
@@ -634,6 +685,8 @@ pencils is added to the database and is worth 5. The database contains notecards
 
 For the third and last viewing, the third cheapest item is pencils.
 
+```
+
 ## [Solved] 2272
 
 https://leetcode.com/problems/substring-with-largest-variance/
@@ -654,15 +707,7 @@ https://leetcode.com/problems/substring-with-largest-variance/
 
 
 
-
-
-## [Solved] Economy Mart
-
-1. 2.Economy Mart 相关的题 lc  饵以岭饵变种‍‌‌&
-
-
-
-
+ 
 
 
 
@@ -673,8 +718,7 @@ https://leetcode.com/problems/substring-with-largest-variance/
 
 
 ## Amazon warehouse load imbalance
-
-```
+ 
 Amazon warehouse has a group of n items of various weights lined up in a row. A segment of contiguously placed items can be shipped ogether if only if the difference betweeen the weihts of the heaviest and lightest item differs by at most k to avoid load imbalance.
 
 Given the weights of the n items and an integer k, fine the number of segments of items that can be shipped together.
@@ -698,7 +742,7 @@ as only 5 out 6 pair, is less than equal equal to k (3) , so the number of segme
 Constraints
 -- 1<=k, weights[i] <=10^9
 -- 1 <= n <=3*10^5
-```
+ 
 
 ## k most popular combos
 
@@ -710,20 +754,20 @@ https://leetcode.com/discuss/interview-question/1895396/Amazon-SDE-New-Grad-or-O
 
 https://leetcode.com/discuss/interview-question/1777410/Amazon-Online-Assesment-SDE-1/1272110
 
-# 
+ 
 
-## [Solved]  Implement an algorithm to find plan for the closest X destinations
+## [Solved] closest X destinations
 
 https://leetcode.com/discuss/interview-question/1777410/Amazon-Online-Assesment-SDE-1/1272110
 
-# 
+ 
 
 Same question :    https://leetcode.com/problems/k-closest-points-to-origin/
 
 My assessment was completed recently. I am sharing the questions asked. Please feel free to suggest the approach.
 One thing more, not only you have to solve coding problems, but also, you need to explain the approach and time complexity on a seperate notepad.
 
-
+```
 
 **PLEASE UPVOTE IF YOU FIND IT USEFUL.**
 
@@ -778,64 +822,12 @@ The distance of the truck from loaction [1,-1] is square root(2) = 1.414.
 
 *numDeliveries* is 2, hence the output is [1,-1] and [1,2].
 
-
+```
 
 **Question 2:** https://leetcode.com/discuss/interview-question/1777426/Amazon-Online-Assessment-(follow-up)
 
 
-
-## minimum distance required for the demolition robot to remove the obstacle
-
-类似参考： 1293. Shortest Path in a Grid with Obstacles Elimination
-
-
-
-Write an algorithm to determine the minimum distance required for the demolition robot to remove the obstacle.
-
-
-
-**Assumptions**
-The demolition robot must start from the top-left corner of the lot, which is always *flat*, and can move one block up, down, left, or right at a time.
-The demolition robot cannot enter *trenches* and cannot leave the *lot*.
-The *flat areas* are represented as 1, areas with *trenches* are represented as 0 and the *obstacle* is represented by 9.
-
-
-
-**Input**
-The input to yhe function/method consists of one argument:
-*lot*, representing the two-dimensional grid of integers;
-
-
-
-**Output**
-Return an integer representing the minimum distance traversed to remove the *obstacle* **else return -1**.
-
-
-
-**Constraints**
-1<=*rows,columns*<=10^3
-
-
-
-**Example**
-**Input**
-*lot* = [ [1,0,0] , [1,0,0] , [1,9,1] ]
-
-
-
-**Output**
-3
-
-
-
-**Explaination**
-Starting from the top-left corner, the demolition robot traversed the cells (0,0) -> (1,0) ->(2,0) ->(2,1). The robot traversed the total distance 3 to remove the obstacle.
-So, the output is 3.
-
-
-
-
-
+ 
 ## .net stock price change minimum
 
 第一题： aggregate temperature change evaluated on the ith day is the maximum of the sum of the changes in temperatures until the ith day, and the sum of the change in temperatures on the next (n - i) days, with the ith day temperature change included in both. Given the temperature data of n days, find the maximum aggregate temperature change
