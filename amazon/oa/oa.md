@@ -55,6 +55,14 @@ I tried a couple of approaches but could not pass most test cases. :(
 
 
 ## Minimum swaps to make the A Binary String Palindrome
+
+
+## String palindrome
+https://leetcode.com/discuss/interview-question/2068125/Amazon-or-OA-or-Seattle
+
+Given a binary string write an algorithm to calculate minimum number of swaps required to make it a palindrome for eg 11101 requires on swap between 3rd and 4th to make it 11011
+ 
+reference: 
 https://leetcode.com/discuss/interview-question/2144970/Amazon-OA
 
 
@@ -69,7 +77,23 @@ https://www.geeksforgeeks.org/count-minimum-swap-to-make-string-palindrome/
 
 
 
-## Best combo (k most popular combos)
+```java
+public int minSwapsRequired(String s) {
+ int l = 0, r = s.length()-1, swap = 0;
+ while(l<r) {
+  if(s.charAt(l)!=s.charAt(r)) swap++;
+  l++;
+  r--;
+ }
+ if(s.length()%2==0 && swap%2==1) return -1;
+ return (swap+1)/2; 
+}
+```
+
+
+
+
+## [SOLVED] Best combo (k most popular combos)
 
 图片
 
@@ -83,7 +107,7 @@ https://leetcode.com/discuss/interview-question/1895396/amazon-sde-new-grad-oa-k
 ## Minimum money
 
 https://leetcode.com/discuss/interview-question/2133434/AMAZON-OA
-
+ 
 
 ## Minnum diffenence
 
@@ -122,12 +146,6 @@ While converting to prefix sums, do the operation modulo 10^9 +7.
 
 I could pass only half the TCs. Remaning Time Limit Exceeding. how to solve it
 
-
-
-## String palindrome
-https://leetcode.com/discuss/interview-question/2068125/Amazon-or-OA-or-Seattle
-
-Given a binary string write an algorithm to calculate minimum number of swaps required to make it a palindrome for eg 11101 requires on swap between 3rd and 4th to make it 11011
 
 
 
@@ -187,13 +205,6 @@ repeated the same above for the case if the elements on the left should be 1s be
 returned the minimum of both operations.
 
 Do I have even a miniscule chance of moving forward
-
-
-
-## Min number of swaps required to make binary string a palindrome
-Range min query
-
-
 
 
 
