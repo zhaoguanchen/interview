@@ -226,54 +226,54 @@ We can think about it as finding the maximum subarray with a = -1 and b = 1 and 
 ```java
 class Solution {
     public int largestVariance(String s) {
-        
+
         int[] count = new int[26];
         char[] chars = s.toCharArray();
-        
+
         for (char c : chars) {
             count[c - 'a']++;
         }
-         
+
         int maxVariance = 0;
-        
+
         for (int i = 0; i < 26; i++) {
-            for(int j = 0; j < 26; j++) {
+            for (int j = 0; j < 26; j++) {
                 int totalI = count[i];
                 int totalJ = count[j];
-                
+
                 if (i == j) {
                     continue;
                 }
-                
+
                 if (totalI == 0 || totalJ == 0) {
                     continue;
                 }
-                
-                  int currentI = 0;
-                    int currentJ = 0;
+
+                int currentI = 0;
+                int currentJ = 0;
                 for (int k = 0; k < chars.length; k++) {
-                  
+
                     int c = chars[k] - 'a';
-                     if (c == i) {
+                    if (c == i) {
                         currentI++;
                     } else if (c == j) {
                         currentJ++;
                         totalJ--;
                     }
-                 
+
                     if (currentJ > 0) {
                         maxVariance = Math.max(maxVariance, currentI - currentJ);
                     }
-                    
+
                     if (currentI < currentJ && totalJ > 0) {
-                         currentI = 0;
+                        currentI = 0;
                         currentJ = 0;
                     }
-                
+
                 }
             }
         }
-        
+
         return maxVariance;
     }
 }
