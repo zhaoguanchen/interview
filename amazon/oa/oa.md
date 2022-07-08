@@ -111,7 +111,11 @@ k = 0, not possible to form any sustainable clusters.
 
 
 
-## item rating
+## [Solved] item rating
+
+answer: https://leetcode.com/discuss/interview-question/1639758/amazon-oa-usa
+
+
 https://www.1point3acres.com/bbs/thread-885897-1-1.html
 https://www.1point3acres.com/bbs/thread-899236-1-1.html
 

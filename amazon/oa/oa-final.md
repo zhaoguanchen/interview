@@ -212,7 +212,38 @@ class Solution {
 
 
 
-## 6. item rating
+## 6. Count Decreasing Ratings
+
+```java
+
+class Solution {
+  public int   countDecreasingRatings(int[] ratings) {
+// Write your code here
+    
+if(ratings.length ==0) {
+    return 0;    
+}
+int left =0;    
+int ans =0;    
+
+for(int right = 0;right <ratings.length; right++){
+    if (right - 1 < 0) {
+        ans++;
+        continue;
+    }
+    if((ratings[right-1] - ratings[right]) == 1){
+        ans +=(right-left+1);
+    }else{
+        left = right;
+        ans +=1;
+    }
+    
+}
+return ans;
+}
+}
+  
+```
 
 
 ## 7. [Leetode 2272] Substring With Largest Variance
@@ -335,5 +366,13 @@ if (processingPower.length == 0 || maxPower == 0) {
         return maxLength;
     }
 }
+
+```
+
+
+## 9. maximize the median sum
+
+```java
+
 
 ```
