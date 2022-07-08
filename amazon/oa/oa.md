@@ -1,173 +1,6 @@
 https://archive.ph/Ckx54
 
-# from 1 points
-
-
-
-
-##  the minimum number of swaps required so that the maximum element is at the beginning and the minimum element is at last
-The first question was posted with a lot of other text, but ultimately you can boil it down to this :
-Given N number of elements, find the minimum number of swaps required so that the maximum element is at the beginning and the minimum element is at last with the condition that only swapping of adjacent elements is allowed.
-Examples:
-
-Input: a[] = {3, 1, 5, 3, 5, 5, 2}
-Output: 6
-Step 1: Swap 5 with 1 to make the array as {3, 5, 1, 3, 5, 5, 2}
-Step 2: Swap 5 with 3 to make the array as {5, 3, 1, 3, 5, 5, 2}
-Step 3: Swap 1 with 3 at its right to make the array as {5, 3, 3, 1, 5, 5, 2}
-Step 4: Swap 1 with 5 at its right to make the array as {5, 3, 3, 5, 1, 5, 2}
-Step 5: Swap 1 with 5 at its right to make the array as {5, 3, 3, 5, 5, 1, 2}
-Step 6: Swap 1 with 2 at its right to make the array as {5, 3, 3, 5, 5, 2, 1}
-After performing 6 swapping operations 5 is at the beginning and 1 at the end
-Input: a[] = {5, 6, 1, 3}
-Output: 2
-```
-Find the index of the largest element(let l).
-Find the index of the leftmost largest element if the largest element appears in the array more than once. Similarly, find the index of the rightmost smallest element(let r).
-There exists two cases to solve this problem after this :
-Case 1: If l < r: (Maximum is to the right of minimum element) Number of swaps = l + (n-r-1)
-Case 2: If l > r: (Maximum is to the left of minimum element) Number of swaps = l + (n-r-2), as one swap has already been performed while swapping the larger element to the front.
-```
-```java
-void solve(int a[], int n)
-{
-    int maxx = -1, minn = a[0], l = 0, r = 0;
-    for (int i = 0; i < n; i++) {
- 
-        // Index of leftmost largest element
-        if (a[i] > maxx) {
-            maxx = a[i];
-            l = i;
-        }
- 
-        // Index of rightmost smallest element
-        if (a[i] <= minn) {
-            minn = a[i];
-            r = i;
-        }
-    }
-    if (r < l)
-        cout << l + (n - r - 2);
-    else
-        cout << l + (n - r - 1);
-}
-```
-
-
-## Minimun Processing time
-
-https://leetcode.com/discuss/interview-question/2239893/Amazon-OA-july-2022
-
-**评论区答案**
-
-
-
-
-
-## 5. Get Heaviest Package
-
-第一题Get Heaviest Package, 给一个int array 叫 package，如果package < package[i+1]，可以把i并到i+1里，反过来不行，求合并完之后最大的包裹
-
-题目 ； https://leetcode.com/discuss/interview-question/1845746/Amazon-OA-or-March-2022-or-Questions
-
-**评论区答案**
-
- 
- ## 6. findMaxProducts  从里面单调递增拿包裹
-
-第二题也是package, 给一个int array, 从里面单调递增拿包裹，可以只拿一部分，例子是[7, 4, 5]取[3, 4, 5] ，也是求最大
-两题思路都是一样的从后往前遍历，第一题O(N)，第二题O(N^2)
-要用long不然会overflow
-
-```
-https://leetcode.com/discuss/interview-question/2108095/amazon-sde2-may-2022-online-&#8205;&#8205;&#8205;&#8204;&#8204;&#8205;&#8204;&#8205;&#8204;&#8205;&#8204;&#8205;&#8204;&#8205;&#8204;&#8204;&#8204;&#8204;&#8205;&#8204;assessment
-
-```
-
-
-
-##  n piles of products （Array Strictly Increasing Order）
-题目
-https://leetcode.com/discuss/interview-question/2068122/Amazonor-OA
-
-There are a total of n piles of products.
-The number of products in each pile is represented by the array nums.
-Select any subarray from the array nums and pick up products from that subarray such that the number of the products you pick from the ith pile is strictly less the than the number of the products you pick from the (i+1)th pile for all the indices i of the subarray.
-
-
-
-Example
-nums [7,4,5,2,6,5]
-Choose subarray from indices (1,3) and pick products [3,4,5] respectively from each index, which is 12 products. Note that we are not forced to pick only 3 products from the index 1 as the maximum number of the products we can pick from index 2 is 4 and we need to make sure it is greater than the number of the products picked from index 1.
-
-
-
-indices (3,6) [1,2,4,5] = 12
-indices (3,5) = [1,26] = 9
-indices (1,1) = 7
-
-
-
-答案：
-
-https://leetcode.com/discuss/interview-question/1988635/amazon-phone-screen-array-strictly-increasing-order
-
-
-
-
-```java
-public long findMaxProducts(List<Integer> products) {
-        int l = products.size();
-        long max = 0;
-        for(int i=l-1;i>=0;--i) {
-            if(i!=l-1 && products.get(i) < products.get(i+1)) continue;
-            long localMax = products.get(i);
-            long prev = localMax;
-            for(int j=i-1;j>=0;--j) {
-                prev = Math.min(prev-1, products.get(j));
-                localMax+=prev;
-                if(prev==1) break;
-            }
-            max = Math.max(localMax,max);
-        }
-        return max;
-  }
-
-```
-
-
-
-# From Leetcode Discussion
-
-## [Solved] maximize the median sum
-https://leetcode.com/discuss/interview-question/1565781/Amazon-or-OA-or-maximize-the-median-sum/1142854
-
-Given an array of integers (unsorted) and a value n indicating number of channels. You have to send all these numbers through n channels (At least one number should go through each channel)
-Ex: 1 2 3 2 1 5 , n=3
-Send 1 2 3 using channel 1, 2 using channel 2, 1 5 using channel 3.
-Calculate median of each channel :
-channel 1 , median of (1 2 3) is 2
-channel 2, median of (2) is 2
-channel 3, median of (1 5) is 3
-sum = 7
-
-1 2 3 2 1 5 , n=3
-Send 1 2 2 1 using channel 1, 3 using channel 2, 5 using channel 3.
-Calculate median of each channel :
-channel 1 , median of (1 2 2 1) is 1.5
-channel 2, median of (3) is 3
-channel 3, median of (5) is 5
-sum = 9.5
-
-In case someone has across this question and my understanding differs, do let me know.
-
-
-
-```
-Sort the array in decreasing order. Assign top n-1 values to n-1 channels. Median of all these will be their value only. Remaining must be sent through last channel. Calculate the median of these elements and then output the sum.
-```
-
-
+# need solve
 
 
 ## Good String
@@ -240,11 +73,7 @@ https://www.geeksforgeeks.org/count-minimum-swap-to-make-string-palindrome/
 
 图片
 
-sort
-
-
-
-##### k most popular combos
+sort 
 
 https://leetcode.com/discuss/interview-question/2134960/Amazon-OA
 
@@ -294,159 +123,12 @@ While converting to prefix sums, do the operation modulo 10^9 +7.
 I could pass only half the TCs. Remaning Time Limit Exceeding. how to solve it
 
 
-## sum-of-total-strength-of-wizards [Leetcode 2281]
-2281. Sum of Total Strength of Wizards
-
-定义Power[l, r] = (min power[i]) * ∑ power[i] where 'i' is from 'l' to 'r'
-求sum of all power[i] mod 1000000007
-example: [2, 3, 2, 1] 答案是 69:
-power[0, 0] = 2 * 2 = 4;
-power[0,1] = 2 *5 = 10;
-power[0,2] = 2*7=14;
-power[0,3] = 1*8=8;
-...
-power[3,3] = 1*1=1;
-
-
-## Cloudfront Caching
-
-https://leetcode.com/discuss/interview-question/1144843/amazon-oa-april-2021-storage-optimization-cloudfront-caching
-
-
-## getHeaviest
-
-```JAVA
-public static int getHeaviest(int[] input) {
-    int max = 0;
-    for (int i = input.length - 1; i >= 0; --i) {
-        if (input[i] < max) {
-            max += input[i]; // merge
-        } else {
-            max = input[i]; // too big to merge - this is the new max
-        }
-    }
-    return max;
-}
-
-```
- 
-
-## [Solved] Find Minimum Distance to Destination in a Grid
-: a classic bfs problem. Doing a bfs while keeping track of the distance for each path yields the min distance to the destination point since bfs traverses all the connected paths from the starting point at the same time. Passed all test cases.
-
-Got a follow-up from my recruiter about the on-site quite fast (no delay at all). Will post more about the interview experience after the on-site.
-
-Update: got an offer! currently interviewing for other companies but probably will just take this one.
-
-
-
-##  to be greater than K
-
-题目 https://leetcode.com/discuss/interview-question/2072252/amazon
-
-Find the minimum operations to be performed on the array to have maximum element in the sliding window of 3 to be greater than K. The only allowed operation would be to increase the element by 1.
-Example :
-Input : array = [1, 3, 0, 3, 1] , K=5
-Output: 4
-Explanation : Increasing the element at index (0-based Index) 1 and 3 two times.
-
-
-
-**评论区答案**
-
-## Find the minimum number that can be XOR-ed to each element in the given sorted array to arrange the array to be sorted in descending order
-
-题目  https://leetcode.com/discuss/interview-question/2072252/amazon
-
-Input : [2, 2, 4, 5]
-Output : 5
-Explanation : If each element is XOR-ed with 5, will yield the following array : [7, 7, 3, 0]
-
-Could someone please help with the approach ?
-
-https://leetcode.com/discuss/interview-question/2072252/Amazon
-
-**评论区答案**
 
 ## String palindrome
 https://leetcode.com/discuss/interview-question/2068125/Amazon-or-OA-or-Seattle
 
 Given a binary string write an algorithm to calculate minimum number of swaps required to make it a palindrome for eg 11101 requires on swap between 3rd and 4th to make it 11011
 
-
-
-
-
-
-
-## obstacle robot
-Determine the min distance required for the robot to remove the obstacle
-Input is given as a 2D array which consists of 0, 1 and 9
-9 is the obstacle, can pass through 1 and cannot pass through 0
-Robot can move top, left, right and bottom
-
-Input: [[1,0,0],[1,0,0],[1,9,1]]
-output: 3
-
-
-
-
-
-**默认只有一个obstacle**
-
-
-
-BFS
-
-类似参考： 1293. Shortest Path in a Grid with Obstacles Elimination
-
-
-```
-Write an algorithm to determine the minimum distance required for the demolition robot to remove the obstacle.
-
-
-
-**Assumptions**
-The demolition robot must start from the top-left corner of the lot, which is always *flat*, and can move one block up, down, left, or right at a time.
-The demolition robot cannot enter *trenches* and cannot leave the *lot*.
-The *flat areas* are represented as 1, areas with *trenches* are represented as 0 and the *obstacle* is represented by 9.
-
-
-
-**Input**
-The input to yhe function/method consists of one argument:
-*lot*, representing the two-dimensional grid of integers;
-
-
-
-**Output**
-Return an integer representing the minimum distance traversed to remove the *obstacle* **else return -1**.
-
-
-
-**Constraints**
-1<=*rows,columns*<=10^3
-
-
-
-**Example**
-**Input**
-*lot* = [ [1,0,0] , [1,0,0] , [1,9,1] ]
-
-
-
-**Output**
-3
-
-
-
-**Explaination**
-Starting from the top-left corner, the demolition robot traversed the cells (0,0) -> (1,0) ->(2,0) ->(2,1). The robot traversed the total distance 3 to remove the obstacle.
-So, the output is 3.
-
-
-
-```
 
 
 
@@ -565,14 +247,7 @@ but how to solve the use-case of "If no order is being prepared, start preparing
 
 
  
-
-
-
-## Minimum swaps to sort an array
-
-
-
-
+ 
 
 
 
@@ -1005,6 +680,317 @@ Subarrays
 
 
 
+## [Solved]  the minimum number of swaps required so that the maximum element is at the beginning and the minimum element is at last
+The first question was posted with a lot of other text, but ultimately you can boil it down to this :
+Given N number of elements, find the minimum number of swaps required so that the maximum element is at the beginning and the minimum element is at last with the condition that only swapping of adjacent elements is allowed.
+Examples:
+
+Input: a[] = {3, 1, 5, 3, 5, 5, 2}
+Output: 6
+Step 1: Swap 5 with 1 to make the array as {3, 5, 1, 3, 5, 5, 2}
+Step 2: Swap 5 with 3 to make the array as {5, 3, 1, 3, 5, 5, 2}
+Step 3: Swap 1 with 3 at its right to make the array as {5, 3, 3, 1, 5, 5, 2}
+Step 4: Swap 1 with 5 at its right to make the array as {5, 3, 3, 5, 1, 5, 2}
+Step 5: Swap 1 with 5 at its right to make the array as {5, 3, 3, 5, 5, 1, 2}
+Step 6: Swap 1 with 2 at its right to make the array as {5, 3, 3, 5, 5, 2, 1}
+After performing 6 swapping operations 5 is at the beginning and 1 at the end
+Input: a[] = {5, 6, 1, 3}
+Output: 2
+```
+Find the index of the largest element(let l).
+Find the index of the leftmost largest element if the largest element appears in the array more than once. Similarly, find the index of the rightmost smallest element(let r).
+There exists two cases to solve this problem after this :
+Case 1: If l < r: (Maximum is to the right of minimum element) Number of swaps = l + (n-r-1)
+Case 2: If l > r: (Maximum is to the left of minimum element) Number of swaps = l + (n-r-2), as one swap has already been performed while swapping the larger element to the front.
+```
+```java
+void solve(int a[], int n)
+{
+    int maxx = -1, minn = a[0], l = 0, r = 0;
+    for (int i = 0; i < n; i++) {
+ 
+        // Index of leftmost largest element
+        if (a[i] > maxx) {
+            maxx = a[i];
+            l = i;
+        }
+ 
+        // Index of rightmost smallest element
+        if (a[i] <= minn) {
+            minn = a[i];
+            r = i;
+        }
+    }
+    if (r < l)
+        cout << l + (n - r - 2);
+    else
+        cout << l + (n - r - 1);
+}
+```
+
+
+## [Solved] Minimun Processing time
+
+https://leetcode.com/discuss/interview-question/2239893/Amazon-OA-july-2022
+
+**评论区答案**
+
+
+
+
+
+## [Solved] 5. Get Heaviest Package
+
+第一题Get Heaviest Package, 给一个int array 叫 package，如果package < package[i+1]，可以把i并到i+1里，反过来不行，求合并完之后最大的包裹
+
+题目 ； https://leetcode.com/discuss/interview-question/1845746/Amazon-OA-or-March-2022-or-Questions
+
+**评论区答案**
+
+ 
+ ## [Solved] 6. findMaxProducts  从里面单调递增拿包裹
+
+第二题也是package, 给一个int array, 从里面单调递增拿包裹，可以只拿一部分，例子是[7, 4, 5]取[3, 4, 5] ，也是求最大
+两题思路都是一样的从后往前遍历，第一题O(N)，第二题O(N^2)
+要用long不然会overflow
+
+```
+https://leetcode.com/discuss/interview-question/2108095/amazon-sde2-may-2022-online-&#8205;&#8205;&#8205;&#8204;&#8204;&#8205;&#8204;&#8205;&#8204;&#8205;&#8204;&#8205;&#8204;&#8205;&#8204;&#8204;&#8204;&#8204;&#8205;&#8204;assessment
+
+```
+
+
+
+## [Solved]  n piles of products （Array Strictly Increasing Order）
+题目
+https://leetcode.com/discuss/interview-question/2068122/Amazonor-OA
+
+There are a total of n piles of products.
+The number of products in each pile is represented by the array nums.
+Select any subarray from the array nums and pick up products from that subarray such that the number of the products you pick from the ith pile is strictly less the than the number of the products you pick from the (i+1)th pile for all the indices i of the subarray.
+
+
+
+Example
+nums [7,4,5,2,6,5]
+Choose subarray from indices (1,3) and pick products [3,4,5] respectively from each index, which is 12 products. Note that we are not forced to pick only 3 products from the index 1 as the maximum number of the products we can pick from index 2 is 4 and we need to make sure it is greater than the number of the products picked from index 1.
+
+
+
+indices (3,6) [1,2,4,5] = 12
+indices (3,5) = [1,26] = 9
+indices (1,1) = 7
+
+
+
+答案：
+
+https://leetcode.com/discuss/interview-question/1988635/amazon-phone-screen-array-strictly-increasing-order
+
+
+
+
+```java
+public long findMaxProducts(List<Integer> products) {
+        int l = products.size();
+        long max = 0;
+        for(int i=l-1;i>=0;--i) {
+            if(i!=l-1 && products.get(i) < products.get(i+1)) continue;
+            long localMax = products.get(i);
+            long prev = localMax;
+            for(int j=i-1;j>=0;--j) {
+                prev = Math.min(prev-1, products.get(j));
+                localMax+=prev;
+                if(prev==1) break;
+            }
+            max = Math.max(localMax,max);
+        }
+        return max;
+  }
+
+```
+
+
+
+# From Leetcode Discussion
+
+## [Solved] maximize the median sum
+https://leetcode.com/discuss/interview-question/1565781/Amazon-or-OA-or-maximize-the-median-sum/1142854
+
+Given an array of integers (unsorted) and a value n indicating number of channels. You have to send all these numbers through n channels (At least one number should go through each channel)
+Ex: 1 2 3 2 1 5 , n=3
+Send 1 2 3 using channel 1, 2 using channel 2, 1 5 using channel 3.
+Calculate median of each channel :
+channel 1 , median of (1 2 3) is 2
+channel 2, median of (2) is 2
+channel 3, median of (1 5) is 3
+sum = 7
+
+1 2 3 2 1 5 , n=3
+Send 1 2 2 1 using channel 1, 3 using channel 2, 5 using channel 3.
+Calculate median of each channel :
+channel 1 , median of (1 2 2 1) is 1.5
+channel 2, median of (3) is 3
+channel 3, median of (5) is 5
+sum = 9.5
+
+In case someone has across this question and my understanding differs, do let me know.
+
+
+
+```
+Sort the array in decreasing order. Assign top n-1 values to n-1 channels. Median of all these will be their value only. Remaining must be sent through last channel. Calculate the median of these elements and then output the sum.
+```
+
+
+
+
+
+## [Solved] sum-of-total-strength-of-wizards [Leetcode 2281]
+2281. Sum of Total Strength of Wizards
+
+定义Power[l, r] = (min power[i]) * ∑ power[i] where 'i' is from 'l' to 'r'
+求sum of all power[i] mod 1000000007
+example: [2, 3, 2, 1] 答案是 69:
+power[0, 0] = 2 * 2 = 4;
+power[0,1] = 2 *5 = 10;
+power[0,2] = 2*7=14;
+power[0,3] = 1*8=8;
+...
+power[3,3] = 1*1=1;
+
+
+## [Solved] Cloudfront Caching
+
+https://leetcode.com/discuss/interview-question/1144843/amazon-oa-april-2021-storage-optimization-cloudfront-caching
+
+
+## [Solved] getHeaviest
+
+```JAVA
+public static int getHeaviest(int[] input) {
+    int max = 0;
+    for (int i = input.length - 1; i >= 0; --i) {
+        if (input[i] < max) {
+            max += input[i]; // merge
+        } else {
+            max = input[i]; // too big to merge - this is the new max
+        }
+    }
+    return max;
+}
+
+```
+ 
+
+## [Solved] Find Minimum Distance to Destination in a Grid
+: a classic bfs problem. Doing a bfs while keeping track of the distance for each path yields the min distance to the destination point since bfs traverses all the connected paths from the starting point at the same time. Passed all test cases.
+
+Got a follow-up from my recruiter about the on-site quite fast (no delay at all). Will post more about the interview experience after the on-site.
+
+Update: got an offer! currently interviewing for other companies but probably will just take this one.
+
+
+
+
+##  [solved] to be greater than K
+
+题目 https://leetcode.com/discuss/interview-question/2072252/amazon
+
+Find the minimum operations to be performed on the array to have maximum element in the sliding window of 3 to be greater than K. The only allowed operation would be to increase the element by 1.
+Example :
+Input : array = [1, 3, 0, 3, 1] , K=5
+Output: 4
+Explanation : Increasing the element at index (0-based Index) 1 and 3 two times.
+**评论区答案**
+https://leetcode.com/discuss/interview-question/2072252/amazon
+
+
+
+## [solved] Find the minimum number that can be XOR-ed to each element in the given sorted array to arrange the array to be sorted in descending order
+
+题目  https://leetcode.com/discuss/interview-question/2072252/amazon
+
+Input : [2, 2, 4, 5]
+Output : 5
+Explanation : If each element is XOR-ed with 5, will yield the following array : [7, 7, 3, 0]
+
+Could someone please help with the approach ?
+**评论区答案**
+https://leetcode.com/discuss/interview-question/2072252/Amazon
+
+
+
+
+
+## obstacle robot
+Determine the min distance required for the robot to remove the obstacle
+Input is given as a 2D array which consists of 0, 1 and 9
+9 is the obstacle, can pass through 1 and cannot pass through 0
+Robot can move top, left, right and bottom
+
+Input: [[1,0,0],[1,0,0],[1,9,1]]
+output: 3
+
+
+
+
+
+**默认只有一个obstacle**
+
+
+
+BFS
+
+类似参考： 1293. Shortest Path in a Grid with Obstacles Elimination
+
+
+```
+Write an algorithm to determine the minimum distance required for the demolition robot to remove the obstacle.
+
+
+
+**Assumptions**
+The demolition robot must start from the top-left corner of the lot, which is always *flat*, and can move one block up, down, left, or right at a time.
+The demolition robot cannot enter *trenches* and cannot leave the *lot*.
+The *flat areas* are represented as 1, areas with *trenches* are represented as 0 and the *obstacle* is represented by 9.
+
+
+
+**Input**
+The input to yhe function/method consists of one argument:
+*lot*, representing the two-dimensional grid of integers;
+
+
+
+**Output**
+Return an integer representing the minimum distance traversed to remove the *obstacle* **else return -1**.
+
+
+
+**Constraints**
+1<=*rows,columns*<=10^3
+
+
+
+**Example**
+**Input**
+*lot* = [ [1,0,0] , [1,0,0] , [1,9,1] ]
+
+
+
+**Output**
+3
+
+
+
+**Explaination**
+Starting from the top-left corner, the demolition robot traversed the cells (0,0) -> (1,0) ->(2,0) ->(2,1). The robot traversed the total distance 3 to remove the obstacle.
+So, the output is 3.
+
+
+
+```
 
 
 
