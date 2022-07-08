@@ -315,7 +315,7 @@ While converting to prefix sums, do the operation modulo 10^9 +7.
 I could pass only half the TCs. Remaning Time Limit Exceeding. how to solve it
 
 
-## Variation of Reorder Data in Log Files :
+## [Solved] Variation of Reorder Data in Log Files :
 
 https://leetcode.com/discuss/interview-question/2225636/Amazon-OA-oror-Questions-oror-SDE1
 
@@ -361,7 +361,7 @@ I tried to use a sliding window but only passed 4/13 cases. there was somthing i
 
 
 
-## inimum-swaps-required-sort-binary-array
+## [Solved] inimum-swaps-required-sort-binary-array
 
 Given an array containing only 0 and 1 as its elements. We have to sort the array in such a manner that all the ones are grouped together and all the zeros are grouped together. The group of ones can be either at the start of the array or at the end of the array. The constraint while sorting is that every one/zero can be swapped only with its adjacent zero/one. Find the minimum number of moves to sort the array as per the description.
 Example:
