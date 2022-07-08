@@ -23,11 +23,15 @@ Input: a[] = {5, 6, 1, 3}
 Output: 2
 
 
-## Minimun Proessing time
+
+
+
+
+## Minimun Processing time
 
 https://leetcode.com/discuss/interview-question/2239893/Amazon-OA-july-2022
 
-
+**评论区答案**
 
 
 
@@ -37,9 +41,15 @@ https://leetcode.com/discuss/interview-question/2239893/Amazon-OA-july-2022
 
 第一题Get Heaviest Package, 给一个int array 叫 package，如果package < package[i+1]，可以把i并到i+1里，反过来不行，求合并完之后最大的包裹
 
-第二题也是package, 给一个int array, 从里面单调递增拿包裹，可以只拿一部分，例子是[7, 4, 5]取[3, 4, 5] ，也是求‍‌
+题目 ； https://leetcode.com/discuss/interview-question/1845746/Amazon-OA-or-March-2022-or-Questions
 
+**评论区答案**
 
+ 
+
+第二题也是package, 给一个int array, 从里面单调递增拿包裹，可以只拿一部分，例子是[7, 4, 5]取[3, 4, 5] ，也是求最大
+两题思路都是一样的从后往前遍历，第一题O(N)，第二题O(N^2)
+要用long不然会overflow
 
 
 
@@ -81,6 +91,34 @@ Sort the array in decreasing order. Assign top n-1 values to n-1 channels. Media
 
 https://leetcode.com/discuss/interview-question/2173518/Amazon-or-Good-String
 图片
+
+https://leetcode.com/discuss/interview-question/2174102/AMAZON-ONLINE-ASSESMENT/1447343
+
+
+
+部分通过的答案
+
+```java
+def isDistinctRange(s: List[str], ranges: List[List[int]]) -> bool:
+    for i in range(len(ranges)):
+        l, r = ranges[i]
+        s2 = []
+        for j in range(l-1, r):
+            if s[j] != '_':
+                s2.append(s[j])
+        if len(set(s2)) != len(s2):
+            return False
+    return True
+
+def goodString(N: int, Q: int, S: str, arr: List[int], ranges: List[List[int]]) -> int:
+    s = list(S)
+    if isDistinctRange(s, ranges):
+        return 0
+    for i in range(len(arr)):
+        s[arr[i] - 1] = '_'
+        if isDistinctRange(s, ranges):
+            return i + 1
+```
 
 
 
