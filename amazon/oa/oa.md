@@ -258,12 +258,14 @@ https://leetcode.com/discuss/interview-question/2134960/Amazon-OA
 https://leetcode.com/discuss/interview-question/1895396/amazon-sde-new-grad-oa-k-most-popular-combos
 
 
+
 https://leetcode.com/discuss/interview-question/1895396/Amazon-SDE-New-Grad-or-OA-or-k-most-popular-combos
 
 
 
 https://leetcode.com/discuss/interview-question/1777410/Amazon-Online-Assesment-SDE-1/1272110
 
+ 
 
 
 
@@ -272,14 +274,35 @@ Answer
 https://leetcode.com/playground/Gm2v6aee
 
 
+
+
+
+
+
+
 ## Minimum money
 
 https://leetcode.com/discuss/interview-question/2133434/AMAZON-OA
 
-
 ## Minnum diffenence
 
+
+
+
+
 https://leetcode.com/discuss/interview-question/2132962/Amazon-OA
+
+
+
+
+
+**answer**
+
+https://leetcode.com/discuss/interview-question/2006194/Amazon-or-OA-or-SDE-12
+
+
+
+
 
 ##  the number of second
 https://leetcode.com/discuss/interview-question/2131732/Amazon-OA
@@ -424,9 +447,16 @@ This will be solved using priority queues based on the completion time.
 but how to solve the use-case of "If no order is being prepared, start preparing the order that has the least preparation time from among the pending orders."
 
 
+
+
+
+
+
+
+
  
 
-
+ 
 
 ## .net stock price change minimum
 
