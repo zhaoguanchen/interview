@@ -24,7 +24,7 @@ class Solution {
 ```
 
 
-## 2. [leetcode 2262] Total Appeal of A String
+## 2. Password strength == [leetcode 2262] Total Appeal of A String
 
 assume we have string xxxaxxxxb..., with s[i] = a and s[j] = b.
 s[i] is th last character a before that b.
@@ -215,5 +215,66 @@ class Solution {
 ## 6. item rating
 
 
+## 7. [Leetode 2272] Substring With Largest Variance
+Time Complexity= O(26*26*n)
 
+For every possible character pair a(min freq) & b(max freq),
+find the substring with the max differenct between the freq of a & b which can be done using kadanes algorithm.
 
+We can think about it as finding the maximum subarray with a = -1 and b = 1 and other characters = 0. But we should have at least one occurrence of a.
+
+```java
+class Solution {
+    public int largestVariance(String s) {
+        
+        int[] count = new int[26];
+        char[] chars = s.toCharArray();
+        
+        for (char c : chars) {
+            count[c - 'a']++;
+        }
+         
+        int maxVariance = 0;
+        
+        for (int i = 0; i < 26; i++) {
+            for(int j = 0; j < 26; j++) {
+                int totalI = count[i];
+                int totalJ = count[j];
+                
+                if (i == j) {
+                    continue;
+                }
+                
+                if (totalI == 0 || totalJ == 0) {
+                    continue;
+                }
+                
+                  int currentI = 0;
+                    int currentJ = 0;
+                for (int k = 0; k < chars.length; k++) {
+                  
+                    int c = chars[k] - 'a';
+                     if (c == i) {
+                        currentI++;
+                    } else if (c == j) {
+                        currentJ++;
+                        totalJ--;
+                    }
+                 
+                    if (currentJ > 0) {
+                        maxVariance = Math.max(maxVariance, currentI - currentJ);
+                    }
+                    
+                    if (currentI < currentJ && totalJ > 0) {
+                         currentI = 0;
+                        currentJ = 0;
+                    }
+                
+                }
+            }
+        }
+        
+        return maxVariance;
+    }
+}
+```
