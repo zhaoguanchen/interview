@@ -115,19 +115,22 @@ https://www.geeksforgeeks.org/count-minimum-swap-to-make-string-palindrome/
 
 
 
-## Best combo
+## Best combo (k most popular combos)
 
 图片
 
-
 sort
+
+
+
+##### k most popular combos
 
 https://leetcode.com/discuss/interview-question/2134960/Amazon-OA
 
 https://leetcode.com/discuss/interview-question/1895396/amazon-sde-new-grad-oa-k-most-popular-combos
 
 
-## MInmum money
+## Minimum money
 
 https://leetcode.com/discuss/interview-question/2133434/AMAZON-OA
 
@@ -171,27 +174,7 @@ I could pass only half the TCs. Remaning Time Limit Exceeding. how to solve it
 
 
 
-## Array Strictly Increasing Order
-
-https://leetcode.com/discuss/interview-question/1988635/Amazon-or-Phone-Screen-or-Array-Strictly-Increasing-Order
-There are a total of n piles of products.
-The number of products in each pile is represented by the array nums.
-Select any subarray from the array nums and pick up products from that subarray such that the number of the products you pick from the ith pile is strictly less the than the number of the products you pick from the (i+1)th pile for all the indices i of the subarray.
-
-Example
-nums [7,4,5,2,6,5]
-Choose subarray from indices (1,3) and pick products [3,4,5] respectively from each index, which is 12 products. Note that we are not forced to pick only 3 products from the index 1 as the maximum number of the products we can pick from index 2 is 4 and we need to make sure it is greater than the number of the products picked from index 1.
-
-indices (3,6) [1,2,4,5] = 12
-indices (3,5) = [1,26] = 9
-indices (1,1) = 7
-
-
-also
-
-https://leetcode.com/discuss/interview-question/2068122/Amazonor-OA
-
-
+ 
 
 ## [Solved] Find Minimum Distance to Destination in a Grid
 : a classic bfs problem. Doing a bfs while keeping track of the distance for each path yields the min distance to the destination point since bfs traverses all the connected paths from the starting point at the same time. Passed all test cases.
@@ -200,14 +183,26 @@ Got a follow-up from my recruiter about the on-site quite fast (no delay at all)
 
 Update: got an offer! currently interviewing for other companies but probably will just take this one.
 
-## array
+
+
+##  to be greater than K
+
+题目 https://leetcode.com/discuss/interview-question/2072252/amazon
+
 Find the minimum operations to be performed on the array to have maximum element in the sliding window of 3 to be greater than K. The only allowed operation would be to increase the element by 1.
 Example :
 Input : array = [1, 3, 0, 3, 1] , K=5
 Output: 4
 Explanation : Increasing the element at index (0-based Index) 1 and 3 two times.
 
+
+
+**评论区答案**
+
 ## Find the minimum number that can be XOR-ed to each element in the given sorted array to arrange the array to be sorted in descending order
+
+题目  https://leetcode.com/discuss/interview-question/2072252/amazon
+
 Input : [2, 2, 4, 5]
 Output : 5
 Explanation : If each element is XOR-ed with 5, will yield the following array : [7, 7, 3, 0]
@@ -215,6 +210,8 @@ Explanation : If each element is XOR-ed with 5, will yield the following array :
 Could someone please help with the approach ?
 
 https://leetcode.com/discuss/interview-question/2072252/Amazon
+
+**评论区答案**
 
 ## String palindrome
 https://leetcode.com/discuss/interview-question/2068125/Amazon-or-OA-or-Seattle
@@ -224,9 +221,35 @@ Given a binary string write an algorithm to calculate minimum number of swaps re
 
 
 
-##  n piles of products
-图片
+##  n piles of products 9（Array Strictly Increasing Order）
+题目
 https://leetcode.com/discuss/interview-question/2068122/Amazonor-OA
+
+There are a total of n piles of products.
+The number of products in each pile is represented by the array nums.
+Select any subarray from the array nums and pick up products from that subarray such that the number of the products you pick from the ith pile is strictly less the than the number of the products you pick from the (i+1)th pile for all the indices i of the subarray.
+
+
+
+Example
+nums [7,4,5,2,6,5]
+Choose subarray from indices (1,3) and pick products [3,4,5] respectively from each index, which is 12 products. Note that we are not forced to pick only 3 products from the index 1 as the maximum number of the products we can pick from index 2 is 4 and we need to make sure it is greater than the number of the products picked from index 1.
+
+
+
+indices (3,6) [1,2,4,5] = 12
+indices (3,5) = [1,26] = 9
+indices (1,1) = 7
+
+
+
+答案：
+
+https://leetcode.com/discuss/interview-question/1988635/amazon-phone-screen-array-strictly-increasing-order
+
+
+
+
 
 
 
@@ -240,6 +263,14 @@ Input: [[1,0,0],[1,0,0],[1,9,1]]
 output: 3
 
 
+
+
+
+**默认只有一个obstacle**
+
+
+
+BFS
 
 类似参考： 1293. Shortest Path in a Grid with Obstacles Elimination
 
@@ -293,9 +324,10 @@ So, the output is 3.
 
 
 
-## nnn
+## Find the difference between task1 and task 2 
 
 https://leetcode.com/discuss/interview-question/2023674/Amazon-OA
+
 Given an array consisting of N integer and two number k,d.
 Task1-From the given array we can choose k consecutive elements one after in array and after that leave an array element.Then we calculate maximum sum of all such consecutive element containing subarray.
 Task2-From the given array we can choose k+d consecutive elements one after in array and after that leave an array element.Then we calculate maximum sum of all such consecutive element containing subarray.
