@@ -211,7 +211,41 @@ While converting to prefix sums, do the operation modulo 10^9 +7.
 I could pass only half the TCs. Remaning Time Limit Exceeding. how to solve it
 
 
+## sum-of-total-strength-of-wizards [Leetcode 2281]
+2281. Sum of Total Strength of Wizards
 
+定义Power[l, r] = (min power[i]) * ∑ power[i] where 'i' is from 'l' to 'r'
+求sum of all power[i] mod 1000000007
+example: [2, 3, 2, 1] 答案是 69:
+power[0, 0] = 2 * 2 = 4;
+power[0,1] = 2 *5 = 10;
+power[0,2] = 2*7=14;
+power[0,3] = 1*8=8;
+...
+power[3,3] = 1*1=1;
+
+
+## Cloudfront Caching
+
+https://leetcode.com/discuss/interview-question/1144843/amazon-oa-april-2021-storage-optimization-cloudfront-caching
+
+
+## getHeaviest
+
+```JAVA
+public static int getHeaviest(int[] input) {
+    int max = 0;
+    for (int i = input.length - 1; i >= 0; --i) {
+        if (input[i] < max) {
+            max += input[i]; // merge
+        } else {
+            max = input[i]; // too big to merge - this is the new max
+        }
+    }
+    return max;
+}
+
+```
  
 
 ## [Solved] Find Minimum Distance to Destination in a Grid
