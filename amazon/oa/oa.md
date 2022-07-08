@@ -36,6 +36,8 @@ https://www.1point3acres.com/bbs/thread-901320-1-1.html
 https://leetcode.com/problems/substring-with-largest-variance/
 
 
+## max de‍‌‌‍‌‍viation among all substrings
+https://www.1point3acres.com/bbs/thread-899236-1-1.html
 
 
 
@@ -61,8 +63,6 @@ Output: 2
 
 https://leetcode.com/discuss/interview-question/2239893/Amazon-OA-july-2022
 
-## max de‍‌‌‍‌‍viation among all substrings
-https://www.1point3acres.com/bbs/thread-899236-1-1.html
 
 
 
@@ -101,6 +101,21 @@ powerMax = 6
 
 k = 0, not possible to form any sustainable clusters.
 
+ 
+same question: 
+https://leetcode.com/discuss/interview-question/1636493/Amazon-or-OA-or-Max-Length-of-Valid-Server-Cluster
+
+ 
+Give you a list servers. Their processing power is given as a array of integer, and boot power as a array of integer.
+Write a function to return the max length of sub array which's power consumption is less than or equal to max power limit.
+Formula to calculate the power consumption for a subArray is:
+Max(bootPower[i...j]) + Sum(processPower[i....j]) * length of subArray.
+
+Note: Single server is also a subArray, return 0 if no such subArray can be found.
+
+public int MaxLengthValidSubArray(int[] processingPower, int[] bootingPower, int maxPower)
+{}
+Does anyone know what is the similar question in leetcode?
 
 
 
@@ -316,7 +331,7 @@ Input : array = [1, 3, 0, 3, 1] , K=5
 Output: 4
 Explanation : Increasing the element at index (0-based Index) 1 and 3 two times.
 
-Find the minimum number that can be XOR-ed to each element in the given sorted array to arrange the array to be sorted in descending order
+## Find the minimum number that can be XOR-ed to each element in the given sorted array to arrange the array to be sorted in descending order
 Input : [2, 2, 4, 5]
 Output : 5
 Explanation : If each element is XOR-ed with 5, will yield the following array : [7, 7, 3, 0]
@@ -339,7 +354,7 @@ https://leetcode.com/discuss/interview-question/2068122/Amazonor-OA
 
 
 
-## [Solved] Demolition robot
+## [Solved] obstacle robot
 Determine the min distance required for the robot to remove the obstacle
 Input is given as a 2D array which consists of 0, 1 and 9
 9 is the obstacle, can pass through 1 and cannot pass through 0
@@ -348,22 +363,6 @@ Robot can move top, left, right and bottom
 Input: [[1,0,0],[1,0,0],[1,9,1]]
 output: 3
 
-
-## [Solved] Find Maximum Sustainable Cluster Size
-
-https://leetcode.com/discuss/interview-question/1636493/Amazon-or-OA-or-Max-Length-of-Valid-Server-Cluster
-
-Question2:
-Give you a list servers. Their processing power is given as a array of integer, and boot power as a array of integer.
-Write a function to return the max length of sub array which's power consumption is less than or equal to max power limit.
-Formula to calculate the power consumption for a subArray is:
-Max(bootPower[i...j]) + Sum(processPower[i....j]) * length of subArray.
-
-Note: Single server is also a subArray, return 0 if no such subArray can be found.
-
-public int MaxLengthValidSubArray(int[] processingPower, int[] bootingPower, int maxPower)
-{}
-Does anyone know what is the similar question in leetcode?
 
 
 
