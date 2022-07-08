@@ -21,10 +21,37 @@ Step 6: Swap 1 with 2 at its right to make the array as {5, 3, 3, 5, 5, 2, 1}
 After performing 6 swapping operations 5 is at the beginning and 1 at the end
 Input: a[] = {5, 6, 1, 3}
 Output: 2
-
-
-
-
+```
+Find the index of the largest element(let l).
+Find the index of the leftmost largest element if the largest element appears in the array more than once. Similarly, find the index of the rightmost smallest element(let r).
+There exists two cases to solve this problem after this :
+Case 1: If l < r: (Maximum is to the right of minimum element) Number of swaps = l + (n-r-1)
+Case 2: If l > r: (Maximum is to the left of minimum element) Number of swaps = l + (n-r-2), as one swap has already been performed while swapping the larger element to the front.
+```
+```java
+void solve(int a[], int n)
+{
+    int maxx = -1, minn = a[0], l = 0, r = 0;
+    for (int i = 0; i < n; i++) {
+ 
+        // Index of leftmost largest element
+        if (a[i] > maxx) {
+            maxx = a[i];
+            l = i;
+        }
+ 
+        // Index of rightmost smallest element
+        if (a[i] <= minn) {
+            minn = a[i];
+            r = i;
+        }
+    }
+    if (r < l)
+        cout << l + (n - r - 2);
+    else
+        cout << l + (n - r - 1);
+}
+```
 
 
 ## Minimun Processing time
