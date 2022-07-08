@@ -11,7 +11,149 @@ https://leetcode.com/discuss/interview-question/2173518/Amazon-or-Good-String
 https://leetcode.com/discuss/interview-question/2174102/AMAZON-ONLINE-ASSESMENT/1447343
 
 
+ANSWER
 
+https://leetcode.com/discuss/interview-question/2179250/amazon-sde-hiring-test-placements-2022-season/1449477
+
+
+```
+
+bool check(int mid, string s, vector<int> &arr, vector<vector<int>> &ranges){
+    
+    int n = arr.size();
+    vector<vector<int>> dp;
+
+    for(auto i = 0; i <= mid; i++){
+        s[arr[i] - 1] = '*';
+    }
+
+    vector<int> tmp(26, 0);
+    dp.push_back(tmp);
+    for(auto i = 0; i < n; i++){
+        if(s[i] != '*') tmp[s[i] - 'a']++;
+        dp.push_back(tmp);
+    }
+    
+    for(auto &range : ranges){
+        auto left = range[0], right = range[1];
+        for(auto i = 0; i < 26; i++){
+            if(dp[right][i] - dp[left - 1][i] >= 2) return 0;
+        }
+    }
+    
+    return 1;
+}
+
+int solution(int n, string s, vector<int> &arr, vector<vector<int>> &ranges){
+    
+    int low = 0, high = n - 1;
+    
+    while(low < high){
+        int mid = low + (high - low) / 2;
+
+        if(check(mid, s, arr, ranges)){
+            high = mid;
+        }else{
+            low = mid + 1;
+        }
+    }
+
+    return low;
+}
+```
+
+## Kingdom connections
+
+ANSWER
+
+https://leetcode.com/discuss/interview-question/2179250/amazon-sde-hiring-test-placements-2022-season/1449477
+
+
+```
+vector<int> parent;   //// it stores the parent of all connected water province
+int find(int a){  //finding the parent
+    if(parent[a] != a){
+        return parent[a] = find(parent[a]);
+    }
+    return a;
+}
+void connect(int a, int b){  //to connect the water body
+    int pa = find(a), pb = find(b);
+    if(pa != pb){
+        parent[pb] = pa;
+    }
+}
+
+int solution(int n, vector<vector<int>> &land, vector<vector<int>> &water){
+    vector<vector<int>> adjLand(n + 1), adjWater(n + 1);
+    vector<bool> vis(n + 1, 0);
+    parent.resize(n + 1);
+    iota(parent.begin(), parent.end(), 0);  // setting the parent[i] = i;
+
+    for(auto &e : land){
+        auto a = e[0], b = e[1];
+        adjLand[a].push_back(b);
+        adjLand[b].push_back(a);
+    }
+    for(auto &e : water){
+        auto a = e[0], b = e[1];
+        adjWater[a].push_back(b);
+        adjWater[b].push_back(a);
+        connect(a, b);    ///connecting both province connected by water
+    }  
+
+    // for()
+    int res = 0;
+    
+    for(auto i = 1; i <= n; i++){
+        if(!vis[i]){
+            queue<int> q;
+            vector<bool> seenWater(n + 1, 0);   //for every different bfs traversal initiation
+            q.push(i);
+            vis[i] = 1; 
+            bool valid = 1;
+            int cnt = 0;    //counting total connected node by land
+
+            while(!q.empty()){
+                auto k = q.size();
+                cnt += k;
+                while(k--){
+                    auto tmp = q.front(); q.pop();
+
+                    /// to check if valid or not if already not valid no need to check
+                    if(valid){
+                        for(auto &it : adjWater[tmp]){
+                            int pnt = find(it);
+                            if(seenWater[pnt]){
+                                valid = 0; break;
+                            }
+                        }
+
+                        /// marking the parent of connected province via water to be seen
+                        for(auto &it : adjWater[tmp]){
+                            int pnt = find(it);
+                            seenWater[pnt] = 1;
+                        }
+                    }
+                    
+
+                    for(auto &it : adjLand[tmp]){
+                        if(!vis[it]){    //// if not visited
+                            vis[it] = 1;
+                            q.push(it);
+                        }
+                    }
+
+                }
+            }
+            if(valid) res = max(res, cnt);   /// if all node is not connected via water with other node
+        }
+    }
+    
+    return res;
+}
+
+```
 部分通过的答案
 
 ```java
