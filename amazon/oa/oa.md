@@ -259,7 +259,9 @@ https://leetcode.com/discuss/interview-question/1895396/amazon-sde-new-grad-oa-k
 
 
 
+Answer
 
+https://leetcode.com/playground/Gm2v6aee
 
 
 ## Minimum money
