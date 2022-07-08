@@ -67,7 +67,7 @@ https://leetcode.com/discuss/interview-question/2239893/Amazon-OA-july-2022
 
 
 
-## 4. Server Power
+## 4. [Solved] Server Power [Find Maximum Sustainable Cluster Size]
 
 Net power consumption = maximum booting power among the k processors + (sum of processing power of processors)*k.
 A cluster is said to be sustainable if it's net power consumption does not exceed a given threshold value powerMax.
@@ -100,24 +100,7 @@ processingPower = [10,8,7]
 powerMax = 6
 
 k = 0, not possible to form any sustainable clusters.
-
  
-same question: 
-https://leetcode.com/discuss/interview-question/1636493/Amazon-or-OA-or-Max-Length-of-Valid-Server-Cluster
-
- 
-Give you a list servers. Their processing power is given as a array of integer, and boot power as a array of integer.
-Write a function to return the max length of sub array which's power consumption is less than or equal to max power limit.
-Formula to calculate the power consumption for a subArray is:
-Max(bootPower[i...j]) + Sum(processPower[i....j]) * length of subArray.
-
-Note: Single server is also a subArray, return 0 if no such subArray can be found.
-
-public int MaxLengthValidSubArray(int[] processingPower, int[] bootingPower, int maxPower)
-{}
-Does anyone know what is the similar question in leetcode?
-
-
 
 
 ## 5. Get Heaviest Package

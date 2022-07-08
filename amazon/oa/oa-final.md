@@ -153,7 +153,7 @@ class EconomyMartTrackerEntity {
 ## 4. find plan for the closest X destinations
 
 
-### PriorityQueue
+ **PriorityQueue**
 ```java
 // "static void main" must be defined in a public class.
 //Input
@@ -277,4 +277,63 @@ class Solution {
         return maxVariance;
     }
 }
+```
+
+## 8. Server Power [Find Maximum Sustainable Cluster Size]
+
+https://leetcode.com/playground/XHaDvGTH
+
+```java
+ 
+class Solution{
+
+
+    public int maxLengthValidSubArray(int[] processingPower, int[] bootingPower, int maxPower){
+        if(processingPower == null || bootingPower == null 
+            ||  processingPower.length != bootingPower.length){
+                return 0;
+        }
+if (processingPower.length == 0 || maxPower == 0) {
+    return 0;
+}
+        PriorityQueue<Integer> pq = new PriorityQueue<>((a, b) -> {
+            return b - a;
+        });
+        
+        
+        int maxLength = 0;
+        int currentLength = 0;
+
+        int left = 0;
+        int right = 0;
+         
+        int processingPowerSum = 0;
+        while(right < processingPower.length){
+            
+            pq.add(bootingPower[right]);
+            processingPowerSum += processingPower[right];
+            currentLength++;
+            
+            int maxBootingPower = pq.peek();
+            int sum = maxBootingPower + processingPowerSum * currentLength;
+
+            if(sum <= maxPower){
+                maxLength = currentLength;
+                right++;
+                
+            } else{
+                processingPowerSum -= processingPower[left];
+                pq.remove(bootingPower[left]);
+                left++;
+                right++;
+                currentLength--;
+            }
+
+ 
+        }
+
+        return maxLength;
+    }
+}
+
 ```
