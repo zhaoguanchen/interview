@@ -280,7 +280,7 @@ https://leetcode.com/playground/Gm2v6aee
 
 
 
-## Minimum money
+## [Solved] Minimum money
 
 https://leetcode.com/discuss/interview-question/2133434/AMAZON-OA
 
@@ -966,6 +966,47 @@ void solve(int a[], int n)
 https://leetcode.com/discuss/interview-question/2239893/Amazon-OA-july-2022
 
 **评论区答案**
+
+```java
+ public int minimumProcessingTime(int n, int[] processTime, int[] taskTime) {
+
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+
+        for (int i = 0; i < n; i++) {
+            pq.add(processTime[i]);
+        }
+
+
+        System.out.println(pq);
+        Arrays.sort(taskTime);
+
+        int currentLast = 0;
+        int index = taskTime.length - 1;
+        while (index >= 0) {
+            int max = 0;
+            for (int i = 0; i < 4; i++) {
+                max = Math.max(max, taskTime[index - i]);
+            }
+
+            int minTime = pq.poll();
+
+            System.out.println("max--" + max);
+            minTime += max;
+
+            currentLast = Math.max(currentLast, minTime);
+
+            pq.add(minTime);
+
+            System.out.println(pq
+                    + "--");
+            index -= 4;
+        }
+
+ 
+        return currentLast;
+
+    }
+```
 
 
 
