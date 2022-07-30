@@ -1,3 +1,8 @@
+some experience 
+1point3acres.com/bbs/thread-801493-1-1.html
+给定正整数n求0到n所有数字中024出现的次数之和10-->0出现2次2和4分别出现1次返回422-->0出现32出现64出现2返回112brokenkeyboard3messagesplit
+https://www.1point3acres.com/bbs/thread-902780-1-1.html
+
 # 1. swap to make strictly increasing
 You are given an array of non-negative integers numbers. You are allowed to choose any number from this array and swap any two digits in it. If after the swap operation the number contains leading zeros, they can be omitted and not considered (eg: 010 will be considered just 10).
 
@@ -18,4 +23,127 @@ By swapping the digits of numbers[1] = 31, the array becomes [13, 13, 30] which 
 By swapping the digits of numbers[2] = 30, the array becomes [13, 31, 3] which is not strictly increasing;
 So, it's not possible to obtain a strictly increasing array, and the answer is false.
 
+
+
+
+# 2. Map
+
+You've created a new programming language, and now you've decided to add hashmap support to it. Actually you are quite disappointed that in common programming languages it's impossible to add a number to all hashmap keys, or all its values. So you've decided to take matters into your own hands and implement your own hashmap in your new language that has the following operations:
+
+insert x y - insert an object with key x and value y.
+get x - return the value of an object with key x.
+addToKey x - add x to all keys in map.
+addToValue y - add y to all values in map.
+To test out your new hashmap, you have a list of queries in the form of two arrays: queryTypes contains the names of the methods to be called (eg: insert, get, etc), and queries contains the arguments for those methods (the x and y values).
+
+Your task is to implement this hashmap, apply the given queries, and to find the sum of all the results for get operations.
+
+Example
+
+For queryType = ["insert", "insert", "addToValue", "addToKey", "get"] and query = [[1, 2], [2, 3], [2], [1], [3]], the output should be solution(queryType, query) = 5.
+
+The hashmap looks like this after each query:
+
+1 query: {1: 2}
+2 query: {1: 2, 2: 3}
+3 query: {1: 4, 2: 5}
+4 query: {2: 4, 3: 5}
+5 query: answer is 5
+The result of the last get query for 3 is 5 in the resulting hashmap.
+
+# 3. 
+Minesweeper is a popular single-player computer game. The goal is to locate mines within a rectangular grid of cells. At the start of the game, all of the cells are concealed. On each turn, the player clicks on a blank cell to reveal its contents, leading to the following result:
+If there's a mine on this cell, the player loses and the game is over;
+Otherwise, a number appears on the cell, representing how many mines there are within the 8 neighbouring cells (up, down, left, right, and the 4 diagonal directions);
+If the revealed number is 0, each of the 8 neighbouring cells are automatically revealed in the same way.
+demonstration
+
+You are given a boolean matrix field representing the distribution of bombs in the rectangular field. You are also given integers x and y, representing the coordinates of the player's first clicked cell - x represents the row index, and y represents the column index, both of which are 0-based.
+
+Your task is to return an integer matrix of the same dimensions as field, representing the resulting field after applying this click. If a cell remains concealed, the corresponding element should have a value of -1.
+
+It is guaranteed that the clicked cell does not contain a mine.
+
+Example
+
+For
+field = [[false, true, true],
+         [true, false, true],
+         [false, false, true]]
+x = 1, and y = 1, the output should be
+
+solution(field, x, y) = [[-1, -1, -1],
+                         [-1, 5, -1],
+                         [-1, -1, -1]]
+example
+
+There are 5 neighbors of the cell (1, 1) which contain a mine, so the value in (1, 1) should become 5, and the other elements of the resulting matrix should be -1 since no other cell would be expanded.
+
+For
+field = [[true, false, true, true, false],
+         [true, false, false, false, false],
+         [false, false, false, false, false],
+         [true, false, false, false, false]]
+x = 3, and y = 2, the output should be
+
+solution(field, x, y) = [[-1, -1, -1, -1, -1],
+                         [-1, 3, 2, 2, 1],
+                         [-1, 2, 0, 0, 0],
+                         [-1, 1, 0, 0, 0]]
+example
+
+Since the value in the cell (3, 2) is 0, all of its neighboring cells ((2, 1), (2, 2), (2, 3), (3, 1), and (3, 3)) are also revealed. Since the value in the cell (2, 2) is also 0, its neighbouring cells (1, 1), (1, 2) and (1, 3) are revealed, and since the value in cell (2, 3) is 0, its neighbours (1, 4), (2, 4), and (3, 4) are also revealed. The cells (3, 3), (2, 4), and (3, 4) also contain the value 0, but since all of their neighbours have already been revealed, no further action is required.
+
+Input/Output
+
+[execution time limit] 3 seconds (java)
+
+[input] array.array.boolean field
+
+A rectangular matrix representing the locations of the mines in the game field.
+
+Guaranteed constraints:
+2 ≤ field.length ≤ 100,
+2 ≤ field[i].length ≤ 100.
+
+[input] integer x
+
+The row number of the cell which is clicked (0-based).
+
+Guaranteed constraints:
+0 ≤ x < field.length.
+
+[input] integer y
+
+The column number of the cell which is clicked (0-based).
+
+Guaranteed constraints:
+ 0 ≤ y < field[0].length.
+
+[output] array.array.integer
+
+The expanded matrix after the click.
+
+
+4. 
+
+You are given a string s. Consider the following algorithm applied to this string:
+
+Take all the prefixes of the string, and choose the longest palindrome between them.
+If this chosen prefix contains at least two characters, cut this prefix from s and go back to the first step with the updated string. Otherwise, end the algorithm with the current string s as a result.
+Your task is to implement the above algorithm and return its result when applied to string s.
+
+Note: you can click on the prefixes and palindrome words to see the definition of the terms if you're not familiar with them.
+
+Example
+
+For s = "aaacodedoc", the output should be solution(s) = "".
+
+The initial string s = "aaacodedoc" contains only three prefixes which are also palindromes - "a", "aa", "aaa". The longest one between them is "aaa", so we cut if from s.
+Now we have string "codedoc". It contains two prefixes which are also palindromes - "c" and "codedoc". The longest one between them is "codedoc", so we cut if from the current string and obtain the empty string.
+Finally the algorithm ends on the empty string, so the answer is "".
+For s = "codesignal", the output should be solution(s) = "codesignal".
+The initial string s = "codesignal" contains the only prefix, which is also palindrome - "c". This prefix is the longest, but doesn't contain two characters, so the algorithm ends with string "codesignal" as a result.
+
+For s = "", the output should be solution(s) = "".
 
