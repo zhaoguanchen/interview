@@ -113,11 +113,13 @@ output = [
 
 ## 
 
-
+## pair of prefix
 
 ```
 nput是 a list of strings。问有多少个 i， j 的 index pair，such that strings 是 strings[j] 的prefix。
 return pair 个数
+
+排序 + 二分
 ```
 
 
