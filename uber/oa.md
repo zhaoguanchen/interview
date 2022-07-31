@@ -8,7 +8,7 @@ https://www.1point3acres.com/bbs/thread-902780-1-1.html
 https://www.1point3acres.com/bbs/thread-915542-1-1.html
 
 Codesignal 给4道题目
-1. 机器人只能U和D，给一个array包含UD，问最后结果
+1. <!--机器人只能U和D，给一个array包含UD，问最后结果-->
 2. 一个array 可以往左shift K 次。问是否能得倒一个sorted 从小到大 array
 3. 2d matrix 三种操作。rotate 90， left对角线flip，right对角线flip。最后得到什么
 4. 给一个array 可以 +N 或者 -N。 -N 是移除里面的element。给一个difference=k，问每次加一个value，那个list里面可有对少对pair满足difference=k。
@@ -29,8 +29,8 @@ https://www.1point3acres.com/bbs/thread-907803-1-1.html
 
 https://www.1point3acres.com/bbs/thread-906784-1-1.html
 
-给一个string of operations，里面只有u或者d，u等于往上位移，d等于往下位移，return在operations之后的位置是u还是d，如果回到原点，return一个whitespace。
-比如input=‘ududdd’，return=‘d'；input=‘ududud’，return=‘ ’。这一题我就数了一下string里面u和d的数量，然后对比一下就行了。
+<!--给一个string of operations，里面只有u或者d，u等于往上位移，d等于往下位移，return在operations之后的位置是u还是d，如果回到原点，return一个whitespace。-->
+<!--比如input=‘ududdd’，return=‘d'；input=‘ududud’，return=‘ ’。这一题我就数了一下string里面u和d的数量，然后对比一下就行了。-->
 
 2. 给一个array of integers，里面的数是1到n（没有重复的数），n是array的长度，return需要把array右移多少步能够把这个array变成[n, n-1, n-2, ..., 1]，如果不可能就return -1.
   比如input=[2, 1, 4, 3], return=2,因为向右移两步之后array能变成[4, 3, 2, 1]; input=[1, 2, 3, 4], return=-1,因为向右移多少步，都不可能把array变成[4, 3, 2, 1]。
@@ -216,6 +216,27 @@ B机场起飞时间 [101, 150, 600]
 
 # 高频
 
+## shift array
+
+```
+一个array 可以往左shift K 次。问是否能得倒一个sorted 从小到大 array
+```
+
+
+
+## U and D
+
+```
+机器人只能U和D，给一个array包含UD，问最后结果
+```
+
+```
+给一个string of operations，里面只有u或者d，u等于往上位移，d等于往下位移，return在operations之后的位置是u还是d，如果回到原点，return一个whitespace。
+比如input=‘ududdd’，return=‘d'；input=‘ududud’，return=‘ ’。这一题我就数了一下string里面u和d的数量，然后对比一下就行了。
+```
+
+
+
 ## 4*4 matrix
 
 ```
@@ -270,7 +291,24 @@ for query 3, 8 can come in 2 ways now as well. 4 + 4 and 5 + 3  
 
 
 
+## sub array
 
+```
+给一个数组[1,2,1,1], 一个 k 值 = 2, 返回满足条件的subarray的数量 - 条件时 - subarray当中必须含有至少k个只出现过1次的数字。
+例子:
+数组[1,2,1,1], k = 2, 返回2.
+满足条件的subarray 包括 - [1,2], [2,1]
+[1,2,1] 不满足，因为只有2出现了1次。
+数组[1,2,3,4,1], k =3, 返回6‍‍‍‌‌‍‌‍‌‍‌‍‌‍‌‌‌‌‍‌.
+满足条件的subarray 包括 - [1,2,3], [1,2,3,4],[1,2,3,4,1],[2,3,4],[2,3,4,1],[3,4,1]
+其中[1,2,3,4,1] 满足，因为出现过1次的数字有[2,3,4], length >= k.
+```
+
+
+
+
+
+2.  
 
 eg. str = [
 ["1", "Hello how r u"]
