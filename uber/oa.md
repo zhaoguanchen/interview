@@ -287,6 +287,24 @@ for query 3, 8 can come in 2 ways now as well. 4 + 4 and 5 + 3  
 ```
 
 ```java
+class Solution {
+  public int count(String[] strs) {
+    int ans = 0;
+    
+    for (String s : strs) {
+      int[] count = new int[26];
+      for (int i = 0; i < s.length(); i++) {
+        count[s.charAt(i) - 'a']++;
+        if (count[s.charAt(i) - 'a'] == 3) {
+          ans++;
+          break;
+        }
+      }
+    }
+
+    return ans;
+  }
+}
 ```
 
 
