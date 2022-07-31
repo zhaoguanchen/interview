@@ -64,6 +64,18 @@ https://leetcode.com/problems/number-of-pairs-of-strings-with-concatenation-equa
 
 
 
+【第一题】
+输入正整数数组A，返回01数组B，B[i]表示A[i] A[i+1] A[i+2]能否组成三角形。
+【第二题】
+给一个长度为n的数组A，判断是不是由[1,2,...,n]或者[n,n-1,...,1]右移得来。比如[4,2,3,1]不是，[4,1,2,3]是。
+【第三题】
+给你二维数组长和宽，起点坐标，终点坐标。一开始从起点按照(+1, +1)的方式走，x坐标出界就取相反数，y出界同理，走到角落就同时取反。问走到终点的步数，如果走不到返回-1.
+【第四题】
+给一个数组，返回子数组个数，子数组满足‍‍‍‌‌‍‌‍‌‍‌‍‌‍‌‌‌‌‍‌：所有元素都出现至少2次。
+比如[1,2,1,2,4]返回1（[1,2,1,2]），[1,2,3,3,3,2,4]返回4（[3,3], [3,3], [3,3,3], [2,3,3,3,2]）
+
+
+
 
 
 刚做了CodeSignal上的Uber OA，需要全程share full screen和开摄像头，还要受持证件照拍照。。一共四道题，每题300分。
@@ -210,6 +222,60 @@ B机场起飞时间 [101, 150, 600]
 数组[1,2,3,4,1], k =3, 返回6‍‍‍‌‌‍‌‍‌‍‌‍‌‍‌‌‌‌‍‌.
 满足条件的subarray 包括 - [1,2,3], [1,2,3,4],[1,2,3,4,1],[2,3,4],[2,3,4,1],[3,4,1]
 其中[1,2,3,4,1] 满足，因为出现过1次的数字有[2,3,4], length >= k.
+```
+
+
+
+```
+Given an array of strings, your task is to find the number of pairs in which one string is a suffix
+of the other string. Specifically, given 0 <= i < j < strings.length,
+strings can be a suffix of strings[j], or strings[j] can be a suffix of strings
+参考思路：
+1. Reverse all strings in the array
+2. Sort
+3. For each string, binary search
+
+def func():
+    strings = ['cba',"a","a","b","ba","ca"]
+    strings = list(map(lambda x:x[::-1], strings))
+    sorted_strings = sorted(strings)
+    length = len(sorted_strings)
+    ans = 0
+    for i in range(len(sorted_strings) - 1):
+        current = sorted_strings[ i ]
+        first_not_ok = bi_search(sorted_strings, current, i+1, length)
+        ans += first_not_ok - i - 1
+    return ans
+def bi_search(strings, prefix, lo, hi):
+    while lo < hi:
+        mid = (lo + hi) // 2
+        string = strings[mid]
+        if prefix != string[:len(prefix)]:
+            hi = mid
+        else:
+            lo = mid + 1
+[in‍‍‍‌‌‍‌‍‌‍‌‍‌‍‌‌‌‌‍‌dent]    return lo
+print(func() == 8)
+```
+
+
+
+
+
+```
+Codesignal 给4道题目
+1. 机器人只能U和D，给一个array包含UD，问最后结果
+2. 一个array 可以往左shift K 次。问是否能得倒一个sorted 从小到大 array
+3. 2d matrix 三种操作。rotate 90， left对角线flip，right对角线flip。最后得到什么-baidu 1point3acres
+4. 给一个array 可以 +N 或者 -N。 -N 是移除里面的element。给一个difference=k，问每次加一个value，那个list里面可有对少对pair满足difference=k。
+```
+
+
+
+```
+https://www.1point3acres.com/bbs/thread-876371-1-1.html
+推箱子
+
 ```
 
 
