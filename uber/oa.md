@@ -366,7 +366,6 @@ class CountOccurrences {
 
 ```
 在几个4*4 matrix中各找一个missing element，marked by '?’，然后找到的element的大小给这些matrices排序，如果都一样则保持原顺序
-
 ```
  
 ```
@@ -643,6 +642,30 @@ output = [
 给input三个list，是list of strings for 地铁站名。 另有input 两个string，是origin 和destination站名。
 地铁票有三种，AB，  BC， ABC。价格按照这个顺序便宜到贵。
 问给定的两站之间最便宜的地铁票是这三种的哪一种。如果站名不存在return “”。
+
+
+
+## diff
+
+```
+给一个array和一个int diff，求以这个diff为差的最长等差数列，要求这个等差数列每一个元素 都在array里。O(n^2)会超时，要做到On
+```
+
+```java
+class Solution {
+    public int longestSubsequence(int[] arr, int diff) {
+        Map<Integer, Integer> map = new HashMap<>();
+        int res = 1;
+        for (int num : arr) {
+            int prev = map.getOrDefault(num - diff, 0);
+            map.put(num, prev + 1);
+            res = Math.max(map.get(num), res);
+        }
+        return res;
+    }
+
+}
+```
 
 
 
