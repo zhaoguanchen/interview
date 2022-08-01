@@ -9,7 +9,7 @@ https://www.1point3acres.com/bbs/thread-915542-1-1.html
 
 Codesignal 给4道题目
 1. <!--机器人只能U和D，给一个array包含UD，问最后结果-->
-2. 一个array 可以往左shift K 次。问是否能得倒一个sorted 从小到大 array
+<!-- 2. 一个array 可以往左shift K 次。问是否能得倒一个sorted 从小到大 array -->
 3. 2d matrix 三种操作。rotate 90， left对角线flip，right对角线flip。最后得到什么
 4. 给一个array 可以 +N 或者 -N。 -N 是移除里面的element。给一个difference=k，问每次加一个value，那个list里面可有对少对pair满足difference=k。
 
@@ -18,7 +18,7 @@ Codesignal 给4道题目
 https://www.1point3acres.com/bbs/thread-907803-1-1.html
 
 第1题，给定一个字符串s，找出连续3个各自不同的数然后算总共有几个，s = "abcccbda" -> 答案 = 2 （abc, bda)
-第2题， 给你y一个数组 nums, 每次往右边shift一个position看不能在shift几次之后让他变成从低到高sorted。nums = [4, 1, 2, 3] -> [3, 4, 1, 2] -> [2, 3, 4, 1] -> [1, 2, 3, 4] -> return 3
+<!-- 第2题， 给你y一个数组 nums, 每次往右边shift一个position看不能在shift几次之后让他变成从低到高sorted。nums = [4, 1, 2, 3] -> [3, 4, 1, 2] -> [2, 3, 4, 1] -> [1, 2, 3, 4] -> return 3 -->
 
 第3题，给了你一个grid要你把这些俄罗斯方块给画在上面。 给了5个不同俄罗斯方块的图像， 没有绿色那个，但是有个只有一个tile的 （1x1)。可以assume一定放得下，尽量放越上面的row还有最靠近左边的column。
 
@@ -32,8 +32,8 @@ https://www.1point3acres.com/bbs/thread-906784-1-1.html
 <!--给一个string of operations，里面只有u或者d，u等于往上位移，d等于往下位移，return在operations之后的位置是u还是d，如果回到原点，return一个whitespace。-->
 <!--比如input=‘ududdd’，return=‘d'；input=‘ududud’，return=‘ ’。这一题我就数了一下string里面u和d的数量，然后对比一下就行了。-->
 
-2. 给一个array of integers，里面的数是1到n（没有重复的数），n是array的长度，return需要把array右移多少步能够把这个array变成[n, n-1, n-2, ..., 1]，如果不可能就return -1.
-  比如input=[2, 1, 4, 3], return=2,因为向右移两步之后array能变成[4, 3, 2, 1]; input=[1, 2, 3, 4], return=-1,因为向右移多少步，都不可能把array变成[4, 3, 2, 1]。
+<!-- 2. 给一个array of integers，里面的数是1到n（没有重复的数），n是array的长度，return需要把array右移多少步能够把这个array变成[n, n-1, n-2, ..., 1]，如果不可能就return -1.
+  比如input=[2, 1, 4, 3], return=2,因为向右移两步之后array能变成[4, 3, 2, 1]; input=[1, 2, 3, 4], return=-1,因为向右移多少步，都不可能把array变成[4, 3, 2, 1]。 -->
 3. 给一个schedules，是list of list of list，里面是每个employee的meeting schedules，还给了一个integer length，代表要schedule meeting的长度。目的是要schedule这个长度为length的meeting，如果可以schedule，返回这个新meeting的start time，如果不能schedule(每个employees都没有长度为length的空闲时间)，返回-1. 如果看不明白可以看看下面的例子。
   比如schedules=[[[0, 80], [240, 360]], [[0, 60], [480, 600]]], length=120. 这个例子中employee 0 在0-80和240-360的时间段有meeting，employee 1在0-60和480-600的时间段有meeting，所以长度为120的新meeting最早能schedule到80，最后return 80.
   这一题当时太紧张了没有读完题目，后来发现有个条件没注意看，时间段是从0-1440（可能是因为一天只有1440分钟吧），所以最后的return的start time不能超过1440 - length，我忘记check了，所以有edge cases一直过不了。。。
@@ -286,9 +286,32 @@ https://www.1point3acres.com/bbs/thread-876371-1-1.html
 
 ```
 一个array 可以往左shift K 次。问是否能得倒一个sorted 从小到大 array
+
+给一个array of integers，里面的数是1到n（没有重复的数），n是array的长度，return需要把array右移多少步能够把这个array变成[n, n-1, n-2, ..., 1]，如果不可能就return -1. 比如input=[2, 1, 4, 3], return=2,因为向右移两步之后array能变成[4, 3, 2, 1]; input=[1, 2, 3, 4], return=-1,因为向右移多少步，都不可能把array变成[4, 3, 2, 1]。
 ```
 
+```java
+     public int shift(int[] nums) {
+        int n  = nums.length;
+        int count = 0;
+        int index = 0;
+        for (int i = 0; i < n; i++) {
+          if (nums[i] < nums[(i + 1) % n]) {
+            count++;
+            index = i;
+          }
 
+          if (count > 1) {
+            return -1;
+          }
+
+        }
+
+        return  n - 1 - index;
+     
+     }
+    
+```
 
 ## U and D
 
