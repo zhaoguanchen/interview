@@ -35,8 +35,11 @@ https://www.1point3acres.com/bbs/thread-906784-1-1.html
 <!--给一个string of operations，里面只有u或者d，u等于往上位移，d等于往下位移，return在operations之后的位置是u还是d，如果回到原点，return一个whitespace。-->
 <!--比如input=‘ududdd’，return=‘d'；input=‘ududud’，return=‘ ’。这一题我就数了一下string里面u和d的数量，然后对比一下就行了。-->
 
-<!-- 2. 给一个array of integers，里面的数是1到n（没有重复的数），n是array的长度，return需要把array右移多少步能够把这个array变成[n, n-1, n-2, ..., 1]，如果不可能就return -1.
+ 
   比如input=[2, 1, 4, 3], return=2,因为向右移两步之后array能变成[4, 3, 2, 1]; input=[1, 2, 3, 4], return=-1,因为向右移多少步，都不可能把array变成[4, 3, 2, 1]。 -->
+=======
+2. 给一个array of integers，里面的数是1到n（没有重复的数），n是array的长度，return需要把array右移多少步能够把这个array变成[n, n-1, n-2, ..., 1]，如果不可能就return -1.
+    比如input=[2, 1, 4, 3], return=2,因为向右移两步之后array能变成[4, 3, 2, 1]; input=[1, 2, 3, 4], return=-1,因为向右移多少步，都不可能把array变成[4, 3, 2, 1]。
 3. 给一个schedules，是list of list of list，里面是每个employee的meeting schedules，还给了一个integer length，代表要schedule meeting的长度。目的是要schedule这个长度为length的meeting，如果可以schedule，返回这个新meeting的start time，如果不能schedule(每个employees都没有长度为length的空闲时间)，返回-1. 如果看不明白可以看看下面的例子。
     比如schedules=[[[0, 80], [240, 360]], [[0, 60], [480, 600]]], length=120. 这个例子中employee 0 在0-80和240-360的时间段有meeting，employee 1在0-60和480-600的时间段有meeting，所以长度为120的新meeting最早能schedule到80，最后return 80.
     这一题当时太紧张了没有读完题目，后来发现有个条件没注意看，时间段是从0-1440（可能是因为一天只有1440分钟吧），所以最后的return的start time不能超过1440 - length，我忘记check了，所以有edge cases一直过不了。。。
@@ -353,13 +356,9 @@ class CountOccurrences {
           if (count > 1) {
             return -1;
           }
-
-        }
-
-        return  n - 1 - index;
-     
-     }
-    
+				 return  n - 1 - index;
+ 
+}
 ```
 
 ## U and D
@@ -372,15 +371,13 @@ class CountOccurrences {
 给一个string of operations，里面只有u或者d，u等于往上位移，d等于往下位移，return在operations之后的位置是u还是d，如果回到原点，return一个whitespace。
 比如input=‘ududdd’，return=‘d'；input=‘ududud’，return=‘ ’。这一题我就数了一下string里面u和d的数量，然后对比一下就行了。
 ```
-
-
-
-## 4*4 matrix
+ ## 4*4 matrix
 
 ```
 在几个4*4 matrix中各找一个missing element，marked by '?’，然后找到的element的大小给这些matrices排序，如果都一样则保持原顺序
-```
 
+```
+ 
 ```
 给input一个matrix，这个matrix是很多个 4*4 的小matrix并排摆放。 （size 是4行，4*k 列）
 每个4*4matrix里都应该是 1-16 这16个数字，但是每个matrix里都有一个是“？” missing。
@@ -388,9 +385,6 @@ class CountOccurrences {
 如果missing value一样，保持matrix的原顺序。
 return 修改后的大 matrix
 ```
-
-
-
 ## list of queries
 
 ```
@@ -408,10 +402,12 @@ result = [2, 2]
 for query‍‍‍‌‌‍‌‍‌‍‌‍‌‍‌‌‌‌‍‌ 1, 6 can come in 2 ways, 1 + 5 and 2 + 4
 for query 2 -> update a[1] += 2 , so a becomes [1,4,3]
 for query 3, 8 can come in 2 ways now as well. 4 + 4 and 5 + 3  
+
+
 ```
 
-```java
-```
+
+
 
 
 
