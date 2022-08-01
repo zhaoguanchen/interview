@@ -20,7 +20,7 @@ https://www.1point3acres.com/bbs/thread-915542-1-1.html
 
 https://www.1point3acres.com/bbs/thread-907803-1-1.html
 
-第1题，给定一个字符串s，找出连续3个各自不同的数然后算总共有几个，s = "abcccbda" -> 答案 = 2 （abc, bda)
+第1题，≈
 <!-- 第2题， 给你y一个数组 nums, 每次往右边shift一个position看不能在shift几次之后让他变成从低到高sorted。nums = [4, 1, 2, 3] -> [3, 4, 1, 2] -> [2, 3, 4, 1] -> [1, 2, 3, 4] -> return 3 -->
 
 第3题，给了你一个grid要你把这些俄罗斯方块给画在上面。 给了5个不同俄罗斯方块的图像， 没有绿色那个，但是有个只有一个tile的 （1x1)。可以assume一定放得下，尽量放越上面的row还有最靠近左边的column。
@@ -32,14 +32,6 @@ https://www.1point3acres.com/bbs/thread-907803-1-1.html
 
 https://www.1point3acres.com/bbs/thread-906784-1-1.html
 
-<!--给一个string of operations，里面只有u或者d，u等于往上位移，d等于往下位移，return在operations之后的位置是u还是d，如果回到原点，return一个whitespace。-->
-<!--比如input=‘ududdd’，return=‘d'；input=‘ududud’，return=‘ ’。这一题我就数了一下string里面u和d的数量，然后对比一下就行了。-->
-
- 
-  比如input=[2, 1, 4, 3], return=2,因为向右移两步之后array能变成[4, 3, 2, 1]; input=[1, 2, 3, 4], return=-1,因为向右移多少步，都不可能把array变成[4, 3, 2, 1]。 -->
-=======
-2. 给一个array of integers，里面的数是1到n（没有重复的数），n是array的长度，return需要把array右移多少步能够把这个array变成[n, n-1, n-2, ..., 1]，如果不可能就return -1.
-    比如input=[2, 1, 4, 3], return=2,因为向右移两步之后array能变成[4, 3, 2, 1]; input=[1, 2, 3, 4], return=-1,因为向右移多少步，都不可能把array变成[4, 3, 2, 1]。
 3. 给一个schedules，是list of list of list，里面是每个employee的meeting schedules，还给了一个integer length，代表要schedule meeting的长度。目的是要schedule这个长度为length的meeting，如果可以schedule，返回这个新meeting的start time，如果不能schedule(每个employees都没有长度为length的空闲时间)，返回-1. 如果看不明白可以看看下面的例子。
     比如schedules=[[[0, 80], [240, 360]], [[0, 60], [480, 600]]], length=120. 这个例子中employee 0 在0-80和240-360的时间段有meeting，employee 1在0-60和480-600的时间段有meeting，所以长度为120的新meeting最早能schedule到80，最后return 80.
     这一题当时太紧张了没有读完题目，后来发现有个条件没注意看，时间段是从0-1440（可能是因为一天只有1440分钟吧），所以最后的return的start time不能超过1440 - length，我忘记check了，所以有edge cases一直过不了。。。
@@ -270,8 +262,7 @@ print(func() == 8)
 
 ```
 Codesignal 给4道题目
-1. 机器人只能U和D，给一个array包含UD，问最后结果
-2. 一个array 可以往左shift K 次。问是否能得倒一个sorted 从小到大 array
+
 3. 2d matrix 三种操作。rotate 90， left对角线flip，right对角线flip。最后得到什么-baidu 1point3acres
 4. 给一个array 可以 +N 或者 -N。 -N 是移除里面的element。给一个difference=k，问每次加一个value，那个list里面可有对少对pair满足difference=k。
 ```
@@ -406,6 +397,9 @@ for query 3, 8 can come in 2 ways now as well. 4 + 4 and 5 + 3  
 
 ```
 
+
+```java
+```
 
 
 
@@ -549,8 +543,6 @@ class SolutionHelper {
 return [3， 4， 2]
 ```
 
-
-
 ```java
 
     public List<Integer> countSubStr(String str, List<String> ops) {
@@ -568,7 +560,6 @@ return [3， 4， 2]
                 ans.add(countOne(num));
             } else {
                 num++;
-
             }
         }
 
@@ -588,8 +579,30 @@ return [3， 4， 2]
 
 
 
+## radius
+
+```
+大意是 input是一个matrix和一个radius，这个radius表示一个element到中心 element的euclidean distance。一个元素和自己的距离是1.然后对matrix里每一个可能的 center，求关于这个center距离为radius的元素的和。大概是这样:
+
+1,2,3,4,5 radius = 3， 那么唯一一个valid的center是正中间的那个3，因为其他的元素 作为 center的话，距离为3会超出边界。结果就是3+4+5+4+3+2+1+2=24
+
+1,2,3,4,5
+ 1,2,3,4,5
+ 1,2,3,4,5
+ 1,2,3,4,5
+ 这个题弯弯绕挺多的，我用print debug法debug了很久才过了所有test
+
+```
+
+
+
 2.  
 
+
+
+## word
+
+```
 eg. str = [
 ["1", "Hello how r u"]
 ["2", "Good u"]
@@ -607,10 +620,14 @@ output = [
 "|Good        |"
 "+***********+"
 ]
+```
 
-# 训练
+```java
+```
 
 
+
+ 
 
 # 一亩三分地
 
@@ -642,6 +659,26 @@ i = 4: (arr + arr[i+1] + arr[i+1]) = 8 / (arr[i-1] + arr + arr[i+1]) = 9 => 不�
 回傳return = 1
 解法: O(n)
 遍尋一次input array做accumulate sum array，然後再遍尋一次input array求解
+```
+
+```java
+    // 1, 3, 4, 2, 3, 4, 1
+    // 0, 1, 4, 8, 10, 13, 17, 18
+    public int sum(int[] nums) {
+        int[] sum = new int[nums.length + 1];
+        sum[0] = nums[0];
+        for (int i = 1; i < nums.length; i++) {
+            sum[i + 1] = nums[i] + sum[i];
+        }
+        int count = 0;
+        for (int i = 4; i < sum.length; i++) {
+            if (sum[i] - sum[i - 3] > sum[i - 1] - sum[i - 4]) {
+                count++;
+            }
+        }
+
+        return count;
+    }
 ```
 
 
@@ -896,20 +933,3 @@ For s = "", the output should be solution(s) = "".
 
 
 
-
-
-```
-Given two arrays a and b and list of queries. Return the values of all (1) query in an array.
-Queries are of two types:
-(0) update [type, index of element in a, value]. Update the element in a by given value
-(1) get [type, sum]. Return the number of ways a + b[ j] == sum where 0<=i < len(a) and 0<= j < len(b)
-e.g a = [1,2,3] , b = [4,5]
-queries = [[1,6], [0, 1, 2], [1,8]]
-result = [2, 2]
-for query 1, 6‍‍‍‌‌‍‌‍‌‍‌‍‌‍‌‌‌‌‍‌ can come in 2 ways, 1 + 5 and 2 + 4
-for query 2 -> update a[1] += 2 , so a becomes [1,4,3]
-for query 3, 8 can come in 2 ways now as well. 4 + 4 and 5 + 3  
-```
-
-```java
-```
