@@ -1,17 +1,20 @@
 some experience 
 1point3acres.com/bbs/thread-801493-1-1.html
-给定正整数n求0到n所有数字中024出现的次数之和10-->0出现2次2和4分别出现1次返回422-->0出现32出现64出现2返回112brokenkeyboard3messagesplit
+<!--给定正整数n求0到n所有数字中024出现的次数之和10 0出现2次2和4分别出现1次返回422- 0出现32出现64出现2返回11-->
+
+2brokenkeyboard
+
+
+
+3messagesplit
+
+
+
 https://www.1point3acres.com/bbs/thread-902780-1-1.html
 
 新的
 
 https://www.1point3acres.com/bbs/thread-915542-1-1.html
-
-Codesignal 给4道题目
-1. <!--机器人只能U和D，给一个array包含UD，问最后结果-->
-<!-- 2. 一个array 可以往左shift K 次。问是否能得倒一个sorted 从小到大 array -->
-3. 2d matrix 三种操作。rotate 90， left对角线flip，right对角线flip。最后得到什么
-4. 给一个array 可以 +N 或者 -N。 -N 是移除里面的element。给一个difference=k，问每次加一个value，那个list里面可有对少对pair满足difference=k。
 
 
 
@@ -35,30 +38,30 @@ https://www.1point3acres.com/bbs/thread-906784-1-1.html
 <!-- 2. 给一个array of integers，里面的数是1到n（没有重复的数），n是array的长度，return需要把array右移多少步能够把这个array变成[n, n-1, n-2, ..., 1]，如果不可能就return -1.
   比如input=[2, 1, 4, 3], return=2,因为向右移两步之后array能变成[4, 3, 2, 1]; input=[1, 2, 3, 4], return=-1,因为向右移多少步，都不可能把array变成[4, 3, 2, 1]。 -->
 3. 给一个schedules，是list of list of list，里面是每个employee的meeting schedules，还给了一个integer length，代表要schedule meeting的长度。目的是要schedule这个长度为length的meeting，如果可以schedule，返回这个新meeting的start time，如果不能schedule(每个employees都没有长度为length的空闲时间)，返回-1. 如果看不明白可以看看下面的例子。
-  比如schedules=[[[0, 80], [240, 360]], [[0, 60], [480, 600]]], length=120. 这个例子中employee 0 在0-80和240-360的时间段有meeting，employee 1在0-60和480-600的时间段有meeting，所以长度为120的新meeting最早能schedule到80，最后return 80.
-  这一题当时太紧张了没有读完题目，后来发现有个条件没注意看，时间段是从0-1440（可能是因为一天只有1440分钟吧），所以最后的return的start time不能超过1440 - length，我忘记check了，所以有edge cases一直过不了。。。
+    比如schedules=[[[0, 80], [240, 360]], [[0, 60], [480, 600]]], length=120. 这个例子中employee 0 在0-80和240-360的时间段有meeting，employee 1在0-60和480-600的时间段有meeting，所以长度为120的新meeting最早能schedule到80，最后return 80.
+    这一题当时太紧张了没有读完题目，后来发现有个条件没注意看，时间段是从0-1440（可能是因为一天只有1440分钟吧），所以最后的return的start time不能超过1440 - length，我忘记check了，所以有edge cases一直过不了。。。
 4. 给两个array of integers，一个代表coordinates，一个代表colors，两个array长度都是n，返回一个长度为n的array of integers，代表到coordinate i时一共有多少unique colors。
-  coordinates=[1, 2, 3, 3, 3, 5], colors=[1, 2, 2, 5, 4, 5]，返回results=[1, 2, 2, 3, 4, 4]。
-  index=0时，coordinate 1被paint成了color 1， 这时候num of unique colors是1，所以results[0]=1.
-  index=1时，coordinate 2被paint成了color 2，这时候num of unique colors是1和2，所以results[1]=2.
-  index=2时，coordinate 3被paint成了color 2，这时候num of unique colors是1和2，所以results[2]=2.
-  index=3时，coordinate 3被paint成了color 5，这时候num of unique colors是1，2和5，所以results[3]=3.
-  index=4时，coordinate 3被paint成了color 4，这时候num of unique colors是1，2，5和4，所以results[4]=4.
-  index=5时，coordinate 5被paint成了color 5，这时候num of unique colors是1，2，5和4，所以results[5]=4.
-  这一题需要o(n)才能test cases全部过，我最后tle了，后来想了一下两个map就能做到o(n)，肯定也有更好的办法，求大神指教。
-  总结：题很简单，但是题目是真的长，时间也比较紧张，所以我感觉更多的是考验心态。感觉越快做完分越高，还会penalize debug的时长，我试了一下practice exam，三分钟内做完第一道题，一次过，后面的题完全没看就submit都有667/850分。。。
-  分数：每道题400分，前面两题满分，第三题280，第四题tle，过了10/20个test cases只有100分，这样算是980/1200，最后是727/850，怪自己时间一紧张，没有认真读题，所以第三题edge cases，debug一直弄不出来就心态崩了，一直死磕，最后没时间去优化第四题了。
-  码字辛苦，也没加限制，求加米看面经，谢谢！！！
-  补充内容 (2022-06-26 05:26 +8:00):[‍‍‍‌‌‍‌‍‌‍‌‍‌‍‌‌‌‌‍‌/b]
-  第四题有个小错误，修改一下：
+    coordinates=[1, 2, 3, 3, 3, 5], colors=[1, 2, 2, 5, 4, 5]，返回results=[1, 2, 2, 3, 4, 4]。
+    index=0时，coordinate 1被paint成了color 1， 这时候num of unique colors是1，所以results[0]=1.
+    index=1时，coordinate 2被paint成了color 2，这时候num of unique colors是1和2，所以results[1]=2.
+    index=2时，coordinate 3被paint成了color 2，这时候num of unique colors是1和2，所以results[2]=2.
+    index=3时，coordinate 3被paint成了color 5，这时候num of unique colors是1，2和5，所以results[3]=3.
+    index=4时，coordinate 3被paint成了color 4，这时候num of unique colors是1，2，5和4，所以results[4]=4.
+    index=5时，coordinate 5被paint成了color 5，这时候num of unique colors是1，2，5和4，所以results[5]=4.
+    这一题需要o(n)才能test cases全部过，我最后tle了，后来想了一下两个map就能做到o(n)，肯定也有更好的办法，求大神指教。
+    总结：题很简单，但是题目是真的长，时间也比较紧张，所以我感觉更多的是考验心态。感觉越快做完分越高，还会penalize debug的时长，我试了一下practice exam，三分钟内做完第一道题，一次过，后面的题完全没看就submit都有667/850分。。。
+    分数：每道题400分，前面两题满分，第三题280，第四题tle，过了10/20个test cases只有100分，这样算是980/1200，最后是727/850，怪自己时间一紧张，没有认真读题，所以第三题edge cases，debug一直弄不出来就心态崩了，一直死磕，最后没时间去优化第四题了。
+    码字辛苦，也没加限制，求加米看面经，谢谢！！！
+    补充内容 (2022-06-26 05:26 +8:00):[‍‍‍‌‌‍‌‍‌‍‌‍‌‍‌‌‌‌‍‌/b]
+    第四题有个小错误，修改一下：
 5. 给两个array of integers，一个代表coordinates，一个代表colors，两个array长度都是n，返回一个长度为n的array of integers，代表到coordinate i时一共有多少unique colors。
-  coordinates=[1, 2, 3, 3, 3, 5], colors=[1, 2, 2, 5, 4, 5]，返回results=[1, 2, 2, 3, 3, 4]。
-  index=0时，coordinate 1被paint成了color 1， 这时候unique colors是1，所以results[0]=1.
-  index=1时，coordinate 2被paint成了color 2，这时候unique colors是1和2，所以results[1]=2.
-  index=2时，coordinate 3被paint成了color 2，这时候unique colors是1和2，所以results[2]=2.
-  index=3时，coordinate 3被paint成了color 5，这时候unique colors是1，2和5，所以results[3]=3.
-  index=4时，coordinate 3被paint成了color 4，这时候unique colors是1，2和4，所以results[4]=3.
-  index=5时，coordinate 5被paint成了color 5，这时候unique colors是1，2，4和5，所以results[5]=4.
+    coordinates=[1, 2, 3, 3, 3, 5], colors=[1, 2, 2, 5, 4, 5]，返回results=[1, 2, 2, 3, 3, 4]。
+    index=0时，coordinate 1被paint成了color 1， 这时候unique colors是1，所以results[0]=1.
+    index=1时，coordinate 2被paint成了color 2，这时候unique colors是1和2，所以results[1]=2.
+    index=2时，coordinate 3被paint成了color 2，这时候unique colors是1和2，所以results[2]=2.
+    index=3时，coordinate 3被paint成了color 5，这时候unique colors是1，2和5，所以results[3]=3.
+    index=4时，coordinate 3被paint成了color 4，这时候unique colors是1，2和4，所以results[4]=3.
+    index=5时，coordinate 5被paint成了color 5，这时候unique colors是1，2，4和5，所以results[5]=4.
 
 https://leetcode.com/problems/number-of-pairs-of-strings-with-concatenation-equal-to-target/
 
@@ -67,7 +70,7 @@ https://leetcode.com/problems/number-of-pairs-of-strings-with-concatenation-equa
 【第一题】
 输入正整数数组A，返回01数组B，B[i]表示A[i] A[i+1] A[i+2]能否组成三角形。
 【第二题】
-给一个长度为n的数组A，判断是不是由[1,2,...,n]或者[n,n-1,...,1]右移得来。比如[4,2,3,1]不是，[4,1,2,3]是。
+<!--给一个长度为n的数组A，判断是不是由[1,2,...,n]或者[n,n-1,...,1]右移得来。比如[4,2,3,1]不是，[4,1,2,3]是。-->
 【第三题】
 给你二维数组长和宽，起点坐标，终点坐标。一开始从起点按照(+1, +1)的方式走，x坐标出界就取相反数，y出界同理，走到角落就同时取反。问走到终点的步数，如果走不到返回-1.
 【第四题】
@@ -79,11 +82,11 @@ https://leetcode.com/problems/number-of-pairs-of-strings-with-concatenation-equa
 
 
 刚做了CodeSignal上的Uber OA，需要全程share full screen和开摄像头，还要受持证件照拍照。。一共四道题，每题300分。
-1. input一个String只包含“U”或“D”，代表向上或向下走一步，return最后的位移。
+1. <!--input一个String只包含“U”或“D”，代表向上或向下走一步，return最后的位移。-->
 2. input一段文字，把里面的元音字母(a e i o u)每个都向后shift，最后一个元音字母放到第一个元音字母的位置，其他char都不变。
 3. input两个array分别代表一些电池的使用时间和充电时间，给定一个目标时间t，先按照编号顺序使用电池，用完的立即开始充电，换下一个充满的电池（必须充满才能使用），没充好的就再换下一个，如果没有可用的return -1。如果能坚持到t，return num of fully used batteries.
 4. 给a b两个array，给一个int[][] queries 代表指令，有一个指令只是改变b的某个值，另一个指令是找num of [i,j] pair in a and b such that a[i]+b[j]=target，return 指令产生的结果。
-  总体不难，但是对复杂度有点‍‍‍‌‌‍‌‍‌‍‌‍‌‍‌‌‌‌‍‌要求，有些hidden test case过不了。
+    总体不难，但是对复杂度有点‍‍‍‌‌‍‌‍‌‍‌‍‌‍‌‌‌‌‍‌要求，有些hidden test case过不了。
 
 
 
@@ -282,6 +285,52 @@ https://www.1point3acres.com/bbs/thread-876371-1-1.html
 
 # 高频
 
+## 024
+
+```
+给定正整数n，求0到n所有数字中0， 2， 4出现的次数之和
+10 --> 0出现2次，2和4分别出现1次，返回4
+22 --> 0出现3， 2出现6，4出现2，返回11
+```
+
+```java
+class CountOccurrences {
+
+    public int helper(int n) {
+        int result = 0;
+
+        while (n > 0) {
+            int reminder = n % 10;
+            if (reminder == 0 || reminder == 2 || reminder == 4) {
+                result++;
+            }
+            n = n / 10;
+        }
+      
+        return result;
+    }
+
+    public int number(int n) {
+        int count = 1;
+        for (int i = 1; i <= n; i++) {
+            count += helper(i);
+        }
+        return count;
+    }
+
+    public static void main(String[] args) {
+        CountOccurrences oc = new CountOccurrences();
+        int total = oc.number(22);
+        System.out.println(total);
+
+    }
+
+}
+
+```
+
+
+
 ## shift array
 
 ```
@@ -361,6 +410,9 @@ for query 2 -> update a[1] += 2 , so a becomes [1,4,3]
 for query 3, 8 can come in 2 ways now as well. 4 + 4 and 5 + 3  
 ```
 
+```java
+```
+
 
 
 
@@ -411,7 +463,132 @@ class Solution {
 其中[1,2,3,4,1] 满足，因为出现过1次的数字有[2,3,4], length >= k.
 ```
 
+```java
+```
 
+
+
+##  WDL
+
+```
+You are given a string str containing only the letters W, D, and L. Your task is to construct a new string from the characters of str, according to the following algorithm:
+1. Begin with an empty string output = "".
+2. If str contains a W, then remove it and concatenate a W to the end of output.
+3. If str contains a D, then remove it and concatenate a D to the end of output.
+4. If str contains an L, then remove it and concatenate an L to the end of output.
+5. If str is empty, end the algorithm; otherwise go back to step 2.
+Return the value of output after the algorithm is complete.
+Note that it doesn't matter from where you remove the letter from the string, only the count of the letters left in the string matters.
+Example
+• For str = "LDWDL", the output should be equallyRearranging(str) = "WDLDL".
+  ○ str contains all W, D, and L, so we add them to the output and remove from the initial string one by one and get "WDL"
+  ○ The remaining string contains only letters D and L, so we add them to the output and get "WDLDL" as the answer
+• For str = "DLDD", the output should be equallyRearranging(str) = "DLDD".
+  ○ The string doesn't contain W letters, and do contain both D and L, so we add them to the output and remove from the initial string. The output is "DL" after that
+  ○ The remaining string contains only two letters D and nothing else, so in two more iterations we get the output equal "DLDD"
+Input/Output
+• [execution time limit] 4 seconds (py3)
+• [input] string strA string containing only the letters 'W', 'D' and 'L'.Guaranteed constraints:1 ≤ str.length ≤ 1000.
+• [output] stringReturn the string constructed from the characters of str.
+```
+
+```java
+class SolutionHelper {
+  
+  
+    public String helper(String s) {
+        Map<Character, Integer> map = new HashMap<>();
+        map.put('W', 0);
+        map.put('D', 0);
+        map.put('L', 0);
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            map.put(c, map.get(c) + 1);
+        }
+
+        StringBuilder sb = new StringBuilder();
+        int total = s.length();
+        while (total > 0) {
+            if (map.get('W') > 0) {
+                sb.append("W");
+                total--;
+                map.put('W', map.get('W') - 1);
+            }
+
+            if (map.get('D') > 0) {
+                sb.append("D");
+                total--;
+                map.put('D', map.get('D') - 1);
+            }
+
+            if (map.get('L') > 0) {
+                sb.append("L");
+                total--;
+                map.put('L', map.get('L') - 1);
+            }
+
+        }
+
+        return sb.toString();
+
+    }
+
+
+}
+```
+
+
+
+
+
+## 二进制数加一
+
+```
+给一个字符串形式的二进制数，给一个query list，query有两种，'+'是把那个二进制数加一，'?'
+
+\1. 2.
+
+是在返回list中加入二进制字符串中'1'的个数 比如说，input='1110'， query=[?,+,?,+,+,?]
+
+return [3， 4， 2]
+```
+
+
+
+```java
+
+    public List<Integer> countSubStr(String str, List<String> ops) {
+        int num = 0;
+
+        for (int i = str.length() - 1; i >= 0; i--) {
+            if (str.charAt(i) == '1') {
+                num += Math.pow(2, str.length() - 1 - i);
+            }
+        }
+
+        List<Integer> ans = new ArrayList<>();
+        for (String o : ops) {
+            if ("?".equals(o)) {
+                ans.add(countOne(num));
+            } else {
+                num++;
+
+            }
+        }
+
+        return ans;
+    }
+
+    private int countOne(int n) {
+        int ans = 0;
+        while (n > 0) {
+            ans++;
+            n = n & (n - 1);
+        }
+
+        return ans;
+    }
+```
 
 
 
@@ -448,23 +625,6 @@ output = [
 第三题：在几个4*4 matrix中各找一个missing element，marked by '?’，然后找到的element的大小给这些matrices排序，如果都一样则保持原顺序
 第四题：给定a，b，比如a=[1,2,3], b=[4,5]；同时给定一个list of queries，query有两种情况：（1）比如[0,1,x]，0就是a，1就是指a中的index为1，x指的是a[index] = x，这个操作不需要对res进行更新； (2）比如[1,m]，即输出a，b中相加等于m的所有情况的数量，比如m=5, 那么只有1+4符合情况，则‍‍‍‌‌‍‌‍‌‍‌‍‌‍‌‌‌‌‍‌res.append(1)。 值得一提的是这题对时间复杂度要求比较高
 目前uber的oa应该很多在codesignal上面进行，推荐大家先做practise熟悉一下平台。
-
-
-## 024
-
-```
-   给定正整数n，求0到n所有数字中0， 2， 4出现的次数之和
-   10 --> 0出现2次，2和4分别出现1次，返回4
-   22 --> 0出现3， 2出现6，4出现2，返回11
-```
-
-```java
-public class Solution {
-  public int sum(int n) {
-    
-  }
-}
-```
 
  一个城市有三个区域 A， B， C。 是从A到C的包含关系。（A是B的子区域，B是C的子区域）
 给input三个list，是list of strings for 地铁站名。 另有input 两个string，是origin 和destination站名。
