@@ -80,8 +80,7 @@ https://leetcode.com/problems/number-of-pairs-of-strings-with-concatenation-equa
 1. <!--input一个String只包含“U”或“D”，代表向上或向下走一步，return最后的位移。-->
 2. input一段文字，把里面的元音字母(a e i o u)每个都向后shift，最后一个元音字母放到第一个元音字母的位置，其他char都不变。
 3. input两个array分别代表一些电池的使用时间和充电时间，给定一个目标时间t，先按照编号顺序使用电池，用完的立即开始充电，换下一个充满的电池（必须充满才能使用），没充好的就再换下一个，如果没有可用的return -1。如果能坚持到t，return num of fully used batteries.
-4. 给a b两个array，给一个int[][] queries 代表指令，有一个指令只是改变b的某个值，另一个指令是找num of [i,j] pair in a and b such that a[i]+b[j]=target，return 指令产生的结果。
-    总体不难，但是对复杂度有点‍‍‍‌‌‍‌‍‌‍‌‍‌‍‌‌‌‌‍‌要求，有些hidden test case过不了。
+4.  
 
 
 
@@ -278,6 +277,17 @@ https://www.1point3acres.com/bbs/thread-876371-1-1.html
 
 
 # 高频
+
+## JUMP
+
+```
+给你二维数组长和宽，起点坐标，终点坐标。一开始从起点按照(+1, +1)的方式走，x坐标出界就取相反数，y出界同理，走到角落就同时取反。问走到终点的步数，如果走不到返回-1.
+```
+
+```JAVA
+```
+
+
 
 ## 024
 
@@ -642,6 +652,185 @@ output = [
 给input三个list，是list of strings for 地铁站名。 另有input 两个string，是origin 和destination站名。
 地铁票有三种，AB，  BC， ABC。价格按照这个顺序便宜到贵。
 问给定的两站之间最便宜的地铁票是这三种的哪一种。如果站名不存在return “”。
+
+## String在大字符里出现了几次
+
+input:String  abababababac , {ab, abab, abc}问对应的String在大字符里出现了几次，不考虑重叠情 况， output {4, 2, 0}
+
+```JAVA
+class xSolution {
+    public static void main(String[] args) {
+        String text = "ababababac";
+        List<String> array = new ArrayList<>();
+        array.add("ab");
+        array.add("abab");
+        array.add("abc");
+        List<Integer> res = helper(text, array);
+        System.out.println(res);
+    }
+
+    private static List<Integer> helper(String text, List<String> list) {
+        List<Integer> res = new ArrayList<>();
+        if (text == null || text.length() == 0 || list == null || list.size() == 0) return res;
+        for (String s : list) {
+            int count = countMatches(text, s);
+            res.add(count);
+        }
+        return res;
+    }
+
+    private static int countMatches(String text, String s) {
+        if (s == null || s.length() == 0) return 0;
+        System.out.println(Arrays.toString(text.split(s, -1)));
+        return text.split(s, -1).length - 1;
+    }
+}
+```
+
+
+
+## 输出首尾字母连接
+
+```java
+
+class SSolution {
+    public static void main(String[] args) {
+        List<String> list = new ArrayList<>();
+        list.add("apple");
+        list.add("pen");
+        list.add("car");
+        list.add("class"); // list.add("");
+// list.add("aa");
+        List<String> res = helper(list);
+        System.out.println(res);
+        //output:{"ap","pc","cc","ca"}
+    }
+
+    private static List<String> helper(List<String> list) {
+        List<String> res = new ArrayList<>();
+        if (list == null || list.size() == 0) return res;
+        if (list.size() == 1) {
+            char[] array = list.get(0).toCharArray();
+            res.add(String.valueOf(array[0]));
+            return res;
+        }
+        for (int i = 0; i < list.size() - 1; i++) {
+            StringBuilder sb = new StringBuilder();
+            if (list.get(i) == null || list.get(i).length() == 0) {
+                sb.append("");
+            } else {
+                char[] first = list.get(i).toCharArray();
+                sb.append(first[0]);
+            }
+            if (list.get(i + 1) == null || list.get(i + 1).length() == 0) {
+                sb.append("");
+            } else {
+                char[] second = list.get(i + 1).toCharArray();
+                sb.append(second[0]);
+            }
+            res.add(sb.toString());
+        }
+        
+        StringBuilder sb = new StringBuilder();
+        if (list.get(list.size() - 1) == null || list.get(list.size() - 1).length() == 0) {
+            sb.append("");
+        } else {
+            char[] second = list.get(list.size() - 1).toCharArray();
+            sb.append(second[0]);
+        }
+        if (list.get(0) == null || list.get(0).length() == 0) {
+            sb.append("");
+        } else {
+            char[] first = list.get(0).toCharArray();
+            sb.append(first[0]);
+        }
+        res.add(sb.toString());
+        return res;
+    }
+}
+```
+
+
+
+## 俄罗斯方块
+
+```
+第3题，给了你一个grid要你把这些俄罗斯方块给画在上面。 给了5个不同俄罗斯方块的图像， 没有绿色那个，但是有个只有一个tile的 （1x1)。可以assume一定放得下，尽量放越上面的row还有最靠近左边的column。
+```
+
+```JAVA
+
+    int[][][] figureDimension = {{{0, 0}},
+            {{0, 0}, {0, 1}, {0, 2}},
+            {{0, 0}, {0, 1}, {1, 0}, {1, 1}},
+            {{0, 0}, {1, 0}, {2, 0}, {1, 1}},
+            {{0, 1}, {1, 0}, {1, 1}, {1, 2}}};
+
+    public int[][] almostTetris(int n, int m, int[] figures) {
+        int[][] matrix = new int[n][m];
+        int code = 1;
+        for (int figure : figures) {
+            boolean figurePlaced = false;
+            for (int i = 0; i < matrix.length; i++) {
+                for (int j = 0; j < matrix[i].length; j++) {
+                    if (isPossibleAtThisPoint(matrix, figureDimension[figure - 1], i, j, code)) {
+                        figurePlaced = true;
+                        code++;
+                        break;
+                    }
+                }
+
+                if (figurePlaced) {
+                    break;
+                }
+            }
+
+        }
+        return matrix;
+    }
+
+    private boolean isPossibleAtThisPoint(int[][] matrix, int[][] fd, int x, int y, int code) {
+        for (int i = 0; i < fd.length; i++) {
+            int next_x = fd[i][0] + x;
+            int next_y = fd[i][1] + y;
+            if (next_x >= 0 && next_x < matrix.length && next_y >= 0 && next_y < matrix[0].length) {
+                if (matrix[next_x][next_y] != 0) {
+                    return false;
+                }
+            } else {
+                return false;
+            }
+        }
+        for (int i = 0; i < fd.length; i++) {
+            int next_x = fd[i][0] + x;
+            int next_y = fd[i][1] + y;
+            matrix[next_x][next_y] = code;
+        }
+        return true;
+    }
+}
+
+
+```
+
+
+
+## 数字位
+
+```JAVA
+private static int helper(int test) {
+if (test == 0) return 0;
+List<Integer> list = new ArrayList<>(); while (test > 0) {
+list.add(test % 10);
+test /= 10; }
+if (list.size() == 1) { return 0;
+}
+int times = list.get(0); int adds = list.get(0);
+for (int i = 1; i < list.size(); i ++) { times *= list.get(i);
+adds += list.get(i);
+}
+return times - adds; }
+```
 
 
 
