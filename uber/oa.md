@@ -267,9 +267,62 @@ This matrix has n = 5 and contains 9 diagonals:
 
 ```
 给你二维数组长和宽，起点坐标，终点坐标。一开始从起点按照(+1, +1)的方式走，x坐标出界就取相反数，y出界同理，走到角落就同时取反。问走到终点的步数，如果走不到返回-1.
+
+給定n*m的map，map上面的robot起始位置(x1, y1)，還有一個目標位置(x2, y2)。問你這個robot要移動多少步才能從起始位置抵達目標位置。如果無法抵達回傳-1。
+Robot的前進規則如下:
+1. 一開始往 (右, 下) 移動
+2. 如果下一步的移動會超出map boundry，則根據超出的位置轉換方向 (所以不會超出boundry，但是這裡還是要算移動一步)。
+如果往 (右, 下) 的下一步會超過 x-boundry，則不移動，轉換方向到 (左, 下)。
+如果往 (右, 下) 的下一步會同時超過 x-boundry以及y-b‍‍‍‌‌‍‌‍‌‍‌‍‌‍‌‌‌‌‍‌oundry (也就是從右下角出界)，則不移動，轉換方向到 (左, 上)。
+範例:
+map: 4*5, (x1, y1) = (1, 0), (x3, y2) = (0,3)     7
 ```
 
 ```JAVA
+class PatrixSolution {
+    public int move(int[][] matrix, int startX, int startY, int desX, int desY) {
+        int m = matrix.length;
+        int n = matrix[0].length;
+
+        Set<String> visited = new HashSet<>();
+
+        int directX = 1;
+        int directY = 1;
+        int i = startX;
+        int j = startY;
+        int step = 0;
+        while (!(i == desX && j == desY)) {
+            String key = i + "," + j + "," + directX + "," + directY;
+            if (visited.contains(key)) {
+                return -1;
+            }
+            
+            visited.add(key);
+
+            int nextI = i + directX;
+            int nextJ = j + directY;
+
+            if (nextI < 0 || nextI >= m || nextJ < 0 || nextJ >= n) {
+                if (nextI < 0 || nextI >= m) {
+                    directX = -directX;
+                }
+                if (nextJ < 0 || nextJ >= n) {
+                    directY = -directY;
+                }
+            } else {
+                i = nextI;
+                j = nextJ;
+            }
+
+            step++;
+        }
+
+        return step;
+    }
+
+
+}
+
 ```
 
 ##  4*4 matrix 
