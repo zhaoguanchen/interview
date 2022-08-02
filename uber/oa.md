@@ -303,6 +303,11 @@ This matrix has n = 5 and contains 9 diagonals:
 return 修改后的大 matrix
 ```
 
+```JAVA
+```
+
+
+
 ## list of queries
 
 ```
@@ -319,7 +324,7 @@ Queries are of two types:
 e.g a = [1,2,3] , b = [4,5]
 queries = [[1,6], [0, 1, 2], [1,8]]
 result = [2, 2]
-for query‍‍‍‌‌‍‌‍‌‍‌‍‌‍‌‌‌‌‍‌ 1, 6 can come in 2 ways, 1 + 5 and 2 + 4
+for query‍‍‍‌‌‍‌‍‌‍‌‍‌‍‌‌‌‌‍‌	 1, 6 can come in 2 ways, 1 + 5 and 2 + 4
 for query 2 -> update a[1] += 2 , so a becomes [1,4,3]
 for query 3, 8 can come in 2 ways now as well. 4 + 4 and 5 + 3  
 
@@ -330,6 +335,52 @@ for query 3, 8 can come in 2 ways now as well. 4 + 4 and 5 + 3  
 
 ```java
 
+class MSolution {
+  
+    public List<Integer> ope(int[] a, int[] b, List<int[]> query) {
+        Map<Integer, Integer> mapA = new HashMap<>();
+        Map<Integer, Integer> mapB = new HashMap<>();
+
+        for (int num : a) {
+            mapA.put(num, mapA.getOrDefault(num, 0) + 1);
+        }
+        for (int num : b) {
+            mapB.put(num, mapB.getOrDefault(num, 0) + 1);
+        }
+        List<Integer> ans = new ArrayList<>();
+
+        for (int[] op : query) {
+            if (op[0] == 0) {
+                int index = op[1];
+                int old = a[index];
+                int newOne = op[2];
+                mapA.put(old, mapA.get(old) - 1);
+                if (mapA.get(old) == 0) {
+                    mapA.remove(old);
+                }
+                a[index] = newOne;
+                mapA.put(newOne, mapA.getOrDefault(newOne, 0) + 1);
+            } else {
+                int sum = op[1];
+
+                int res = 0;
+                for (int num : mapB.keySet()) {
+                    int target = sum - num;
+                    if (mapA.containsKey(target)) {
+                        res += mapA.get(target) * mapB.get(num);
+                    }
+                }
+
+                ans.add(res);
+
+            }
+
+
+        }
+        return ans;
+
+    }
+}
 ```
 
 
