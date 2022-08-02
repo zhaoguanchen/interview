@@ -1,12 +1,5 @@
 some experience 
-1point3acres.com/bbs/thread-801493-1-1.html
-<!--给定正整数n求0到n所有数字中024出现的次数之和10 0出现2次2和4分别出现1次返回422- 0出现32出现64出现2返回11-->
 
-2brokenkeyboard
-
-
-
-3messagesplit
 
 
 
@@ -20,35 +13,15 @@ https://www.1point3acres.com/bbs/thread-915542-1-1.html
 
 https://www.1point3acres.com/bbs/thread-907803-1-1.html
 
-第1题，≈
-<!-- 第2题， 给你y一个数组 nums, 每次往右边shift一个position看不能在shift几次之后让他变成从低到高sorted。nums = [4, 1, 2, 3] -> [3, 4, 1, 2] -> [2, 3, 4, 1] -> [1, 2, 3, 4] -> return 3 -->
+ 
 
-第3题，给了你一个grid要你把这些俄罗斯方块给画在上面。 给了5个不同俄罗斯方块的图像， 没有绿色那个，但是有个只有一个tile的 （1x1)。可以assume一定放得下，尽量放越上面的row还有最靠近左边的column。
-
-第4题,
-给了你一个message queue 还有两个数组 a 跟 b，queue 里面有两种类型的讯息。第一种是 ‍‍‍‌‌‍‌‍‌‍‌‍‌‍‌‌‌‌‍‌[0, i, x]， 要做的处理是 b += x。 第二个是 [1, x] 这代表你要找出 a + b[j] = x 然后把count 加到你的solution list里。 这题很看重runtime，跑太慢会fail至少6个hidden test case。
-
-
+ 
 
 https://www.1point3acres.com/bbs/thread-906784-1-1.html
 
 3. 给一个schedules，是list of list of list，里面是每个employee的meeting schedules，还给了一个integer length，代表要schedule meeting的长度。目的是要schedule这个长度为length的meeting，如果可以schedule，返回这个新meeting的start time，如果不能schedule(每个employees都没有长度为length的空闲时间)，返回-1. 如果看不明白可以看看下面的例子。
     比如schedules=[[[0, 80], [240, 360]], [[0, 60], [480, 600]]], length=120. 这个例子中employee 0 在0-80和240-360的时间段有meeting，employee 1在0-60和480-600的时间段有meeting，所以长度为120的新meeting最早能schedule到80，最后return 80.
     这一题当时太紧张了没有读完题目，后来发现有个条件没注意看，时间段是从0-1440（可能是因为一天只有1440分钟吧），所以最后的return的start time不能超过1440 - length，我忘记check了，所以有edge cases一直过不了。。。
-4. 给两个array of integers，一个代表coordinates，一个代表colors，两个array长度都是n，返回一个长度为n的array of integers，代表到coordinate i时一共有多少unique colors。
-    coordinates=[1, 2, 3, 3, 3, 5], colors=[1, 2, 2, 5, 4, 5]，返回results=[1, 2, 2, 3, 4, 4]。
-    index=0时，coordinate 1被paint成了color 1， 这时候num of unique colors是1，所以results[0]=1.
-    index=1时，coordinate 2被paint成了color 2，这时候num of unique colors是1和2，所以results[1]=2.
-    index=2时，coordinate 3被paint成了color 2，这时候num of unique colors是1和2，所以results[2]=2.
-    index=3时，coordinate 3被paint成了color 5，这时候num of unique colors是1，2和5，所以results[3]=3.
-    index=4时，coordinate 3被paint成了color 4，这时候num of unique colors是1，2，5和4，所以results[4]=4.
-    index=5时，coordinate 5被paint成了color 5，这时候num of unique colors是1，2，5和4，所以results[5]=4.
-    这一题需要o(n)才能test cases全部过，我最后tle了，后来想了一下两个map就能做到o(n)，肯定也有更好的办法，求大神指教。
-    总结：题很简单，但是题目是真的长，时间也比较紧张，所以我感觉更多的是考验心态。感觉越快做完分越高，还会penalize debug的时长，我试了一下practice exam，三分钟内做完第一道题，一次过，后面的题完全没看就submit都有667/850分。。。
-    分数：每道题400分，前面两题满分，第三题280，第四题tle，过了10/20个test cases只有100分，这样算是980/1200，最后是727/850，怪自己时间一紧张，没有认真读题，所以第三题edge cases，debug一直弄不出来就心态崩了，一直死磕，最后没时间去优化第四题了。
-    码字辛苦，也没加限制，求加米看面经，谢谢！！！
-    补充内容 (2022-06-26 05:26 +8:00):[‍‍‍‌‌‍‌‍‌‍‌‍‌‍‌‌‌‌‍‌/b]
-    第四题有个小错误，修改一下：
 5. 给两个array of integers，一个代表coordinates，一个代表colors，两个array长度都是n，返回一个长度为n的array of integers，代表到coordinate i时一共有多少unique colors。
     coordinates=[1, 2, 3, 3, 3, 5], colors=[1, 2, 2, 5, 4, 5]，返回results=[1, 2, 2, 3, 3, 4]。
     index=0时，coordinate 1被paint成了color 1， 这时候unique colors是1，所以results[0]=1.
@@ -61,11 +34,6 @@ https://www.1point3acres.com/bbs/thread-906784-1-1.html
 https://leetcode.com/problems/number-of-pairs-of-strings-with-concatenation-equal-to-target/
 
 
-
-【第一题】
-输入正整数数组A，返回01数组B，B[i]表示A[i] A[i+1] A[i+2]能否组成三角形。
-【第二题】
-<!--给一个长度为n的数组A，判断是不是由[1,2,...,n]或者[n,n-1,...,1]右移得来。比如[4,2,3,1]不是，[4,1,2,3]是。-->
 【第三题】
 给你二维数组长和宽，起点坐标，终点坐标。一开始从起点按照(+1, +1)的方式走，x坐标出界就取相反数，y出界同理，走到角落就同时取反。问走到终点的步数，如果走不到返回-1.
 【第四题】
@@ -74,13 +42,9 @@ https://leetcode.com/problems/number-of-pairs-of-strings-with-concatenation-equa
 
 
 
-
-
-刚做了CodeSignal上的Uber OA，需要全程share full screen和开摄像头，还要受持证件照拍照。。一共四道题，每题300分。
-1. <!--input一个String只包含“U”或“D”，代表向上或向下走一步，return最后的位移。-->
 2. input一段文字，把里面的元音字母(a e i o u)每个都向后shift，最后一个元音字母放到第一个元音字母的位置，其他char都不变。
 3. input两个array分别代表一些电池的使用时间和充电时间，给定一个目标时间t，先按照编号顺序使用电池，用完的立即开始充电，换下一个充满的电池（必须充满才能使用），没充好的就再换下一个，如果没有可用的return -1。如果能坚持到t，return num of fully used batteries.
-4.  
+3.  
 
 
 
@@ -93,45 +57,7 @@ https://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=696384&ctid=230%26
 
 
 ```
-Quesiton 1
-You are given an integer n. Your task is to calculate how many times the digits 0, 2 and 4 appear in all the non-negative integers up to n (0, 1, ...., n).
-Example
-• For n = 10, the output should be countOccurrences(n) = 4.
-  ○ The digit 0 appears in numbers 0 and 10 once, for a total of 2 occurrences,
-  ○ The digit 2 appears in the number 2 once, for a total of 1 occurrence,
-  ○ The digit 4 appears in the number 4 once, for a total of 1 occurrence.So the answer is 2 + 1 + 1 = 4.
-• For n = 22, the output should be countOccurrences(n) = 11.
-  ○ The digit 0 appears in numbers 0, 10, and 20 once, for a total of 3 occurrences,
-  ○ The digit 2 appears in numbers 2, 12, 20, and 21 once, and in the number 22 twice, for a total of 6 occurrences,
-  ○ The digit 4 appears in numbers 4 and 14 once, for a total of 2 occurrences.So the answer is 3 + 6 + 2 = 11.
-Input/Output
-• [execution time limit] 4 seconds (py3)
-• [input] integer nAn integer.Guaranteed constraints:0 ≤ n ≤ 1000.
-• [output] integerThe overall count of occurrences of digits 0, 2 and 4 in the integers from 0 to n inclusive.
-[Python 3] Syntax Tips
-# Prints help message to the console# Returns a stringdef helloWorld(name):    print("This prints to the console when you Run Tests")    return "Hello, " + name
-Quesiton 2
-You are given a string str containing only the letters W, D, and L. Your task is to construct a new string from the characters of str, according to the following algorithm:
-1. Begin with an empty string output = "".
-2. If str contains a W, then remove it and concatenate a W to the end of output.
-3. If str contains a D, then remove it and concatenate a D to the end of output.
-4. If str contains an L, then remove it and concatenate an L to the end of output.
-5. If str is empty, end the algorithm; otherwise go back to step 2.
-Return the value of output after the algorithm is complete.
-Note that it doesn't matter from where you remove the letter from the string, only the count of the letters left in the string matters.
-Example
-• For str = "LDWDL", the output should be equallyRearranging(str) = "WDLDL".
-  ○ str contains all W, D, and L, so we add them to the output and remove from the initial string one by one and get "WDL"
-  ○ The remaining string contains only letters D and L, so we add them to the output and get "WDLDL" as the answer
-• For str = "DLDD", the output should be equallyRearranging(str) = "DLDD".
-  ○ The string doesn't contain W letters, and do contain both D and L, so we add them to the output and remove from the initial string. The output is "DL" after that
-  ○ The remaining string contains only two letters D and nothing else, so in two more iterations we get the output equal "DLDD"
-Input/Output
-• [execution time limit] 4 seconds (py3)
-• [input] string strA string containing only the letters 'W', 'D' and 'L'.Guaranteed constraints:1 ≤ str.length ≤ 1000.
-• [output] stringReturn the string constructed from the characters of str.
-[Python 3] Syntax Tips
-# Prints help message to the console# Returns a stringdef helloWorld(name):    print("This prints to the console when you Run Tests")    return "Hello, " + name
+ 
 Question 3
 You've decided to create a bot for handling stock trades. For now, you have a simple prototype which handles trades for just one stock. Each day, it's programmed to either buy or sell one share of the stock.
 You are given prices, an array of positive integers where prices[i] represents the stock price on the ith day. You're also given algo, an array of 0s and 1s representing the bot's schedule, where 0 means buy and 1 means sell.
@@ -278,6 +204,82 @@ https://www.1point3acres.com/bbs/thread-876371-1-1.html
 
 # 高频
 
+## 子数组
+
+
+
+```
+给一个数组[1,2,1,1], 一个 k 值 = 2, 返回满足条件的subarray的数量 - 条件时 - subarray当中必须含有至少k个只出现过1次的数字。
+例子:
+数组[1,2,1,1], k = 2, 返回2.
+满足条件的subarray 包括 - [1,2], [2,1]
+[1,2,1] 不满足，因为只有2出现了1次。
+数组[1,2,3,4,1], k =3, 返回6‍‍‍‌‌‍‌‍‌‍‌‍‌‍‌‌‌‌‍‌.
+满足条件的subarray 包括 - [1,2,3], [1,2,3,4],[1,2,3,4,1],[2,3,4],[2,3,4,1],[3,4,1]
+其中[1,2,3,4,1] 满足，因为出现过1次的数字有[2,3,4], length >= k.
+```
+
+## sub array
+
+```
+给一个数组[1,2,1,1], 一个 k 值 = 2, 返回满足条件的subarray的数量 - 条件时 - subarray当中必须含有至少k个只出现过1次的数字。
+例子:
+数组[1,2,1,1], k = 2, 返回2.
+满足条件的subarray 包括 - [1,2], [2,1]
+[1,2,1] 不满足，因为只有2出现了1次。
+数组[1,2,3,4,1], k =3, 返回6‍‍‍‌‌‍‌‍‌‍‌‍‌‍‌‌‌‌‍‌.
+满足条件的subarray 包括 - [1,2,3], [1,2,3,4],[1,2,3,4,1],[2,3,4],[2,3,4,1],[3,4,1]
+其中[1,2,3,4,1] 满足，因为出现过1次的数字有[2,3,4], length >= k.
+```
+
+```java
+
+```
+
+
+
+## 对角线
+
+```JAVA
+Question 4
+You are given a square matrix of characters a which size is n x n. Your task is to create a list of strings from the diagonals of a, where each string has a length of n, and then sort this created list.
+We'll consider all diagonals that are parallel to the main diagonal, where each diagonal is considered to start at its upper point and end at its lower point. Since these diagonals will have different lengths, we'll traverse each one cyclically (ie: go back to the start of the diagonal after reaching the end) until we reach n characters.
+Sort the resulting strings in lexicographical order, and return an array of 2n - 1 integers, representing the diagonals' 1-based indices in their sorted order. In the case of lexicographically equal strings, their indices should be kept in the original order.
+Here's an example of how to count the diagonals for a 5 x 5 matrix (the number on the diagram corresponds to the diagonal index):
+5 6 7 8 94 5 6 7 83 4 5 6 72 3 4 5 61 2 3 4 5
+Example
+• Fora = [["b", "b"],     ["c", "a"]]the output should be diagonalsArranging(a) = [2, 3, 1].
+       
+This matrix has n = 2 and contains 3 diagonals:
+  ○ The diagonal with index 1 is ["c"] and its corresponding cyclic string is "cc";
+  ○ The diagonal with index 2 is ["b", "a"] and its corresponding cyclic string is "ba";
+  ○ The diagonal with index 3 is ["b"] and its corresponding cyclic string is "bb".The lexicographical ordering of the matrix diagonals looks like ["ba", "bb", "cc"], so the answer is [2, 3, 1].
+• Fora = [["a", "c", "a", "b", "b"],      ["c", "b", "a", "c", "b"],      ["a", "a", "e", "c", "b"],      ["b", "b", "d", "a", "g"],      ["a", "b", "e", "b", "a"]]the output should be diagonalsArranging(a) = [1, 5, 3, 7, 2, 8, 9, 6, 4].
+       
+This matrix has n = 5 and contains 9 diagonals:
+  ○ The diagonal with index 1 is ["a"] and its corresponding cyclic string is "aaaaa",
+  ○ The diagonal with index 2 is ["b", "b"] and its corresponding cyclic string is "bbbbbb",
+  ○ The diagonal with index 3 is ["a", "b", "e"] and its corresponding cyclic string is "abeab",
+  ○ The diagonal with index 4 is ["c", "a", "d", "b"] and its corresponding cyclic string is "cadb‍‍‍‌‌‍‌‍‌‍‌‍‌‍‌‌‌‌‍‌c",
+  ○ The diagonal with index 5 is ["a", "b", "e", "a", "a"] and its corresponding cyclic string is "abeaa",
+  ○ The diagonal with index 6 is ["c", "a", "c", "g"] and its corresponding cyclic string is "cacgc",
+  ○ The diagonal with index 7 is ["a", "c", "b"] and its corresponding cyclic string is "acbac",
+  ○ The diagonal with index 8 is ["b", "b"] and its corresponding cyclic string is "bbbbb",
+  ○ The diagonal with index 9 is ["b"] and its corresponding cyclic string is "bbbbb".The lexicographical ordering of the matrix diagonals looks like ["aaaaa", "abeaa", "abeab", "acbac", "bbbbb", "bbbbb", "bbbbb", "cacgc", "cadbc"], so the answer is [1, 5, 3, 7, 2, 8, 9, 6, 4].Note that the cyclic string "bbbbb" occurs 3 times, and the indices corresponding to this cyclic string appear in ascending order in the output: [2, 8, 9].
+```
+
+
+
+##  翻转
+
+2d matrix 三种操作。rotate 90， left对角线flip，right对角线flip。最后得到什么-baidu 1point3acres
+
+
+
+## 推箱子
+
+
+
 ## JUMP
 
 ```
@@ -285,6 +287,49 @@ https://www.1point3acres.com/bbs/thread-876371-1-1.html
 ```
 
 ```JAVA
+```
+
+##  4*4 matrix 
+
+```
+在几个4*4 matrix中各找一个missing element，marked by '?’，然后找到的element的大小给这些matrices排序，如果都一样则保持原顺序
+```
+
+```
+给input一个matrix，这个matrix是很多个 4*4 的小matrix并排摆放。 （size 是4行，4*k 列）
+每个4*4matrix里都应该是 1-16 这16个数字，但是每个matrix里都有一个是“？” missing。
+需要把所有的“？”按照缺的数字填回去，然后根据他们填回去的数字的大小顺序 从左到右re-arrange这些matrix。
+如果missing value一样，保持matrix的原顺序。
+return 修改后的大 matrix
+```
+
+## list of queries
+
+```
+给定a，b，比如a=[1,2,3], b=[4,5]；同时给定一个list of queries，query有两种情况：（1）比如[0,1,x]，0就是a，1就是指a中的index为1，x指的是a[index] = x，这个操作不需要对res进行更新； (2）比如[1,m]，即输出a，b中相加等于m的所有情况的数量，比如m=5, 那么只有1+4符合情况，则res.append(1)。 值得一提的是这题对时间复杂度要求比较高
+```
+
+
+
+```
+given two arrays a and b and list of queries. Return the values of all (1) query in an array.
+Queries are of two types:
+(0) update [type, index of element in a, value]. Update the element in a by given value
+(1) get [type, sum]. Return the number of ways a + b[ j] == sum where 0<=i < len(a) and 0<= j < len(b)
+e.g a = [1,2,3] , b = [4,5]
+queries = [[1,6], [0, 1, 2], [1,8]]
+result = [2, 2]
+for query‍‍‍‌‌‍‌‍‌‍‌‍‌‍‌‌‌‌‍‌ 1, 6 can come in 2 ways, 1 + 5 and 2 + 4
+for query 2 -> update a[1] += 2 , so a becomes [1,4,3]
+for query 3, 8 can come in 2 ways now as well. 4 + 4 and 5 + 3  
+
+
+```
+
+
+
+```java
+
 ```
 
 
@@ -362,54 +407,6 @@ class CountOccurrences {
 }
 ```
 
-## U and D
-
-```
-机器人只能U和D，给一个array包含UD，问最后结果
-```
-
-```
-给一个string of operations，里面只有u或者d，u等于往上位移，d等于往下位移，return在operations之后的位置是u还是d，如果回到原点，return一个whitespace。
-比如input=‘ududdd’，return=‘d'；input=‘ududud’，return=‘ ’。这一题我就数了一下string里面u和d的数量，然后对比一下就行了。
-```
- ## 4*4 matrix
-
-```
-在几个4*4 matrix中各找一个missing element，marked by '?’，然后找到的element的大小给这些matrices排序，如果都一样则保持原顺序
-```
- 
-```
-给input一个matrix，这个matrix是很多个 4*4 的小matrix并排摆放。 （size 是4行，4*k 列）
-每个4*4matrix里都应该是 1-16 这16个数字，但是每个matrix里都有一个是“？” missing。
-需要把所有的“？”按照缺的数字填回去，然后根据他们填回去的数字的大小顺序 从左到右re-arrange这些matrix。
-如果missing value一样，保持matrix的原顺序。
-return 修改后的大 matrix
-```
-## list of queries
-
-```
-给定a，b，比如a=[1,2,3], b=[4,5]；同时给定一个list of queries，query有两种情况：（1）比如[0,1,x]，0就是a，1就是指a中的index为1，x指的是a[index] = x，这个操作不需要对res进行更新； (2）比如[1,m]，即输出a，b中相加等于m的所有情况的数量，比如m=5, 那么只有1+4符合情况，则res.append(1)。 值得一提的是这题对时间复杂度要求比较高
-```
-
-```
-given two arrays a and b and list of queries. Return the values of all (1) query in an array.
-Queries are of two types:
-(0) update [type, index of element in a, value]. Update the element in a by given value
-(1) get [type, sum]. Return the number of ways a + b[ j] == sum where 0<=i < len(a) and 0<= j < len(b)
-e.g a = [1,2,3] , b = [4,5]
-queries = [[1,6], [0, 1, 2], [1,8]]
-result = [2, 2]
-for query‍‍‍‌‌‍‌‍‌‍‌‍‌‍‌‌‌‌‍‌ 1, 6 can come in 2 ways, 1 + 5 and 2 + 4
-for query 2 -> update a[1] += 2 , so a becomes [1,4,3]
-for query 3, 8 can come in 2 ways now as well. 4 + 4 and 5 + 3  
-
-
-```
-
-
-```java
-```
-
 
 
 
@@ -448,22 +445,6 @@ class Solution {
 ```
 
 
-
-## sub array
-
-```
-给一个数组[1,2,1,1], 一个 k 值 = 2, 返回满足条件的subarray的数量 - 条件时 - subarray当中必须含有至少k个只出现过1次的数字。
-例子:
-数组[1,2,1,1], k = 2, 返回2.
-满足条件的subarray 包括 - [1,2], [2,1]
-[1,2,1] 不满足，因为只有2出现了1次。
-数组[1,2,3,4,1], k =3, 返回6‍‍‍‌‌‍‌‍‌‍‌‍‌‍‌‌‌‌‍‌.
-满足条件的subarray 包括 - [1,2,3], [1,2,3,4],[1,2,3,4,1],[2,3,4],[2,3,4,1],[3,4,1]
-其中[1,2,3,4,1] 满足，因为出现过1次的数字有[2,3,4], length >= k.
-```
-
-```java
-```
 
 
 
