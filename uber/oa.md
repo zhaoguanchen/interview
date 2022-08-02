@@ -219,23 +219,6 @@ https://www.1point3acres.com/bbs/thread-876371-1-1.html
 其中[1,2,3,4,1] 满足，因为出现过1次的数字有[2,3,4], length >= k.
 ```
 
-## sub array
-
-```
-给一个数组[1,2,1,1], 一个 k 值 = 2, 返回满足条件的subarray的数量 - 条件时 - subarray当中必须含有至少k个只出现过1次的数字。
-例子:
-数组[1,2,1,1], k = 2, 返回2.
-满足条件的subarray 包括 - [1,2], [2,1]
-[1,2,1] 不满足，因为只有2出现了1次。
-数组[1,2,3,4,1], k =3, 返回6‍‍‍‌‌‍‌‍‌‍‌‍‌‍‌‌‌‌‍‌.
-满足条件的subarray 包括 - [1,2,3], [1,2,3,4],[1,2,3,4,1],[2,3,4],[2,3,4,1],[3,4,1]
-其中[1,2,3,4,1] 满足，因为出现过1次的数字有[2,3,4], length >= k.
-```
-
-```java
-
-```
-
 
 
 ## 对角线
@@ -304,6 +287,78 @@ return 修改后的大 matrix
 ```
 
 ```JAVA
+
+class MatrixSolution {
+    public String[][] arrange(String[][] matrix) {
+        int k = matrix[0].length / 4;
+        int m = matrix.length;
+        int n = matrix[0].length;
+
+        List<int[]> list = new ArrayList<>();
+        for (int i = 0; i < k; i++) {
+            int missVal = findMiss(matrix, i * 4);
+            list.add(new int[]{i, missVal});
+        }
+
+        list.sort((a, b) -> {
+            if (a[1] == b[1]) {
+                return a[0] - b[0];
+            }
+
+            return a[1] - b[1];
+        });
+
+        return generate(m, n, matrix, list);
+    }
+
+    private String[][] generate(int m, int n, String[][] source, List<int[]> list) {
+        String[][] ans = new String[m][n];
+        int k = n / 4;
+
+        for (int i = 0; i < k; i++) {
+            int sourceIndex = list.get(i)[0];
+            int sourceBase = sourceIndex * 4;
+            int targetBase = i * 4;
+            for (int row = 0; row < 4; row++) {
+                for (int col = 0; col < 4; col++) {
+                    ans[row][targetBase + col] = source[row][sourceBase + col];
+                }
+            }
+
+        }
+
+        return ans;
+    }
+
+    private int findMiss(String[][] matrix, int baseCol) {
+        int[] ans = new int[3];
+        int[] count = new int[17];
+
+        for (int i = 0; i < 4; i++) {
+            for (int j = baseCol; j < baseCol + 4; j++) {
+                if ("?".equals(matrix[i][j])) {
+                    ans[0] = i;
+                    ans[1] = j;
+                } else {
+                    int num = Integer.parseInt(matrix[i][j]);
+                    count[num]++;
+
+                }
+            }
+        }
+
+        for (int i = 1; i < count.length; i++) {
+            if (count[i] == 0) {
+                ans[2] = i;
+                break;
+            }
+        }
+
+        matrix[ans[0]][ans[1]] = String.valueOf(ans[2]);
+        return ans[2];
+    }
+}
+
 ```
 
 
