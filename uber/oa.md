@@ -237,7 +237,13 @@ This matrix has n = 2 and contains 3 diagonals:
   ○ The diagonal with index 1 is ["c"] and its corresponding cyclic string is "cc";
   ○ The diagonal with index 2 is ["b", "a"] and its corresponding cyclic string is "ba";
   ○ The diagonal with index 3 is ["b"] and its corresponding cyclic string is "bb".The lexicographical ordering of the matrix diagonals looks like ["ba", "bb", "cc"], so the answer is [2, 3, 1].
-• Fora = [["a", "c", "a", "b", "b"],      ["c", "b", "a", "c", "b"],      ["a", "a", "e", "c", "b"],      ["b", "b", "d", "a", "g"],      ["a", "b", "e", "b", "a"]]the output should be diagonalsArranging(a) = [1, 5, 3, 7, 2, 8, 9, 6, 4].
+• Fora = [["a", "c", "a", "b", "b"],
+          ["c", "b", "a", "c", "b"], 
+          ["a", "a", "e", "c", "b"], 
+          ["b", "b", "d", "a", "g"], 
+          ["a", "b", "e", "b", "a"]]
+    
+    the output should be diagonalsArranging(a) = [1, 5, 3, 7, 2, 8, 9, 6, 4].
        
 This matrix has n = 5 and contains 9 diagonals:
   ○ The diagonal with index 1 is ["a"] and its corresponding cyclic string is "aaaaa",
@@ -249,6 +255,64 @@ This matrix has n = 5 and contains 9 diagonals:
   ○ The diagonal with index 7 is ["a", "c", "b"] and its corresponding cyclic string is "acbac",
   ○ The diagonal with index 8 is ["b", "b"] and its corresponding cyclic string is "bbbbb",
   ○ The diagonal with index 9 is ["b"] and its corresponding cyclic string is "bbbbb".The lexicographical ordering of the matrix diagonals looks like ["aaaaa", "abeaa", "abeab", "acbac", "bbbbb", "bbbbb", "bbbbb", "cacgc", "cadbc"], so the answer is [1, 5, 3, 7, 2, 8, 9, 6, 4].Note that the cyclic string "bbbbb" occurs 3 times, and the indices corresponding to this cyclic string appear in ascending order in the output: [2, 8, 9].
+```
+
+```java
+class SoSolution {
+    public int[] arrange(String[][] matrix) {
+        int n = matrix[0].length;
+
+        int index = 0;
+        List<Pair<String, Integer>> list = new ArrayList<>();
+        for (int i = n - 1; i > 0; i--) {
+            String s = getStr(i, 0, matrix);
+            list.add(new Pair<>(s, index));
+            index++;
+        }
+
+        for (int i = 0; i < n; i++) {
+            String s = getStr(0, i, matrix);
+            list.add(new Pair<>(s, index));
+            index++;
+        }
+
+        list.sort((a, b) -> {
+            if (Objects.equals(a.getKey(), b.getKey())) {
+                return a.getValue() - b.getValue();
+            }
+            return a.getKey().compareTo(b.getKey());
+        });
+ 
+        int[] ans = new int[2 * n - 1];
+        for (int i = 0; i < list.size(); i++) {
+            Pair<String, Integer> pair = list.get(i);
+            ans[i] = pair.getValue() + 1;
+        }
+
+        return ans;
+    }
+
+
+    private String getStr(int row, int col, String[][] matrix) {
+        int n = matrix.length;
+        StringBuilder sb = new StringBuilder();
+
+        int i = row;
+        int j = col;
+        while (sb.length() < n) {
+            sb.append(matrix[i][j]);
+            i++;
+            j++;
+            if (i >= n || j >= n) {
+                i = row;
+                j = col;
+            }
+
+        }
+
+        return sb.toString();
+    }
+}
 ```
 
 
