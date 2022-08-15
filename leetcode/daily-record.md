@@ -1,5 +1,14 @@
 # daily record
 
+## todo
+
+1. 堆实现
+2. Min Stack
+3. LRU
+4. Construct tree
+
+
+
 1. 树
    1. 二叉树
       1. 遍历
