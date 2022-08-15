@@ -1,5 +1,14 @@
 # daily record
 
+
+## record
+08.15.2022
+- binary search(left-bound, right-bound)
+make blog.
+
+
+
+
 ## todo
 
 1. 堆实现
@@ -8,6 +17,9 @@
 4. Construct tree
 
 
+
+
+## cate
 
 1. 树
    1. 二叉树
