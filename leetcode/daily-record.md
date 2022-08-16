@@ -15,6 +15,8 @@ make blog.
 2. Min Stack
 3. LRU
 4. Construct tree
+5. quick sort, quick select
+6. merge sort
 
 
 
