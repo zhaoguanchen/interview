@@ -4,3 +4,4 @@
 
 # 2. Business
 
+![image-20220825200511523](photo/stack.png)
